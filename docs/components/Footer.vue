@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <footer class="body-font w-full grow text-gray-600">
+  <footer class="body-font w-full text-gray-600">
     <div
       class="container mx-auto flex flex-col items-center px-5 py-8 sm:flex-row"
     >

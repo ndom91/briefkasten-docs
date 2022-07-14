@@ -22,9 +22,11 @@
         </svg>
         <h3 class="my-3 text-3xl font-semibold">Self-Hostable</h3>
         <div class="space-y-1 leading-tight">
-          <p>Similique quas ea veniam</p>
-          <p>Tempore quasi porro</p>
-          <p>Blanditiis aut mollitia ex</p>
+          <p>With a platform to run a Next.js App,</p>
+          <p>a Prisma compatible database,</p>
+          <p>and optionally an S3-compatible</p>
+          <p>blob storage you can host Briefkasten</p>
+          <p>yourself!</p>
         </div>
       </div>
       <div class="flex flex-col items-center p-4">
@@ -42,9 +44,17 @@
         </svg>
         <h3 class="my-3 text-3xl font-semibold">Browser Extension</h3>
         <div class="space-y-1 leading-tight">
-          <p>Similique quas ea veniam</p>
-          <p>Tempore quasi porro</p>
-          <p>Blanditiis aut mollitia ex</p>
+          <p>
+            Available on the
+            <a
+              href="https://chrome.google.com/webstore/detail/briefkasten-bookmarks/aighkhofochfjejmhjfkgjfpkpgmjlnd"
+              target="_blank"
+              >Chrome Webstore</a
+            >
+          </p>
+          <p>as well as via the source</p>
+          <p>you can add and search extensions</p>
+          <p>without leaving your browser!</p>
         </div>
       </div>
       <div class="flex flex-col items-center p-4">
@@ -62,9 +72,10 @@
         </svg>
         <h3 class="my-3 text-3xl font-semibold">Import/Export</h3>
         <div class="space-y-1 leading-tight">
-          <p>Similique quas ea veniam</p>
-          <p>Tempore quasi porro</p>
-          <p>Blanditiis aut mollitia ex</p>
+          <p>We support the standard HTML bookmarks</p>
+          <p>format, so importing from your browser</p>
+          <p>or another bookmarking tool</p>
+          <p>should be as easy as 1 click!</p>
         </div>
       </div>
       <div class="flex flex-col items-center p-4">
@@ -82,9 +93,9 @@
         </svg>
         <h3 class="my-3 text-3xl font-semibold">Screenshot Fetching</h3>
         <div class="space-y-1 leading-tight">
-          <p>Similique quas ea veniam</p>
-          <p>Tempore quasi porro</p>
-          <p>Blanditiis aut mollitia ex</p>
+          <p>A background job runs every</p>
+          <p>6 hours to fetch missing screenshots</p>
+          <p>for every users bookmarks.</p>
         </div>
       </div>
       <div class="flex flex-col items-center p-4">
@@ -102,9 +113,11 @@
         </svg>
         <h3 class="my-3 text-3xl font-semibold">Full-text Search</h3>
         <div class="space-y-1 leading-tight">
-          <p>Similique quas ea veniam</p>
-          <p>Tempore quasi porro</p>
-          <p>Blanditiis aut mollitia ex</p>
+          <p>Search both in your browser, via</p>
+          <p>the extension, as well as in the</p>
+          <p>application itself is full-text</p>
+          <p>so you'll always find what you're</p>
+          <p>looking for.</p>
         </div>
       </div>
       <div class="flex flex-col items-center p-4">
@@ -122,9 +135,10 @@
         </svg>
         <h3 class="my-3 text-3xl font-semibold">REST API</h3>
         <div class="space-y-1 leading-tight">
-          <p>Similique quas ea veniam</p>
-          <p>Tempore quasi porro</p>
-          <p>Blanditiis aut mollitia ex</p>
+          <p>We offer a standard REST API</p>
+          <p>with methods to interact with all</p>
+          <p>of the assets in the application</p>
+          <p>like Bookmarks, Tags and Categories.</p>
         </div>
       </div>
     </div>

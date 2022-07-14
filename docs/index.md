@@ -16,11 +16,13 @@ head:
 import useData from './composables/useData.vue'
 import Hero from './components/Hero.vue'
 import Features from './components/Features.vue'
+import Pricing from './components/Pricing.vue'
 import Footer from './components/Footer.vue'
 </script>
 
-<div class="flex flex-col items-center justify-start h-screen">
+<div class="flex flex-col items-center justify-start h-screen gap-8">
   <Hero />
   <Features />
+  <Pricing />
   <Footer />
 </div>
