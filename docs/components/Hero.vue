@@ -4,7 +4,7 @@ console.log('HERO')
 
 <template>
     <div class="w-full px-6">
-        <div class="mt-8 relative rounded-lg bg-slate-800 container mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
+        <div class="mt-8 relative rounded-lg dark:bg-slate-600 bg-slate-800 container mx-auto flex flex-col items-center pt-12 sm:pt-24 pb-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
             <svg class="mr-2 lg:mr-12 mt-2 lg:mt-12 absolute right-0 top-0" width="104px" height="95px" viewBox="0 0 104 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <g id="Work-in-Progress" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.122837612">
                     <g transform="translate(-1139.000000, -175.000000)" fill="#FFFFFF">
