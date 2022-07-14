@@ -27,12 +27,12 @@ console.log('HERO')
       />
       <a
         href="https://briefkasten.vercel.app"
-        class="group mb-7 inline-flex items-center justify-between rounded-full bg-zinc-300 py-1 px-1 pr-4 text-sm text-gray-700 transition hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+        class="group mb-7 inline-flex items-center justify-between rounded-full bg-zinc-100 py-1 px-1 pr-4 text-sm text-gray-700 transition transition hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
         target="_blank"
         role="alert"
       >
         <span
-          class="mr-3 rounded-full bg-emerald-300 px-4 py-1.5 text-xs text-white transition group-hover:bg-emerald-400 dark:bg-emerald-300/50 dark:group-hover:bg-emerald-300/80"
+          class="mr-3 rounded-full bg-emerald-300 px-4 py-1.5 text-xs text-white transition transition group-hover:bg-emerald-400 dark:bg-emerald-300/50 dark:group-hover:bg-emerald-300/80"
           >New</span
         >
         <span class="text-sm font-medium"
@@ -65,7 +65,7 @@ console.log('HERO')
         class="mb-8 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 lg:mb-16"
       >
         <a
-          href="/documentation"
+          href="/documentation/"
           class="inline-flex items-center justify-center rounded-lg bg-slate-700 py-3 px-5 text-center text-base font-medium text-white transition hover:bg-slate-900 focus:ring-4 focus:ring-slate-300 dark:bg-emerald-300/30 dark:hover:bg-emerald-300/80 dark:focus:ring-slate-900"
         >
           Learn more

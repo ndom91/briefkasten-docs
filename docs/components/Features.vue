@@ -1,5 +1,5 @@
 <template>
-  <section class="m-4 dark:bg-gray-800 dark:text-gray-100 md:m-8">
+  <section class="m-4 dark:text-gray-100 md:m-8">
     <div class="container mx-auto my-6 space-y-2 p-4 text-center">
       <h2 class="text-5xl font-bold">Built to empower every user</h2>
       <p class="dark:text-gray-400">Always find what you're looking for!</p>

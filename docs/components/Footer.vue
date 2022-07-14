@@ -24,7 +24,7 @@
             d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
           ></path>
         </svg>
-        <span class="ml-3 text-xl">Briefkasten</span>
+        <span class="ml-3 text-xl dark:text-zinc-100">Briefkasten</span>
       </a>
       <p
         class="mt-4 text-sm text-gray-500 sm:ml-4 sm:mt-0 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:pl-4"
