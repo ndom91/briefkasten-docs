@@ -20,7 +20,7 @@ export default {
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/docs/' },
+      { text: 'Docs', link: '/documentation/' },
       {
         text: 'Related',
         items: [
@@ -43,9 +43,5 @@ export default {
         ]
       }
     ],
-    footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2022-present'
-    }
   },
 }
