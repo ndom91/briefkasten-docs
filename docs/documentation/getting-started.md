@@ -2,4 +2,4 @@
 layout: 'doc'
 ---
 
-# Introduction
+# Getting Started

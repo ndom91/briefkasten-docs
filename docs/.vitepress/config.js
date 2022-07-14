@@ -15,8 +15,9 @@ export default {
     siteTitle: 'Briefkasten',
     lastUpdatedText: 'Updated Date',
     editLink: {
-      pattern: 'https://github.com/ndom91/briefkasten-docs/edit/main/docs/:path',
-      text: 'Edit this page on GitHub'
+      pattern:
+        'https://github.com/ndom91/briefkasten-docs/edit/main/docs/:path',
+      text: 'Edit this page on GitHub',
     },
     nav: [
       { text: 'Home', link: '/' },
@@ -24,11 +25,20 @@ export default {
       {
         text: 'Related',
         items: [
-          { text: 'Screenshot Scraper', link: 'https://github.com/ndom91/briefkasten-scrape' },
-          { text: 'Browser Extension', link: 'https://github.com/ndom91/briefkasten-extension' },
-          { text: 'Screenshot API', link: 'https://github.com/ndom91/briefkasten-screenshot' }
-        ]
-      }
+          {
+            text: 'Screenshot Scraper',
+            link: 'https://github.com/ndom91/briefkasten-scrape',
+          },
+          {
+            text: 'Browser Extension',
+            link: 'https://github.com/ndom91/briefkasten-extension',
+          },
+          {
+            text: 'Screenshot API',
+            link: 'https://github.com/ndom91/briefkasten-screenshot',
+          },
+        ],
+      },
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/ndom91/briefkasten' },
@@ -38,10 +48,12 @@ export default {
       {
         text: 'Guide',
         items: [
-          { text: 'Introduction', link: '/introduction' },
-          { text: 'Getting Started', link: '/getting-started' },
-        ]
-      }
+          { text: 'Introduction', link: '/documentation/' },
+          { text: 'Getting Started', link: '/documentation/getting-started' },
+          { text: 'Selfhosting', link: '/documentation/self-hosting' },
+          { text: 'Development', link: '/documentation/development' },
+        ],
+      },
     ],
   },
 }
