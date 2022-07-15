@@ -17,8 +17,8 @@ To selfhost Briefkasten there are 3 required prerequisites and 1 optional one. T
 
 1. A platform to host a Node.js (Next.js) application
 2. A Prisma compatible database (SQLite, Postgres, Mysql, etc.)
-3. OAuth App credentials
-4. S3-like object store for images (**optional**)
+3. An authentication provider
+4. S3-like object store (**optional**)
 
 ### Next.js Hosting
 
@@ -28,10 +28,10 @@ Some things to remember here, however, are the environment variables. You will n
 
 The OAuth credentials can be acquired through the instructions on the [NextAuth.js](https://next-auth.js.org/providers/github) site. Don't forget to set the provider `clientId`/`secret` of your choice (i.e. `GITHUB_ID`/`GITHUB_SECRET`).
 
-Finally, if you've opted into providing an object storage provider for bookmark images, the application is currently setup to use [Supabase](https://supabase.io) only. Therefore, you can pass your secrets as `SUPABASE_URL` and `SUPABASE_KEY`. Make sure to use the service account key which has `write` rights.
+Finally, if you've opted into providing an object storage provider for bookmark images, the application is currently setup to use [Supabase](https://supabase.io) only. Therefore, you can pass your secrets as `SUPABASE_URL` and `SUPABASE_KEY`. Make sure to use the service account key which has `write` rights. More details [below](#object-storage) for using a different object storage provider.
 
-:::tip
-The image uploading/saving functionality will be skipped over entirely if you do not pass a `SUPABASE_URL` environment variable.
+:::tip Tip
+The image uploading functionality will be skipped over entirely if you do not pass a `SUPABASE_URL` environment variable. No other action is necessary.
 :::
 
 ### Database
@@ -62,7 +62,7 @@ The two OAuth providers are setup simply by passing their respective `clientId` 
 
 As previously mentioned, the object storage is optional, and used only for storing bookmark screenshots. The application with function just fine without bookmark images, however, in my opinion it will be much less nice :)
 
-Briefkasten is setup to use Supabase and their Storage product. You can sign-up for a [free Supabase account](https://supabase.io) at their website and use the 1GB free storage they provide you. As mentioned in the [hosting](#Next.js%20Hosting) section, you then simply need to pass the `SUPABASE_URL` and `SUPABASE_KEY` as environment variables for it to work.
+Briefkasten is setup to use Supabase and their Storage product. You can sign-up for a [free Supabase account](https://supabase.io) at their website and use the 1GB free storage they provide you. As mentioned in the [hosting](#next-js-hosting) section, you then simply need to pass the `SUPABASE_URL` and `SUPABASE_KEY` as environment variables for it to work.
 
 **If you want to use a different object storage provider**, there are a few changes you will need to make. Including swapping out the use of the `supabase` javascript sdk with your own object storage library, and replacing of the public bucket URL in a few places.
 

@@ -50,6 +50,7 @@ export default {
         items: [
           { text: 'Introduction', link: '/docs/' },
           { text: 'Getting Started', link: '/docs/getting-started' },
+          { text: 'API', link: '/docs/api' },
           { text: 'Selfhosting', link: '/docs/self-hosting' },
           { text: 'Development', link: '/docs/development' },
         ],
