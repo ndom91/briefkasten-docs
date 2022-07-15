@@ -33,3 +33,12 @@ As stated above, this cloud version is completely free and without any sort of l
 ## Selfhosting
 
 To host the Briefkasten application yourself, please visit the [self-hosting](/documentation/self-hosting) section for more details. There are no complex or expensive pieces to the system, and as such can be self-hosted with the right providers, for free or very cheap.
+
+# Screenshots
+
+| [![](/screenshots/app0.png)](/screenshots/app0.png) | [![](/screenshots/app1.png)](/screenshots/app1.png)             |
+| :-------------------------------------------------- | :-------------------------------------------------------------- |
+| [![](/screenshots/app2.png)](/screenshots/app2.png) | [![](/screenshots/app3.png)](/screenshots/app3.png)             |
+| [![](/screenshots/app4.png)](/screenshots/app4.png) | [![](/screenshots/app5.png)](/screenshots/app5.png)             |
+| [![](/screenshots/app6.png)](/screenshots/app6.png) | [![](/screenshots/app7.png)](/screenshots/app7.png)             |
+| [![](/screenshots/app8.png)](/screenshots/app8.png) | [![](/screenshots/extension1.png)](/screenshots/extension1.png) |
