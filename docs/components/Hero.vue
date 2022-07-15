@@ -26,7 +26,7 @@ console.log('HERO')
         "
       />
       <a
-        href="https://briefkasten.vercel.app"
+        href="https://briefkasten.vercel.app?utm_source=docs&utm_medium=hero"
         class="group mb-7 inline-flex items-center justify-between rounded-full bg-zinc-100 py-1 px-1 pr-4 text-sm text-gray-700 transition transition hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
         target="_blank"
         role="alert"
@@ -83,7 +83,7 @@ console.log('HERO')
           </svg>
         </a>
         <a
-          href="https://github.com/ndom91/briefkasten"
+          href="https://github.com/ndom91/briefkasten?utm_source=docs&utm_medium=hero"
           target="_blank"
           class="inline-flex items-center justify-center rounded-lg border border-gray-300 py-3 px-5 text-center text-base font-medium text-gray-200 transition hover:bg-gray-700 focus:ring-4 focus:ring-gray-100 dark:border-emerald-300/50 dark:text-white dark:hover:bg-emerald-300/60 dark:focus:ring-gray-800"
         >

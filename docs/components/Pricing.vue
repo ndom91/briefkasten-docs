@@ -101,7 +101,7 @@
             </p>
             <a
               class="mt-auto flex w-full items-center rounded border-0 bg-slate-500 py-2 px-4 text-white transition hover:bg-slate-600 focus:outline-none dark:bg-emerald-300/50"
-              href="https://briefkasten.vercel.app/auth/signin?utm_campaign=home-pricing"
+              href="https://briefkasten.vercel.app/auth/signin?utm_source=docs&utm_medium=pricing"
               target="_blank"
             >
               Signup
@@ -207,7 +207,7 @@
             </p>
             <a
               class="mt-auto flex w-full items-center rounded border-0 bg-gray-400 py-2 px-4 text-white transition hover:bg-gray-500 focus:outline-none dark:bg-emerald-300/20"
-              href="https://briefkasten.vercel.app/auth/signin?utm_campaign=home-pricing"
+              href="https://briefkasten.vercel.app/auth/signin?utm_source=docs&utm_medium=pricing"
               target="_blank"
             >
               Signup
