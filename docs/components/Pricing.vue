@@ -14,7 +14,7 @@
       <div class="flex flex-col justify-around md:flex-row">
         <div class="w-full p-4 md:w-1/2 xl:w-1/2">
           <div
-            class="relative flex h-full flex-col overflow-hidden rounded-lg border-2 border-slate-500 p-6"
+            class="relative flex h-full flex-col overflow-hidden rounded-lg border-2 border-gray-400 p-6"
           >
             <span
               class="absolute right-0 top-0 rounded-bl bg-slate-500 px-3 py-1 text-xs tracking-widest text-white"
@@ -121,7 +121,7 @@
         </div>
         <div class="w-full p-4 md:w-1/2 xl:w-1/2">
           <div
-            class="relative flex h-full flex-col overflow-hidden rounded-lg border-2 border-gray-300 p-6"
+            class="relative flex h-full flex-col overflow-hidden rounded-lg border-2 border-slate-600 p-6"
           >
             <h2
               class="title-font mb-1 text-sm font-medium tracking-widest dark:text-zinc-400"
