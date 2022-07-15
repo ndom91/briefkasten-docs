@@ -5,10 +5,10 @@ console.log('HERO')
 <template>
   <div class="flex w-full flex-col items-center justify-start px-6">
     <div
-      class="container relative mx-auto mt-12 flex flex-col items-center rounded-lg bg-slate-800 py-24 dark:bg-zinc-600"
+      class="container relative mx-auto mt-12 flex flex-col items-center rounded-lg bg-slate-800 pt-12 pb-24 dark:bg-zinc-600 sm:py-24"
     >
       <div
-        class="absolute -right-12 -top-12 h-72 w-72"
+        class="absolute -right-12 -top-12 hidden h-72 w-72 lg:block"
         style="
           background-color: transparent;
           opacity: 1;
@@ -17,7 +17,7 @@ console.log('HERO')
         "
       />
       <div
-        class="absolute -bottom-12 -left-12 h-72 w-72"
+        class="absolute -bottom-12 -left-12 hidden h-72 w-72 lg:block"
         style="
           background-color: transparent;
           opacity: 1;
@@ -27,16 +27,20 @@ console.log('HERO')
       />
       <a
         href="https://briefkasten.vercel.app?utm_source=docs&utm_medium=hero"
-        class="group mb-7 inline-flex items-center justify-between rounded-full bg-zinc-100 py-1 px-1 pr-4 text-sm text-gray-700 transition transition hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+        class="group mx-4 mb-7 inline-flex items-center justify-between rounded-full bg-zinc-100 py-1 px-1 text-sm text-gray-700 transition hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 md:mx-0"
         target="_blank"
         role="alert"
       >
         <span
-          class="mr-3 rounded-full bg-emerald-300 px-4 py-1.5 text-xs text-white transition transition group-hover:bg-emerald-400 dark:bg-emerald-300/50 dark:group-hover:bg-emerald-300/80"
+          class="mr-3 rounded-full bg-emerald-300 px-4 py-1.5 text-xs text-white transition group-hover:bg-emerald-400 dark:bg-emerald-300/50 dark:group-hover:bg-emerald-300/80"
           >New</span
         >
-        <span class="text-sm font-medium"
-          >Briefkasten Beta is out! Give it a shot</span
+        <span class="text-xs font-medium md:text-sm"
+          >Briefkasten Beta is out! </span
+        ><span
+          class="ml-1 hidden text-xs font-medium sm:inline-block md:text-sm"
+        >
+          Give it a shot</span
         >
         <svg
           class="ml-2 h-5 w-5"
@@ -52,21 +56,19 @@ console.log('HERO')
         </svg>
       </a>
       <h1
-        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-200 dark:text-white md:text-5xl lg:text-6xl"
+        class="mx-8 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-200 dark:text-white md:mx-0 md:text-5xl lg:text-6xl"
       >
         Briefkasten Bookmarks
       </h1>
       <p
-        class="mb-8 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 lg:text-xl xl:px-48"
+        class="mx-8 mb-8 text-lg font-normal text-gray-500 dark:text-gray-400 sm:px-16 md:mx-0 lg:text-xl xl:px-48"
       >
         Never miss a thing. Keep all your bookmarks in one place.
       </p>
-      <div
-        class="mb-8 flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 lg:mb-16"
-      >
+      <div class="mb-12 flex justify-center gap-4 md:mb-16">
         <a
           href="/documentation/"
-          class="inline-flex items-center justify-center rounded-lg bg-slate-700 py-3 px-5 text-center text-base font-medium text-white transition hover:bg-slate-900 focus:ring-4 focus:ring-slate-300 dark:bg-emerald-300/30 dark:hover:bg-emerald-300/80 dark:focus:ring-slate-900"
+          class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-slate-500 py-3 px-5 text-center text-base font-medium text-white transition hover:bg-slate-900 focus:ring-4 focus:ring-slate-300 dark:bg-emerald-300/30 dark:hover:bg-emerald-300/80 dark:focus:ring-slate-900"
         >
           Learn more
           <svg
@@ -105,7 +107,7 @@ console.log('HERO')
         </a>
       </div>
     </div>
-    <div class="relative -mt-32 w-11/12 sm:w-3/5">
+    <div class="relative -mt-32 w-full sm:w-4/5 md:w-3/5">
       <img src="/images/screenshot_hero.png" alt="" class="" />
     </div>
   </div>

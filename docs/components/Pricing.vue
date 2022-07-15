@@ -8,10 +8,10 @@
           Pricing
         </h1>
         <p class="mx-auto text-base leading-relaxed text-gray-400 lg:w-2/3">
-          We're currently offering unlimited useage plans for free!
+          Free as in beer! Come one, come all!
         </p>
       </div>
-      <div class="flex justify-around">
+      <div class="flex flex-col justify-around md:flex-row">
         <div class="w-full p-4 md:w-1/2 xl:w-1/2">
           <div
             class="relative flex h-full flex-col overflow-hidden rounded-lg border-2 border-slate-500 p-6"
