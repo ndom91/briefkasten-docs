@@ -83,7 +83,7 @@ console.log('HERO')
           </svg>
         </a>
         <a
-          href="https://github.com/ndom91/briefkasten?utm_source=docs&utm_medium=hero"
+          href="https://github.com/ndom91/briefkasten?utm_source=briefkasten-docs&utm_medium=hero"
           target="_blank"
           class="inline-flex items-center justify-center rounded-lg border border-gray-300 py-3 px-5 text-center text-base font-medium text-gray-200 transition hover:bg-gray-700 focus:ring-4 focus:ring-gray-100 dark:border-emerald-300/50 dark:text-white dark:hover:bg-emerald-300/60 dark:focus:ring-gray-800"
         >
