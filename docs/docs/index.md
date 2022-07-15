@@ -36,9 +36,18 @@ To host the Briefkasten application yourself, please visit the [self-hosting](/d
 
 # Screenshots
 
-| [![](/screenshots/app0.png)](/screenshots/app0.png) | [![](/screenshots/app1.png)](/screenshots/app1.png)             |
-| :-------------------------------------------------- | :-------------------------------------------------------------- |
-| [![](/screenshots/app2.png)](/screenshots/app2.png) | [![](/screenshots/app3.png)](/screenshots/app3.png)             |
-| [![](/screenshots/app4.png)](/screenshots/app4.png) | [![](/screenshots/app5.png)](/screenshots/app5.png)             |
-| [![](/screenshots/app6.png)](/screenshots/app6.png) | [![](/screenshots/app7.png)](/screenshots/app7.png)             |
+| [![](/screenshots/app0.png)](/screenshots/app0.png) |       [![](/screenshots/app1.png)](/screenshots/app1.png)       |
+| :-------------------------------------------------: | :-------------------------------------------------------------: |
+|                    Login Screen                     |                            Dashboard                            |
+|                                                     |                                                                 |
+| [![](/screenshots/app2.png)](/screenshots/app2.png) |       [![](/screenshots/app3.png)](/screenshots/app3.png)       |
+|                      Quick-Add                      |                         Shrunk Sidebar                          |
+|                                                     |                                                                 |
+| [![](/screenshots/app4.png)](/screenshots/app4.png) |       [![](/screenshots/app5.png)](/screenshots/app5.png)       |
+|                      List View                      |                         Edit Slide-Out                          |
+|                                                     |                                                                 |
+| [![](/screenshots/app6.png)](/screenshots/app6.png) |       [![](/screenshots/app7.png)](/screenshots/app7.png)       |
+|                      Tag Page                       |                         Search Results                          |
+|                                                     |                                                                 |
 | [![](/screenshots/app8.png)](/screenshots/app8.png) | [![](/screenshots/extension1.png)](/screenshots/extension1.png) |
+|                   Empty Dashboard                   |                            Extension                            |
