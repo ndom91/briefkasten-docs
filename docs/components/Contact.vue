@@ -27,7 +27,7 @@
                 type="text"
                 id="name"
                 name="name"
-                class="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-slate-500 focus:bg-white focus:ring-2 focus:ring-slate-200 dark:bg-zinc-100"
+                class="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-slate-500 focus:bg-white focus:ring-2 focus:ring-slate-200 dark:bg-zinc-700 dark:text-zinc-100"
               />
             </div>
           </div>
@@ -42,7 +42,7 @@
                 type="email"
                 id="email"
                 name="email"
-                class="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-slate-500 focus:bg-white focus:ring-2 focus:ring-slate-200 dark:bg-zinc-100"
+                class="w-full rounded border border-gray-300 bg-gray-100 bg-opacity-50 py-1 px-3 text-base leading-8 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-slate-500 focus:bg-white focus:ring-2 focus:ring-slate-200 dark:bg-zinc-700 dark:text-zinc-100"
               />
             </div>
           </div>
@@ -56,7 +56,7 @@
               <textarea
                 id="message"
                 name="message"
-                class="h-32 w-full resize-none rounded border border-gray-300 bg-gray-100 bg-opacity-50 py-1 px-3 text-base leading-6 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-slate-500 focus:bg-white focus:ring-2 focus:ring-slate-200 dark:bg-zinc-100"
+                class="h-32 w-full resize-none rounded border border-gray-300 bg-gray-100 bg-opacity-50 py-1 px-3 text-base leading-6 text-gray-700 outline-none transition-colors duration-200 ease-in-out focus:border-slate-500 focus:bg-white focus:ring-2 focus:ring-slate-200 dark:bg-zinc-700 dark:text-zinc-100"
               ></textarea>
             </div>
           </div>
