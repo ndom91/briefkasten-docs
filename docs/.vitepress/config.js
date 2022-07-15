@@ -21,7 +21,7 @@ export default {
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/documentation/' },
+      { text: 'Docs', link: '/docs/' },
       {
         text: 'Related',
         items: [
@@ -48,10 +48,10 @@ export default {
       {
         text: 'Guide',
         items: [
-          { text: 'Introduction', link: '/documentation/' },
-          { text: 'Getting Started', link: '/documentation/getting-started' },
-          { text: 'Selfhosting', link: '/documentation/self-hosting' },
-          { text: 'Development', link: '/documentation/development' },
+          { text: 'Introduction', link: '/docs/' },
+          { text: 'Getting Started', link: '/docs/getting-started' },
+          { text: 'Selfhosting', link: '/docs/self-hosting' },
+          { text: 'Development', link: '/docs/development' },
         ],
       },
     ],

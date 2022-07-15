@@ -1,7 +1,3 @@
-<script setup>
-console.log('HERO')
-</script>
-
 <template>
   <div class="flex w-full flex-col items-center justify-start px-6">
     <div
@@ -67,7 +63,7 @@ console.log('HERO')
       </p>
       <div class="mb-12 flex justify-center gap-4 md:mb-16">
         <a
-          href="/documentation/"
+          href="/docs/"
           class="inline-flex items-center justify-center rounded-lg bg-slate-400 py-3 px-5 text-center text-base font-medium text-white transition hover:bg-slate-600 focus:ring-4 focus:ring-slate-300 dark:bg-emerald-300/30 dark:hover:bg-emerald-300/80 dark:focus:ring-slate-900"
         >
           Learn more

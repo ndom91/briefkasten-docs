@@ -13,7 +13,6 @@ head:
 ---
 
 <script setup>
-import useData from './composables/useData.vue'
 import Hero from './components/Hero.vue'
 import Features from './components/Features.vue'
 import Pricing from './components/Pricing.vue'
