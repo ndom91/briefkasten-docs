@@ -26,7 +26,7 @@ console.log('HERO')
         "
       />
       <a
-        href="https://briefkasten.vercel.app?utm_source=docs&utm_medium=hero"
+        href="https://briefkasten.vercel.app/?utm_source=docs&utm_medium=hero"
         class="group mx-4 mb-7 inline-flex items-center justify-between rounded-full bg-zinc-100 py-1 px-1 text-sm text-gray-700 transition hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 md:mx-0"
         target="_blank"
         role="alert"
@@ -68,7 +68,7 @@ console.log('HERO')
       <div class="mb-12 flex justify-center gap-4 md:mb-16">
         <a
           href="/documentation/"
-          class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-slate-500 py-3 px-5 text-center text-base font-medium text-white transition hover:bg-slate-900 focus:ring-4 focus:ring-slate-300 dark:bg-emerald-300/30 dark:hover:bg-emerald-300/80 dark:focus:ring-slate-900"
+          class="inline-flex items-center justify-center rounded-lg bg-slate-400 py-3 px-5 text-center text-base font-medium text-white transition hover:bg-slate-600 focus:ring-4 focus:ring-slate-300 dark:bg-emerald-300/30 dark:hover:bg-emerald-300/80 dark:focus:ring-slate-900"
         >
           Learn more
           <svg
@@ -85,9 +85,9 @@ console.log('HERO')
           </svg>
         </a>
         <a
-          href="https://github.com/ndom91/briefkasten?utm_source=briefkasten-docs&utm_medium=hero"
+          href="https://briefkasten.vercel.app/?utm_source=docs&utm_medium=hero"
           target="_blank"
-          class="inline-flex items-center justify-center rounded-lg border border-gray-300 py-3 px-5 text-center text-base font-medium text-gray-200 transition hover:bg-gray-700 focus:ring-4 focus:ring-gray-100 dark:border-emerald-300/50 dark:text-white dark:hover:bg-emerald-300/60 dark:focus:ring-gray-800"
+          class="inline-flex items-center justify-center rounded-lg bg-slate-700 py-3 px-5 text-center text-base font-medium text-gray-200 transition hover:bg-slate-900 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-emerald-300/60 dark:focus:ring-gray-800"
         >
           <svg
             class="mr-2 -ml-1 h-5 w-5"
@@ -100,10 +100,10 @@ console.log('HERO')
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+              d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
             ></path>
           </svg>
-          Code
+          Start
         </a>
       </div>
     </div>
