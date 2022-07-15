@@ -17,17 +17,19 @@ Welcome to Briefkasten! Your home for bookmarks and links of all kinds.
 
 There are two ways to use Briefkasten at the moment.
 
-1. Selfhosting
-2. Cloud instance
+1. **Briefkasten Cloud**
+2. **Selfhosted Instance**
 
-> We promise to do our best to always run the demo cloud instance any without sort of limits **for free**. However, if it begins to be abused or becomes too expensive, we reserve the right to shutdown or begin imposing limits!
+:::tip Notice
+We promise to do our best to always run the cloud instance without any sort of limits, entirely **for free**. However, if it begins to be abused or becomes too expensive, we reserve the right to shutdown or begin imposing limits!
+:::
 
-### Cloud
+## Briefkasten Cloud
 
 If you want to use the cloud version of Briefkasten, just visit [briefkasten.vercel.app](https://briefkasten.vercel.app) and signin with any of the available providers (Google OAuth, Github OAuth, Email Magic Link).
 
 As stated above, this cloud version is completely free and without any sort of limits, however we do reserve the right to end this at any time. It is after all just a side-project of mine ([`ndom91`](https://ndo.dev)), which I am more than happy to share with the world, however!
 
-### Selfhost
+## Selfhosting
 
-To host the Briefkasten application yourself, please visit the [selfhosting](/documentation/self-hosting) section for more details.
+To host the Briefkasten application yourself, please visit the [self-hosting](/documentation/self-hosting) section for more details. There are no complex or expensive pieces to the system, and as such can be self-hosted with the right providers, for free or very cheap.
