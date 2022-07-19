@@ -67,7 +67,7 @@ Available via:
 
 Once downloaded, you can setup Briefkasten as a shortcut like so:
 
-1. Download the Briefkasten Shortcut [template](https://briefkasten.vercel.app/briefkasten_shortcut.json)
+1. Download the Briefkasten Shortcut [template](https://github.com/ndom91/briefkasten/blob/main/public/briefkasten_shortcut.json)
 2. Open HTTP Shortcuts, go to the 3-dot menu in the top-right and select `Import/Export` and select `Import from file` and select this `.json` template file you've just downloaded.
 3. Select the 3-dot menu again and select `Variables` this time.
 4. Edit the values of `briefkasten_instance`, `briefkasten_tag` and `briefkasten_api_token`.
