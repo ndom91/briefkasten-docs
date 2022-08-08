@@ -13,7 +13,7 @@ head:
 
 # API
 
-Briefkasten comes with a REST API available under `/api/**`. These are based on [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) and can be found under `/src/pages/api/**/*` in the code.
+Briefkasten comes with a REST API reachable at `https://briefkasten.vercel.app/api/**`. These are based on [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) and the code can be found under `/src/pages/api/**/*`.
 
 ## Authentication
 
@@ -59,7 +59,7 @@ Below are the routes and HTTP methods which are available.
   - `PUT` - Update
   - `DELETE` - Delete
 
-### Body
+### Types
 
 ```js
 type Bookmark = {

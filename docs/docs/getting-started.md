@@ -21,11 +21,11 @@ To begin using Briefkasten, you must know a few things. Bookmarks are organised 
 The full database schema can be found in the repository under [`/prisma/schema.prisma`](https://github.com/ndom91/briefkasten/blob/main/prisma/schema.prisma)
 :::
 
-# Adding Bookmarks
+## Adding Bookmarks
 
 There are a few options to add bookmarks. If you want to create a new bookmark entry, you have the following options.
 
-## Quick add
+### Quick add
 
 ![](/screenshots/quick-add1.png)
 
@@ -52,7 +52,7 @@ After you've set these two options and clicked "Save", the extension will double
 
 The Extension comes with the keyboard shortcut **<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd>** setup by default. This shortcut will launch the extension overlay and auto-fill any page title and description it can parse. Just click "Save" and you'll add the current tab to your Briefkasten!
 
-The extension also adds an Omnibox (URL Bar) prefix called `bk` to your Chrome instance. For example, if you type `bk ` and a search term, it will search through your bookmarks and return a list of matching Bookmarks and their URLs which you can simply navigate through (by pressing :arrow_up: or :arrow_down:) and press enter to visit. For example:
+The extension also adds an Omnibox (URL Bar) prefix called `bk` to your Chrome instance. For example, if you type `bk ` and a search term, it will search through your bookmarks and return a list of matching Bookmarks and their URLs which you can simply navigate through (by pressing :arrow_up: or :arrow_down:) and press <kbd>Enter</kbd> to visit. For example:
 
 ![](/screenshots/extension2.png)
 
@@ -72,7 +72,7 @@ Once downloaded, you can setup Briefkasten as a shortcut like so:
 3. Select the 3-dot menu again and select `Variables` this time.
 4. Edit the values of `briefkasten_instance`, `briefkasten_tag` and `briefkasten_api_token`.
 
-After this is setup, any time you press "Share" within Android, you'll have an option titled "Briefkasten"!
+After this is setup, any time you press "Share" within Android, you'll have a new share target titled "Briefkasten".
 
 :::tip
 I like to set a default tag, for example `mobile`, in my HTTP Shortcuts setup. Therefore I can easily identify bookmarks that I've created from my mobile next time I'm back in the application.

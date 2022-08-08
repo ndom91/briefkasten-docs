@@ -85,8 +85,9 @@
           target="_blank"
           class="inline-flex items-center justify-center rounded-lg bg-slate-700 py-3 px-5 text-center text-base font-medium text-gray-200 transition hover:bg-slate-900 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-emerald-300/60 dark:focus:ring-gray-800"
         >
+          Start
           <svg
-            class="mr-2 -ml-1 h-5 w-5"
+            class="ml-2 -mr-1 h-5 w-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -96,10 +97,9 @@
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-            ></path>
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            />
           </svg>
-          Start
         </a>
       </div>
     </div>
