@@ -15,17 +15,54 @@ head:
 
 ## Docker
 
-You can host the Briefkasten stack via the included `Dockerfile`/`docker-compose.yml` files.
+You can host the Briefkasten application entirely on your own via the included docker files.
 
-1. Install docker and docker-compose.
-2. Clone the repository and copy the `.env.example` to `.env` file.
-   1. Here you also need to fill out the `DATABASE_URL` and `NEXTAUTH_*` environment variables at minimum.
-   2. The `DATABASE_URL` for the postgres container should be `DATABASE_URL=postgres://bkAdmin:briefkasten@postgres:5432/briefkasten?sslmode=disable`
-3. Run `docker-compose up -d` in the root of the repository. This will start the application as well as the database for you.
-4. After the initial start, you still have to manually seed the database. This is most easily done through the app container (`bk-app`).
-   1. Run `docker exec -it bk-app /bin/bash` to enter a terminal session inside the container.
-   2. Then run `pnpm db:push` inside the container. This will push the database schema from prisma to the configured database.
+This will result in your hosting two items:
+
+1. The `Briefkasten` Next.js application
+2. The companion PostgreSQL database
+
+To host the docker version of Briefkasten, make sure you have `docker` and `docker-compose` installed.
+
+1. Clone the repository to your server.
+
+```bash
+$ git clone https://github.com/ndom91/briefkasten.git
+```
+
+2. Setup the environment variables.
+
+Make a copy of the `.env.example` file and fill in at least the required variables with your favorite text editor. The example file has annotations for the variables.
+
+```bash
+$ cp .env.example .env
+$ vim .env
+```
+
+:::note `DATABASE_URL`
+For the local postgres container you should set it to `DATABASE_URL=postgres://bkAdmin:briefkasten@postgres:5432/briefkasten?sslmode=disable`
+:::
+
+3. Start the docker-compose stack of applications
+
+```bash
+$ docker-compose up -d
+```
+
+4. Setup the database
+
+After starting the containers, you still have to manually apply the database schema. This is most easily done through the app container (`bk-app`).
+
+```bash
+$ docker exec -it bk-app /bin/bash
+
+// Inside the 'bk-app' container
+$ pnpm db:push
+```
+
 5. Now your application and database should be up and running at the default `http://localhost:3000`
+
+You can continue by putting `localhost:3000` behind a reverse proxy (i.e. `nginx`) which can terminate TLS for you and provide a nice domain name of your choice. For more details, check out the [Linode guide](https://www.linode.com/docs/guides/use-nginx-reverse-proxy/#configure-nginx) on setting up a reverse proxy with nginx.
 
 ## Manually
 
