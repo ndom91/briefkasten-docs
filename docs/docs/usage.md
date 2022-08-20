@@ -11,7 +11,7 @@ head:
       data-api: '/a/e'
 ---
 
-# Getting Started
+# Usage
 
 To begin using Briefkasten, you must know a few things. Bookmarks are organised as follows, each bookmark can have multiple tags and each tag can have multiple bookmarks. Each bookmark, however, can only have 1 category. You can use these, in addition to the full-text search, to filter and find whatever you may be looking for on the home dashboard.
 

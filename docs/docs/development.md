@@ -53,6 +53,9 @@ datasource db {
 }
 ```
 
+In addition, to use a SQLite database, you'll have to remove the `@db.Text` annotations in the `schema.prisma` file, as that is Postgres specific. 
+
+You can do this with one command like so: `sed -i 's/@db.Text//g' prisma/schema.prisma`
 :::
 
 If you want to setup any OAuth login provider, you'll also want to add either the `GITHUB_ID`/`GITHUB_SECRET` or the Google keys. Please see the [NextAuth.js docs](https://next-auth.js.org/providers/github) for more details on how exactly to set that up.
