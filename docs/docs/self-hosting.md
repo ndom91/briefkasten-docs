@@ -22,12 +22,14 @@ This will result in your hosting two items:
 1. The `Briefkasten` Next.js application
 2. The companion PostgreSQL database
 
-To host the docker version of Briefkasten, make sure you have `docker` and `docker-compose` installed.
+> Make sure you have `docker` and `docker-compose` installed.
+
+### Getting Started
 
 1. Clone the repository to your server.
 
 ```bash
-$ git clone https://github.com/ndom91/briefkasten.git
+git clone https://github.com/ndom91/briefkasten.git
 ```
 
 2. Setup the environment variables.
@@ -35,18 +37,18 @@ $ git clone https://github.com/ndom91/briefkasten.git
 Make a copy of the `.env.example` file and fill in at least the required variables with your favorite text editor. The example file has annotations for the variables.
 
 ```bash
-$ cp .env.example .env
-$ vim .env
+cp .env.example .env
+vim .env
 ```
 
-:::note `DATABASE_URL`
-For the local postgres container you should set it to `DATABASE_URL=postgres://bkAdmin:briefkasten@postgres:5432/briefkasten?sslmode=disable`
+:::tip `DATABASE_URL`
+When using the local postgres container you should set the `DATABASE_URL` environment variable to `DATABASE_URL=postgres://bkAdmin:briefkasten@postgres:5432/briefkasten?sslmode=disable`
 :::
 
 3. Start the docker-compose stack of applications
 
 ```bash
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 4. Setup the database
@@ -54,15 +56,15 @@ $ docker-compose up -d
 After starting the containers, you still have to manually apply the database schema. This is most easily done through the app container (`bk-app`).
 
 ```bash
-$ docker exec -it bk-app /bin/bash
+docker exec -it bk-app /bin/bash
 
 // Inside the 'bk-app' container
-$ pnpm db:push
+pnpm db:push
 ```
 
-5. Now your application and database should be up and running at the default `http://localhost:3000`
+5. Now your application and database should be up and running at the default [`http://localhost:3000`](http://localhost:3000)
 
-You can continue by putting `localhost:3000` behind a reverse proxy (i.e. `nginx`) which can terminate TLS for you and provide a nice domain name of your choice. For more details, check out the [Linode guide](https://www.linode.com/docs/guides/use-nginx-reverse-proxy/#configure-nginx) on setting up a reverse proxy with nginx.
+You can continue by putting `localhost:3000` behind a reverse proxy (i.e. `nginx`) which can terminate TLS for you (https) and provide access via a nice domain name of your choice. For more details, check out the [Linode guide](https://www.linode.com/docs/guides/use-nginx-reverse-proxy/#configure-nginx) on setting up a reverse proxy with nginx.
 
 ## Manually
 
