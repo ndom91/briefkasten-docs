@@ -62,7 +62,7 @@ docker exec -it bk-app /bin/bash
 pnpm db:push
 ```
 
-5. Now your application and database should be up and running at the default [`http://localhost:3000`](http://localhost:3000)
+5. Now your application and database should be up and running at the default `http://localhost:3000`!
 
 You can continue by putting `localhost:3000` behind a reverse proxy (i.e. `nginx`) which can terminate TLS for you (https) and provide access via a nice domain name of your choice. For more details, check out the [Linode guide](https://www.linode.com/docs/guides/use-nginx-reverse-proxy/#configure-nginx) on setting up a reverse proxy with nginx.
 
