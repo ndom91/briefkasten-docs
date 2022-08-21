@@ -46,7 +46,7 @@
           </svg>
         </a>
         <a href="https://briefkasten.vercel.app/?utm_source=docs&utm_medium=hero" target="_blank"
-          class="inline-flex items-center justify-center rounded-lg bg-slate-700 py-3 px-5 text-center text-base font-medium text-gray-200 transition hover:bg-slate-900 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-emerald-300/60 dark:focus:ring-gray-800">
+          class="inline-flex items-center justify-center rounded-lg bg-slate-700 py-3 px-5 text-center text-base font-medium text-gray-200 transition hover:bg-slate-900 focus:ring-4 focus:ring-gray-100 dark:text-white dark:hover:bg-slate-800 dark:focus:ring-gray-800">
           Start
           <svg class="ml-2 -mr-1 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg">
