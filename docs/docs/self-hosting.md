@@ -13,6 +13,10 @@ head:
 
 # Self-hosting
 
+You can self-host Briefkasten with Docker or manually by spinning up the Next.js app and Postgres on any host yourself. There are a few caveats to keep in mind with the self-hosted route, however. Depending on how okay you are with signing up for online services. 
+
+You can use any Postgres database you like, i.e. local, or hosted in the cloud. However, the object storage for bookmark screenshots is designed to work specifically with [Supabase](https://supabase.io). That means, if you don't fill in the `SUPABASE_*` environment variables, you will not have dynamic bookmark screenshots. Otherwise, the app works just fine completely self-hosted, for example with the Docker setup described below!
+
 ## Docker
 
 You can host the Briefkasten application entirely on your own via the included docker files.
