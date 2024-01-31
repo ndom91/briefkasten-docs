@@ -7,7 +7,7 @@ head:
   - - script
     - src: '/p.js'
       defer: true
-      data-domain: 'briefkasten-docs.vercel.app'
+      data-domain: 'docs.briefkastenhq.com'
       data-api: '/a/e'
 ---
 
@@ -53,7 +53,7 @@ datasource db {
 }
 ```
 
-In addition, to use a SQLite database, you'll have to remove the `@db.Text` annotations in the `schema.prisma` file, as that is Postgres specific. 
+In addition, to use a SQLite database, you'll have to remove the `@db.Text` annotations in the `schema.prisma` file, as that is Postgres specific.
 
 You can do this with one command like so: `sed -i 's/@db.Text//g' prisma/schema.prisma`
 :::

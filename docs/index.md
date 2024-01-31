@@ -8,7 +8,7 @@ head:
   - - script
     - src: '/p.js'
       defer: true
-      data-domain: 'briefkasten-docs.vercel.app'
+      data-domain: 'docs.briefkastenhq.com'
       data-api: '/a/e'
 ---
 
