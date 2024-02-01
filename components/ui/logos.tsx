@@ -1,10 +1,14 @@
-import type { SVGProps } from "react"
+// import type { SVGProps } from "react"
 
-export function BriefkastenLogoSvg(
-  props: SVGProps<SVGSVGElement>,
-): JSX.Element {
+export interface Props extends React.HTMLProps<HTMLElement> {
+  className?: string
+  fill?: string
+}
+
+export const BriefkastenLogoSvg: React.FC<Props> = ({ className }) => {
   return (
     <svg
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       height="24"
       fill="none"

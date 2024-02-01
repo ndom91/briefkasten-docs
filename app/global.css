@@ -20,7 +20,7 @@
 /* 210 40% 98%; --destructive: 0 63% 31%; --destructive-foreground: 210 40% 98%; */
 /* --ring: 216 34% 17%; } */
 
-body::before {
+body:has(main.homepage)::before {
   --line: hsl(0 0% 65% / 0.25);
   --size: 80px;
   content: "";
@@ -37,6 +37,7 @@ body::before {
   z-index: -1;
   transform: translate3d(0, 0, -100vmin);
 }
+
 html.dark body::before {
   --line: hsl(0 0% 95% / 0.15);
 }

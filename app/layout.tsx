@@ -1,7 +1,6 @@
 import "./global.css"
-import Link from "next/link"
 import Script from "next/script"
-import { Star } from "lucide-react"
+import { Star } from "@phosphor-icons/react/dist/ssr"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { RootProvider } from "fumadocs-ui/provider"

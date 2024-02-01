@@ -1,12 +1,12 @@
 import { Layout } from "fumadocs-ui/layout"
-import { layoutOptions } from "./docs/layout"
+import { layoutOptions } from "./docs/layoutOptions"
 import Image from "next/image"
 import HeroImage from "../public/images/screenshot_hero_sveltekasten.png"
 
 export default function HomePage() {
   return (
     <Layout {...layoutOptions}>
-      <main className="container flex flex-col justify-start items-center pt-16 text-center hero h-dvh">
+      <main className="container flex flex-col justify-start items-center pt-16 text-center homepage hero h-dvh">
         <div className="overflow-hidden relative p-px w-full max-w-screen-lg rounded-md">
           <div className="absolute inset-0 rotate-45 glow w-[100px] h-[100px]"></div>
           <Image

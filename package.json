@@ -16,6 +16,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.15",
     "fumadocs-core": "8.1.1",
     "fumadocs-mdx": "8.0.2",
     "fumadocs-openapi": "^1.0.1",

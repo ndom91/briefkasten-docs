@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { ExternalLinkIcon } from "lucide-react"
+import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr"
 import { getPage, getPages } from "@/app/source"
 import { DocsPage, DocsBody } from "fumadocs-ui/page"
 import type { Metadata } from "next"
@@ -31,9 +31,9 @@ export default async function Page({ params }: { params: Param }) {
             href={`https://github.com/ndom91/briefkasten-docs/blob/main/${path}`}
             target="_blank"
             rel="noreferrer noopener"
-            className="inline-flex items-center text-xs text-muted-foreground hover:text-foreground"
+            className="flex items-baseline text-xs text-muted-foreground hover:text-foreground"
           >
-            Edit on Github <ExternalLinkIcon className="ml-1 size-3" />
+            Edit on Github <ArrowSquareOut size={24} className="ml-1 size-4" />
           </a>
         ),
       }}
