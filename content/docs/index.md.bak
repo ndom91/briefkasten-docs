@@ -1,30 +1,17 @@
 ---
-title: Briefkasten
-description: Briefkasten Introduction
+layout: 'doc'
+head:
+  - - link
+    - href: '/favicon/favicon.ico'
+      rel: 'shortcut icon'
+  - - script
+    - src: '/p.js'
+      defer: true
+      data-domain: 'docs.briefkastenhq.com'
+      data-api: '/a/e'
 ---
 
-import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
-import app0 from '../../public/screenshots/app0.png';
-import app1 from '../../public/screenshots/app1.png';
-import app2 from '../../public/screenshots/app2.png';
-import app3 from '../../public/screenshots/app3.png';
-import app4 from '../../public/screenshots/app4.png';
-import app5 from '../../public/screenshots/app5.png';
-import app6 from '../../public/screenshots/app6.png';
-import app7 from '../../public/screenshots/app7.png';
-import app8 from '../../public/screenshots/app8.png';
-import extension1 from '../../public/screenshots/extension1.png';
-
 # Introduction
-
-Welcome to the docs! You can start writing documents in `/content/docs`.
-
-## What is Next?
-
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
-</Cards>
 
 Welcome to Briefkasten! Your home for bookmarks and links of all kinds.
 
@@ -49,18 +36,18 @@ To host the Briefkasten application yourself, please visit the [self-hosting](/d
 
 # Screenshots
 
-| <ImageZoom src={app0} /> |       <ImageZoom src={app1} />       |
+| [![](/screenshots/app0.png)](/screenshots/app0.png) |       [![](/screenshots/app1.png)](/screenshots/app1.png)       |
 | :-------------------------------------------------: | :-------------------------------------------------------------: |
 |                    Login Screen                     |                            Dashboard                            |
 |                                                     |                                                                 |
-| <ImageZoom src={app2} /> |       <ImageZoom src={app3} />       |
+| [![](/screenshots/app2.png)](/screenshots/app2.png) |       [![](/screenshots/app3.png)](/screenshots/app3.png)       |
 |                      Quick-Add                      |                         Shrunk Sidebar                          |
 |                                                     |                                                                 |
-| <ImageZoom src={app4} /> |       <ImageZoom src={app5} />       |
+| [![](/screenshots/app4.png)](/screenshots/app4.png) |       [![](/screenshots/app5.png)](/screenshots/app5.png)       |
 |                      List View                      |                         Edit Slide-Out                          |
 |                                                     |                                                                 |
-| <ImageZoom src={app6} /> |       <ImageZoom src={app7} />       |
+| [![](/screenshots/app6.png)](/screenshots/app6.png) |       [![](/screenshots/app7.png)](/screenshots/app7.png)       |
 |                      Tag Page                       |                         Search Results                          |
 |                                                     |                                                                 |
-| <ImageZoom src={app8} /> | <ImageZoom src={extension1} /> |
+| [![](/screenshots/app8.png)](/screenshots/app8.png) | [![](/screenshots/extension1.png)](/screenshots/extension1.png) |
 |                   Empty Dashboard                   |                            Extension                            |
