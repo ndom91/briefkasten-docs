@@ -1,3 +1,142 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* :root { --background: 0 0% 100%; --foreground: 222.2 47.4% */
+/* 11.2%; --muted: 210 40% 96.1%; --muted-foreground: 215.4 16.3% 46.9%; --popover: */
+/* 0 0% 100%; --popover-foreground: 222.2 47.4% 11.2%; --card: 210 40% 98%; */
+/* --card-foreground: 222.2 47.4% 11.2%; --border: 214.3 31.8% 91.4%; --input: */
+/* 214.3 31.8% 91.4%; --primary: 222.2 47.4% 11.2%; --primary-foreground: 210 40% */
+/* 98%; --secondary: 210 40% 96.1%; --secondary-foreground: 222.2 47.4% 11.2%; */
+/* --accent: 210 40% 96.1%; --accent-foreground: 222.2 47.4% 11.2%; --destructive: */
+/* 0 100% 50%; --destructive-foreground: 210 40% 98%; --ring: 215 20.2% 65.1%; } */
+/**/
+/* .dark { --background: 224 71% 4%; --foreground: 213 31% 91%; --muted: 223 47% */
+/* 11%; --muted-foreground: 215.4 16.3% 56.9%; --popover: 224 47.4% 6%; */
+/* --popover-foreground: 215 20.2% 65.1%; --card: 216 71% 6%; --card-foreground: */
+/* 213 31% 91%; --border: 216 34% 17%; --input: 216 34% 17%; --primary: 210 40% */
+/* 98%; --primary-foreground: 222.2 47.4% 1.2%; --secondary: 222.2 47.4% 11.2%; */
+/* --secondary-foreground: 210 40% 98%; --accent: 216 34% 14%; --accent-foreground: */
+/* 210 40% 98%; --destructive: 0 63% 31%; --destructive-foreground: 210 40% 98%; */
+/* --ring: 216 34% 17%; } */
+
+body::before {
+  --line: hsl(0 0% 65% / 0.25);
+  --size: 80px;
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background:
+    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
+  mask: linear-gradient(-15deg, transparent 30%, white);
+  top: 0;
+  z-index: -1;
+  transform: translate3d(0, 0, -100vmin);
+}
+html.dark body::before {
+  --line: hsl(0 0% 95% / 0.15);
+}
+
+.glow {
+  animation: move 10s linear infinite;
+  offset-path: rect(0% auto 100% auto);
+  background: radial-gradient(#fff, #f1f5f9, transparent);
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 0%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.hero h1 {
+  margin-block: 1rem;
+  font-size: clamp(2rem, 1rem + 5vmin, 10rem);
+  display: inline-flex;
+  align-items: flex-start;
+  flex-direction: column;
+  line-height: 0.8;
+}
+
+:root {
+  --red: #262626;
+  --green: #404040;
+  --yellow: #525252;
+  --speed: 0.65s;
+}
+
+.hero h1 span {
+  --color: var(--red);
+  color: var(--color);
+  position: relative;
+  clip-path: inset(-20% 0);
+  animation-name: text-reveal, shimmy;
+  animation-duration: var(--speed);
+  animation-delay: calc((0.5 + var(--index)) * (var(--speed) / 3));
+  animation-fill-mode: both;
+  animation-timing-function: steps(1), ease-out;
+  font-weight: 800;
+}
+
+@keyframes shimmy {
+  0% {
+    transform: translateX(-1ch);
+  }
+}
+
+@keyframes text-reveal {
+  0% {
+    color: transparent;
+  }
+  50%,
+  100% {
+    color: var(--color);
+  }
+}
+
+.hero h1 span:after {
+  content: "";
+  position: absolute;
+  inset: -20% 0;
+  background-color: var(--color);
+  animation-name: block-reveal;
+  animation-duration: var(--speed);
+  animation-delay: calc((0.5 + var(--index)) * (var(--speed) / 3));
+  animation-fill-mode: both;
+}
+
+@keyframes block-reveal {
+  0% {
+    transform: translateX(-110%);
+  }
+  45%,
+  55% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+.hero h1 span:nth-of-type(1) {
+  --color: var(--green);
+  --index: 0;
+}
+
+.hero h1 span:nth-of-type(2) {
+  --color: var(--yellow);
+  --index: 1;
+}
+
+.hero h1 span:nth-of-type(3) {
+  --color: var(--red);
+  --index: 2;
+}

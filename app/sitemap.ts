@@ -1,24 +1,24 @@
-import type { MetadataRoute } from 'next';
-import { baseUrl } from '@/utils/metadata';
-import { utils } from '@/utils/source';
+import type { MetadataRoute } from "next"
+import { baseUrl } from "@/utils/metadata"
+import { utils } from "@/utils/source"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const url = (path: string): string => new URL(path, baseUrl).toString();
+  const url = (path: string): string => new URL(path, baseUrl).toString()
 
   return [
     {
-      url: url('/'),
-      changeFrequency: 'monthly',
+      url: url("/"),
+      changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: url('/showcase'),
-      changeFrequency: 'monthly',
+      url: url("/showcase"),
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: url('/docs'),
-      changeFrequency: 'monthly',
+      url: url("/docs"),
+      changeFrequency: "monthly",
       priority: 0.8,
     },
     ...utils.getPages().map<MetadataRoute.Sitemap[number]>((page) => ({
@@ -26,8 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: page.data.exports.lastModified
         ? new Date(page.data.exports.lastModified)
         : undefined,
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.5,
     })),
-  ];
+  ]
 }

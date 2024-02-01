@@ -4,21 +4,55 @@ icon: Album
 description: Briefkasten Introduction
 ---
 
-import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
-import app0 from '../../public/screenshots/app0.png';
-import app1 from '../../public/screenshots/app1.png';
-import app2 from '../../public/screenshots/app2.png';
-import app3 from '../../public/screenshots/app3.png';
-import app4 from '../../public/screenshots/app4.png';
-import app5 from '../../public/screenshots/app5.png';
-import app6 from '../../public/screenshots/app6.png';
-import app7 from '../../public/screenshots/app7.png';
-import app8 from '../../public/screenshots/app8.png';
-import extension1 from '../../public/screenshots/extension1.png';
+import { ImageZoom } from "fumadocs-ui/components/image-zoom"
+import app0 from "../../public/screenshots/app0.png"
+import app1 from "../../public/screenshots/app1.png"
+import app2 from "../../public/screenshots/app2.png"
+import app3 from "../../public/screenshots/app3.png"
+import app4 from "../../public/screenshots/app4.png"
+import app5 from "../../public/screenshots/app5.png"
+import app6 from "../../public/screenshots/app6.png"
+import app7 from "../../public/screenshots/app7.png"
+import app8 from "../../public/screenshots/app8.png"
+import extension1 from "../../public/screenshots/extension1.png"
 
 Welcome to the docs! You can start writing documents in `/content/docs`.
 
+```ts twoslash
+import * as Base from "fumadocs-ui/components/codeblock"
+import type { HTMLAttributes } from "react"
+import { useMemo } from "react"
+import { getHighlighter } from "shiki"
+
+const highlighter = await getHighlighter({
+  langs: ["bash", "ts", "tsx"],
+  themes: ["github-light", "github-dark"],
+})
+```
+
+```ts title="src.tsx"
+import * as Base from "fumadocs-ui/components/codeblock"
+import type { HTMLAttributes } from "react"
+import { useMemo } from "react"
+import { getHighlighter } from "shiki"
+
+const highlighter = await getHighlighter({
+  langs: ["bash", "ts", "tsx"],
+  themes: ["github-light", "github-dark"],
+})
+```
+
 ## What is Next?
+
+```js
+console.log("Hello World")
+```
+
+---
+
+```package-install
+@auth/core
+```
 
 <Cards>
   <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
@@ -32,9 +66,11 @@ There are two ways to use Briefkasten at the moment.
 1. **Briefkasten Cloud**
 2. **Selfhosted Instance**
 
-:::tip Notice
-We promise to do our best to always run the cloud instance without any sort of limits, entirely **for free**. However, if it begins to be abused or becomes too expensive, we reserve the right to shutdown or begin imposing limits!
-:::
+<Callout>
+  We promise to do our best to always run the cloud instance without any sort of
+  limits, entirely **for free**. However, if it begins to be abused or becomes
+  too expensive, we reserve the right to shutdown or begin imposing limits!
+</Callout>
 
 ## Briefkasten Cloud
 
@@ -48,18 +84,18 @@ To host the Briefkasten application yourself, please visit the [self-hosting](/d
 
 # Screenshots
 
-| <ImageZoom src={app0} /> |       <ImageZoom src={app1} />       |
-| :-------------------------------------------------: | :-------------------------------------------------------------: |
-|                    Login Screen                     |                            Dashboard                            |
-|                                                     |                                                                 |
-| <ImageZoom src={app2} /> |       <ImageZoom src={app3} />       |
-|                      Quick-Add                      |                         Shrunk Sidebar                          |
-|                                                     |                                                                 |
-| <ImageZoom src={app4} /> |       <ImageZoom src={app5} />       |
-|                      List View                      |                         Edit Slide-Out                          |
-|                                                     |                                                                 |
-| <ImageZoom src={app6} /> |       <ImageZoom src={app7} />       |
-|                      Tag Page                       |                         Search Results                          |
-|                                                     |                                                                 |
+| <ImageZoom src={app0} /> |    <ImageZoom src={app1} />    |
+| :----------------------: | :----------------------------: |
+|       Login Screen       |           Dashboard            |
+|                          |                                |
+| <ImageZoom src={app2} /> |    <ImageZoom src={app3} />    |
+|        Quick-Add         |         Shrunk Sidebar         |
+|                          |                                |
+| <ImageZoom src={app4} /> |    <ImageZoom src={app5} />    |
+|        List View         |         Edit Slide-Out         |
+|                          |                                |
+| <ImageZoom src={app6} /> |    <ImageZoom src={app7} />    |
+|         Tag Page         |         Search Results         |
+|                          |                                |
 | <ImageZoom src={app8} /> | <ImageZoom src={extension1} /> |
-|                   Empty Dashboard                   |                            Extension                            |
+|     Empty Dashboard      |           Extension            |

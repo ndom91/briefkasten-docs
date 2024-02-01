@@ -1,43 +1,41 @@
 /* eslint-disable react/no-unknown-property -- Tailwind CSS `tw` property */
-import { ImageResponse } from 'next/og';
-import type { NextRequest } from 'next/server';
+import { ImageResponse } from "next/og"
+import type { NextRequest } from "next/server"
 
-export const runtime = 'edge';
+export const runtime = "edge"
 
-const bold = fetch(new URL('./inter-bold.woff', import.meta.url)).then((res) =>
+const bold = fetch(new URL("./inter-bold.woff", import.meta.url)).then((res) =>
   res.arrayBuffer(),
-);
+)
 
-const foreground = 'hsl(0 0% 98%)';
-const mutedForeground = 'hsl(0 0% 63.9%)';
-const background = 'rgba(10, 10, 10)';
+const foreground = "hsl(0 0% 98%)"
+const mutedForeground = "hsl(0 0% 63.9%)"
+const background = "rgba(10, 10, 10)"
 
-export async function GET(
-  request: NextRequest,
-): Promise<ImageResponse> {
-  const { searchParams } = request.nextUrl;
-  const title = searchParams.get('title'),
-    description = searchParams.get('description');
+export async function GET(request: NextRequest): Promise<ImageResponse> {
+  const { searchParams } = request.nextUrl
+  const title = searchParams.get("title"),
+    description = searchParams.get("description")
 
   return new ImageResponse(
     OG({
-      title: title ?? 'Briefkasten',
-      description: description ?? 'Read-it-later Bookmarks and RSS Reader',
+      title: title ?? "Briefkasten",
+      description: description ?? "Read-it-later Bookmarks and RSS Reader",
     }),
     {
       width: 1200,
       height: 630,
-      fonts: [{ name: 'Inter', data: await bold, weight: 700 }],
+      fonts: [{ name: "Inter", data: await bold, weight: 700 }],
     },
-  );
+  )
 }
 
 function OG({
   title,
   description,
 }: {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }): JSX.Element {
   return (
     <div
@@ -50,14 +48,14 @@ function OG({
       <div
         style={{
           background:
-            'linear-gradient(to right bottom, rgb(150, 200, 255), rgb(200, 100, 255))',
+            "linear-gradient(to right bottom, rgb(150, 200, 255), rgb(200, 100, 255))",
         }}
         tw="flex flex-col justify-center rounded-2xl p-4 shadow-2xl shadow-purple-600"
       >
         <div
           tw="flex flex-col rounded-2xl p-12"
           style={{
-            border: '1px rgba(156,163,175,0.3)',
+            border: "1px rgba(156,163,175,0.3)",
             background,
           }}
         >
@@ -93,5 +91,5 @@ function OG({
         <p tw="font-bold ml-4 text-4xl">ndom91</p>
       </div>
     </div>
-  );
+  )
 }

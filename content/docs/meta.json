@@ -1,4 +1,13 @@
 {
   "title": "Setup",
-  "pages": ["index", "---Setup---", "usage", "development", "api", "---Self Hosting---", "self-hosting/index", "self-hosting/workers"]
+  "root": true,
+  "pages": [
+    "index",
+    "---Setup---",
+    "usage",
+    "development",
+    "api",
+    "---Self Hosting---",
+    "...self-hosting"
+  ]
 }
