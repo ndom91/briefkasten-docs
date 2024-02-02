@@ -100,7 +100,7 @@ html.dark body:has(main.homepage)::before {
   line-height: 0.8;
 }
 
-:root {
+.hero {
   --red: #262626;
   --green: #404040;
   --yellow: #525252;
@@ -180,9 +180,9 @@ html.dark body:has(main.homepage)::before {
  * @link https://codepen.io/jh3y/pen/GReZEwK
  **/
 
-:root {
+.homepage-scroll {
   --card-width: 300px;
-  --card-width: clamp(200px, 50vmin, 400px);
+  --card-width: clamp(300px, 80vmin, 400px);
 }
 
 .homepage-scroll .track {

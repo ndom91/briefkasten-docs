@@ -59,7 +59,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           src="/p.js"
         />
       )}
-      <body>
+      <body className="">
         <RootProvider>
           {children}
           <Footer />
@@ -88,7 +88,7 @@ function Footer(): JSX.Element {
           </p>
         </div>
 
-        <div className="flex flex-col gap-2 justify-start items-end">
+        <div className="flex flex-col gap-2 justify-start sm:items-end">
           <a
             href="https://twitter.com/ndom91"
             rel="noreferrer noopener"
