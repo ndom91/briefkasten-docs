@@ -1,13 +1,11 @@
 import { pageTree } from "../source"
 import { type DocsLayoutProps } from "fumadocs-ui/layout"
-import { create } from "@/components/ui/icon"
-import { BriefkastenLogoSvg } from "@/components/ui/logos"
-import { HouseSimple } from "@phosphor-icons/react/dist/ssr"
+import { BriefkastenLogoSvg } from "@/components/ui/icons"
 
 export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
   tree: pageTree,
   nav: {
-    transparentMode: "none",
+    transparentMode: "always",
     title: (
       <>
         <BriefkastenLogoSvg
@@ -17,23 +15,17 @@ export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
         <span className="ml-3 font-semibold max-md:hidden">Briefkasten</span>
       </>
     ),
-    // children: <NavChildren />,
     githubUrl: "https://github.com/ndom91/briefkasten",
   },
-  // sidebar: {
-  //   defaultOpenLevel: 0,
-  //   banner: <SidebarBanner />,
-  // },
   links: [
     {
       text: "Documentation",
       url: "/docs",
-      icon: create({ icon: HouseSimple }),
     },
     {
-      text: "Login",
+      text: "Try App",
       url: "https://briefkastenhq.com",
-      icon: create({ icon: HouseSimple }),
+      external: true,
     },
   ],
 }

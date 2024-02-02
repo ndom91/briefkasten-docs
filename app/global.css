@@ -141,3 +141,188 @@ html.dark body::before {
   --color: var(--red);
   --index: 2;
 }
+
+/* Homepage Horizontal Scroller */
+
+:root {
+  --card-width: 300px;
+  --card-width: clamp(200px, 50vmin, 400px);
+}
+
+.homepage-scroll .track {
+  width: 100svw;
+  position: relative;
+  height: 100%;
+}
+
+.homepage-scroll .track ::-webkit-scrollbar {
+  display: none;
+}
+
+.homepage-scroll ul {
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  padding-inline: calc(50vw - (var(--card-width) * 0.5));
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+  list-style-type: none;
+  overflow: auto;
+  height: 100%;
+  align-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+  scroll-padding-inline: calc(50vw - (var(--card-width) * 0.5));
+}
+
+.homepage-scroll li {
+  scroll-snap-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.homepage-scroll :is(li, .indicator):nth-of-type(1) {
+  --hue: 0;
+}
+.homepage-scroll :is(li, .indicator):nth-of-type(2) {
+  --hue: 140;
+}
+.homepage-scroll :is(li, .indicator):nth-of-type(3) {
+  --hue: 45;
+}
+.homepage-scroll :is(li, .indicator):nth-of-type(4) {
+  --hue: 210;
+}
+.homepage-scroll :is(li, .indicator):nth-of-type(5) {
+  --hue: 280;
+}
+
+.homepage-scroll article {
+  width: var(--card-width);
+  aspect-ratio: 4 / 3;
+  background:
+    radial-gradient(circle at center, hsl(0 0% 100% / 0.65), transparent) fixed,
+    linear-gradient(hsl(var(--hue) 100% 0% / 0.25), transparent),
+    linear-gradient(transparent, hsl(var(--hue) 0% 10% / 0.5)),
+    hsl(var(--hue, 10) 0% 6%);
+  box-shadow:
+    0 1px hsl(0 0% 100% / 0.5) inset,
+    0 10px 20px -10px black;
+  border-radius: 1rem;
+  border-top: 2px solid hsl(var(--hue, 10) 80% 60% / 0.75);
+}
+
+.homepage-scroll .track__indicators {
+  height: 20px;
+  position: absolute;
+  top: calc(50% + ((var(--card-width) * (3 / 4)) * 0.5) + 2rem);
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+}
+.homepage-scroll .indicator {
+  --color: hsl(var(--hue, 0) 0% 86%);
+  background: linear-gradient(var(--color), var(--color)) padding-box;
+  flex: 1;
+  border-radius: 100px;
+  height: 100%;
+  min-width: 20px;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  border: 4px solid transparent;
+}
+
+.homepage-scroll .indicator::after {
+  content: "";
+  border-radius: 100px;
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--hue) 90% 70%);
+}
+
+@supports (animation-timeline: scroll()) {
+  .homepage-scroll .track {
+    timeline-scope: --one, --two, --three, --four, --five;
+  }
+
+  .homepage-scroll .track__indicators {
+    aspect-ratio: 7 / 1;
+  }
+
+  .homepage-scroll li:nth-of-type(1) {
+    view-timeline: --one inline;
+  }
+  .homepage-scroll li:nth-of-type(2) {
+    view-timeline: --two inline;
+  }
+  .homepage-scroll li:nth-of-type(3) {
+    view-timeline: --three inline;
+  }
+  .homepage-scroll li:nth-of-type(4) {
+    view-timeline: --four inline;
+  }
+  .homepage-scroll li:nth-of-type(5) {
+    view-timeline: --five inline;
+  }
+
+  .homepage-scroll .indicator {
+    --buffer: calc(var(--card-width) * 0.9);
+    animation: blink both linear;
+    animation-range: contain calc(50% - var(--buffer)) contain
+      calc(50% + var(--buffer));
+  }
+
+  .homepage-scroll .indicator:nth-of-type(1) {
+    animation-timeline: --one;
+  }
+  .homepage-scroll .indicator:nth-of-type(2) {
+    animation-timeline: --two;
+  }
+  .homepage-scroll .indicator:nth-of-type(3) {
+    animation-timeline: --three;
+  }
+  .homepage-scroll .indicator:nth-of-type(4) {
+    animation-timeline: --four;
+  }
+  .homepage-scroll .indicator:nth-of-type(5) {
+    animation-timeline: --five;
+  }
+
+  @keyframes blink {
+    50% {
+      flex: 3;
+    }
+  }
+
+  .homepage-scroll .indicator::after {
+    --buffer: calc(var(--card-width) * 0.9);
+    opacity: 0;
+    animation: show both linear;
+    animation-range: contain calc(50% - var(--buffer)) contain
+      calc(50% + var(--buffer));
+  }
+
+  .homepage-scroll .indicator:nth-of-type(1)::after {
+    animation-timeline: --one;
+  }
+  .homepage-scroll .indicator:nth-of-type(2)::after {
+    animation-timeline: --two;
+  }
+  .homepage-scroll .indicator:nth-of-type(3)::after {
+    animation-timeline: --three;
+  }
+  .homepage-scroll .indicator:nth-of-type(4)::after {
+    animation-timeline: --four;
+  }
+  .homepage-scroll .indicator:nth-of-type(5)::after {
+    animation-timeline: --five;
+  }
+
+  @keyframes show {
+    50% {
+      opacity: 1;
+    }
+  }
+}

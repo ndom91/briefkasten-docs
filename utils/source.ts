@@ -6,9 +6,7 @@ import { PHASE_PRODUCTION_BUILD } from "next/constants"
 import { z } from "zod"
 import type { InferMetaType, InferPageType } from "fumadocs-core/source"
 import { loader } from "fumadocs-core/source"
-import * as icons from "@phosphor-icons/react/dist/ssr"
 import { map } from "@/.map"
-import { create } from "@/components/ui/icon"
 
 const frontmatterSchema = defaultSchemas.frontmatter.extend({
   preview: z.string().optional(),
@@ -19,11 +17,6 @@ const frontmatterSchema = defaultSchemas.frontmatter.extend({
 export const utils = loader({
   baseUrl: "/docs",
   rootDir: "docs",
-  icon(icon) {
-    if (icon in icons)
-      // @ts-expect-error
-      return create({ icon: icons[icon as keyof typeof icons] })
-  },
   source: createMDXSource(map, { schema: { frontmatter: frontmatterSchema } }),
 })
 

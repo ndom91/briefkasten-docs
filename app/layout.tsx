@@ -68,7 +68,14 @@ function Footer(): JSX.Element {
           </p>
         </div>
 
-        <div className="flex flex-row flex-wrap gap-12 items-center">
+        <div className="flex flex-col gap-2 justify-start items-end">
+          <a
+            href="https://twitter.com/ndom91"
+            rel="noreferrer noopener"
+            className="flex flex-row items-center text-sm transition-colors text-muted-foreground hover:text-accent-foreground"
+          >
+            Twitter
+          </a>
           <a
             href="https://github.com/ndom91/briefkasten"
             rel="noreferrer noopener"
