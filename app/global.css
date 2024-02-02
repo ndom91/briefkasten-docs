@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "open-props/shadows";
+@import "open-props/gradients";
+@import "open-props/easings";
+@import "open-props/animations";
+
+.noise-noise-noise {
+  /* stack grain with a gradient */
+  background-image: var(--gradient-3), var(--noise-3);
+  /* force colors and noise to collide */
+  filter: var(--noise-filter-3);
+  /* fit noise image to element */
+  background-size: cover;
+}
+
 /* :root { */
 /*   --background: 0 0% 100%; */
 /*   --foreground: 222.2 47.4% 11.2%; */
@@ -64,10 +78,11 @@ body:has(main.homepage)::before {
   transform: translate3d(0, 0, -100vmin);
 }
 
-html.dark body::before {
+html.dark body:has(main.homepage)::before {
   --line: hsl(0 0% 95% / 0.15);
 }
 
+/* Hero image moving glow */
 .glow {
   animation: move 10s linear infinite;
   offset-path: rect(0% auto 100% auto);
@@ -84,6 +99,7 @@ html.dark body::before {
   }
 }
 
+/* Bookmarks, feeds, notes styling */
 .hero h1 {
   margin-block: 1rem;
   font-size: clamp(2rem, 1rem + 5vmin, 10rem);
@@ -168,7 +184,10 @@ html.dark body::before {
   --index: 2;
 }
 
-/* Homepage Horizontal Scroller */
+/* 
+ * Homepage Horizontal Scroller 
+ * @link https://codepen.io/jh3y/pen/GReZEwK
+ **/
 
 :root {
   --card-width: 300px;
@@ -350,5 +369,105 @@ html.dark body::before {
     50% {
       opacity: 1;
     }
+  }
+}
+
+/* 
+ * Hero Text 
+ * @link https://codepen.io/jh3y/pen/PoLmpOB
+ **/
+
+.hero-text h1 {
+  --font-size: clamp(2rem, 8vw + 1rem, 12rem);
+  margin: 0;
+  color: hsl(0 0% 100%);
+  font-size: var(--font-size);
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.hero-text h1 > span:first-of-type {
+  display: inline-block;
+  line-height: 0.8;
+}
+
+.hero-text .pops {
+  position: absolute;
+  inset: 0;
+  background: white;
+  mix-blend-mode: darken;
+  filter: brightness(2);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+@keyframes pop {
+  50% {
+    background-size: 100% 100%;
+  }
+}
+
+.hero-text .pop {
+  height: var(--size, 100%);
+  aspect-ratio: 1;
+  background: radial-gradient(hsl(var(--h) 100% 70%) 25%, transparent 50%);
+  position: absolute;
+  display: inline-block;
+  animation: scale var(--s, 2s) var(--d, 0s) infinite alternate;
+  left: var(--x, 0);
+  top: var(--y, 0);
+  scale: 0;
+  translate: -50% -50%;
+  mix-blend-mode: multiply;
+  filter: blur(2px);
+}
+
+.hero-text .pop:nth-of-type(1) {
+  --x: 10%;
+  --y: 25%;
+  --h: 277;
+  --s2: 6;
+  --d: -0.25s;
+  --s: 6s;
+}
+
+.hero-text .pop:nth-of-type(2) {
+  --x: 50%;
+  --y: 45%;
+  --h: 140;
+  --s2: 5;
+  --d: -0.75s;
+  --s: 5s;
+}
+.hero-text .pop:nth-of-type(3) {
+  --x: 65%;
+  --y: 75%;
+  --h: 210;
+  --s2: 3;
+  --d: -0.5s;
+  --s: 3s;
+}
+.hero-text .pop:nth-of-type(4) {
+  --x: 85%;
+  --y: 15%;
+  --h: 320;
+  --s2: 5;
+  --d: -1s;
+  --s: 2s;
+}
+.hero-text .pop:nth-of-type(5) {
+  --x: 15%;
+  --y: 100%;
+  --h: 40;
+  --s2: 3;
+  --d: -1s;
+  --s: 2s;
+}
+
+@keyframes scale {
+  to {
+    scale: var(--s2);
   }
 }
