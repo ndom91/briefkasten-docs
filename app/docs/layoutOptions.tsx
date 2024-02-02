@@ -5,7 +5,7 @@ import { BriefkastenLogoSvg } from "@/components/ui/icons"
 export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
   tree: pageTree,
   nav: {
-    transparentMode: "always",
+    transparentMode: "top",
     title: (
       <>
         <BriefkastenLogoSvg
