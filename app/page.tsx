@@ -7,7 +7,7 @@ import { Plus } from "@phosphor-icons/react/dist/ssr"
 export default function HomePage() {
   return (
     <Layout {...layoutOptions}>
-      <main className="container flex overflow-x-hidden flex-col justify-start items-center pt-16 text-center homepage hero">
+      <main className="container flex overflow-hidden flex-col gap-8 justify-start items-center pt-16 text-center homepage hero">
         <HeroImage />
         <div className="flex overflow-hidden relative flex-col mt-8 hero">
           <h1 className="tracking-tighter">
@@ -15,8 +15,8 @@ export default function HomePage() {
             <span>RSS Feeds</span>
             <span>Notes</span>
           </h1>
-          <Plus className="absolute right-0 bottom-36 size-12" />
-          <h1 className="pt-6 my-8 text-2xl font-bold border-t border-neutral-300 boujee-text">
+          <Plus className="absolute right-0 bottom-48 size-12" />
+          <h1 className="pt-6 my-8 !text-6xl tracking-tighter font-bold border-t border-neutral-300">
             Briefkasten
           </h1>
         </div>
