@@ -23,7 +23,7 @@ export default function HomePage() {
             <Plus className="absolute right-0 top-[12vw] size-12 lg:top-[9.5rem]" />
           </div>
           <div className="hero-text">
-            <h1 className="my-8 font-bold tracking-tighter text-[9rem] font-display">
+            <h1 className="my-8 font-bold tracking-tighter text-[9rem] font-heading">
               <div className="text-[20vw] md:text-[12rem]">Briefkasten</div>
               <span className="pops">
                 <span className="pop"></span>

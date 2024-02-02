@@ -31,8 +31,8 @@
 
 .dark {
   /* --background: 224 71% 4%; */
-  --background: theme(colors.neutral.950);
-  --foreground: theme(colors.neutral.200);
+  --background: 0 0% 3%;
+  --foreground: 0 0% 62%;
   /* --muted: 223 47% 11%; */
   /* --muted-foreground: 215.4 16.3% 56.9%; */
   /* --popover: 224 47.4% 6%; */
@@ -52,13 +52,24 @@
   /* --ring: 216 34% 17%; */
 }
 
+body:not(:has(main.homepage)) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-google-display);
+  }
+}
+
 body:has(main.homepage)::before {
   --line: hsl(0 0% 65% / 0.25);
-  --size: 80px;
+  --size: 100px;
   content: "";
   height: 100vh;
   width: 100vw;
-  position: fixed;
+  position: absolute;
   background:
     linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% /
       var(--size) var(--size),

@@ -15,23 +15,23 @@ export function Screenshot({
   className,
 }: ScreenshotProps) {
   return (
-    <div
-      className={cn(
-        "mt-6 flex justify-center overflow-hidden rounded-lg border dark:border-neutral-800 border-zinc-200 shadow-lg",
-        full
-          ? "dark:bg-neutral-950 bg-white"
-          : "dark:bg-neutral-900 bg-zinc-100",
-        className,
-      )}
-    >
-      <Image
-        src={src}
-        alt={alt}
+    <div className="w-full">
+      <div
         className={cn(
-          "w-auto select-none bg-white rounded-md",
-          full ? "" : "ring-1 ring-gray-200",
+          "mx-auto mt-6 flex max-w-fit max-h-min justify-center overflow-hidden rounded-lg border dark:border-neutral-800 border-zinc-200 shadow-sm dark:shadow-lg dark:bg-neutral-950 bg-zinc-100 p-4",
+          full ? "w-full max-w-full" : "",
+          className,
         )}
-      />
+      >
+        <Image
+          src={src}
+          alt={alt}
+          className={cn(
+            "m-0 object-cover object-top block w-full h-full select-none bg-white rounded-md",
+            full ? "w-full" : "ring-1 ring-gray-200",
+          )}
+        />
+      </div>
     </div>
   )
 }

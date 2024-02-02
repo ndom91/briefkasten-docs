@@ -4,7 +4,11 @@ import { Star } from "@phosphor-icons/react/dist/ssr"
 import { RootProvider } from "fumadocs-ui/provider"
 import { baseUrl, createMetadata } from "@/utils/metadata"
 import { Libre_Franklin } from "next/font/google"
-import { UnifrakturCook, Noto_Sans_Mono } from "next/font/google"
+import {
+  UnifrakturCook,
+  Noto_Sans_Mono,
+  DM_Serif_Display,
+} from "next/font/google"
 
 import type { Viewport } from "next"
 import type { ReactNode } from "react"
@@ -22,10 +26,17 @@ const dmMono = Noto_Sans_Mono({
   display: "swap",
 })
 
+const dmSerif = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-google-display",
+  display: "swap",
+})
+
 const uni = UnifrakturCook({
   weight: "700",
   subsets: ["latin"],
-  variable: "--font-google-display",
+  variable: "--font-google-heading",
   display: "swap",
 })
 
@@ -49,7 +60,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${libreFranklin.variable} ${uni.variable} ${dmMono.variable}`}
+      className={`${libreFranklin.variable} ${uni.variable} ${dmMono.variable} ${dmSerif.variable}`}
       suppressHydrationWarning
     >
       {process.env.NODE_ENV === "production" && (
