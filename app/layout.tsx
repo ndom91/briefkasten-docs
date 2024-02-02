@@ -1,13 +1,33 @@
 import "./global.css"
 import Script from "next/script"
 import { Star } from "@phosphor-icons/react/dist/ssr"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
 import { RootProvider } from "fumadocs-ui/provider"
 import { baseUrl, createMetadata } from "@/utils/metadata"
+import { Libre_Franklin } from "next/font/google"
+import { UnifrakturCook, Noto_Sans_Mono } from "next/font/google"
 
 import type { Viewport } from "next"
 import type { ReactNode } from "react"
+
+const libreFranklin = Libre_Franklin({
+  subsets: ["latin"],
+  variable: "--font-google-sans",
+  display: "swap",
+})
+
+const dmMono = Noto_Sans_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-google-mono",
+  display: "swap",
+})
+
+const uni = UnifrakturCook({
+  weight: "700",
+  subsets: ["latin"],
+  variable: "--font-google-display",
+  display: "swap",
+})
 
 export const metadata = createMetadata({
   title: {
@@ -29,7 +49,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${libreFranklin.variable} ${uni.variable} ${dmMono.variable}`}
       suppressHydrationWarning
     >
       {process.env.NODE_ENV === "production" && (

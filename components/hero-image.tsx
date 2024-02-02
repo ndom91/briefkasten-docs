@@ -11,7 +11,7 @@ export const HeroImage = () => {
 
   useEffect(() => {
     setImageStyle({
-      transform: `perspective(500px) translate3d(0, -${y * 1}px, ${y * 0.9}px) rotateX(${y * 0.2}deg) scale(${1 + y * 0.0007})`,
+      transform: `perspective(500px) translate3d(0, -${y * 0.4}px, ${y * 0.4}px) rotateX(${y * 0.15}deg) scale(${1 + y * 0.0004})`,
     })
   }, [y])
 

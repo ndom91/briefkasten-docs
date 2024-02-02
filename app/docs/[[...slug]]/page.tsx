@@ -33,7 +33,7 @@ export default async function Page({ params }: { params: Param }) {
             rel="noreferrer noopener"
             className="flex items-baseline text-xs text-muted-foreground hover:text-foreground"
           >
-            Edit on Github <ArrowSquareOut size={24} className="ml-1 size-4" />
+            Edit on Github <ArrowSquareOut className="ml-1 size-3" />
           </a>
         ),
       }}

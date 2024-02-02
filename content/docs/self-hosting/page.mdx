@@ -34,9 +34,11 @@ cp .env.example .env
 vim .env
 ```
 
-:::tip `DATABASE_URL`
-When using the local postgres container you should set the `DATABASE_URL` environment variable to `DATABASE_URL=postgres://bkAdmin:briefkasten@postgres:5432/briefkasten?sslmode=disable`
-:::
+<Callout title="DATABASE_URL">
+  When using the local postgres container you should set the `DATABASE_URL`
+  environment variable to
+  `DATABASE_URL=postgres://bkAdmin:briefkasten@postgres:5432/briefkasten?sslmode=disable`
+</Callout>
 
 3. Start the docker-compose stack of applications
 
@@ -78,9 +80,10 @@ The OAuth credentials can be acquired through the instructions on the [NextAuth.
 
 Finally, if you've opted into providing an object storage provider for bookmark images, the application is currently setup to use [Supabase](https://supabase.io) only. Therefore, you can pass your secrets as `SUPABASE_URL` and `SUPABASE_KEY`. Make sure to use the service account key which has `write` rights. More details [below](#object-storage) for using a different object storage provider.
 
-:::tip Tip
-The image uploading functionality will be skipped over entirely if you do not pass a `SUPABASE_URL` environment variable. No other action is necessary.
-:::
+<Callout>
+  The image uploading functionality will be skipped over entirely if you do not
+  pass a `SUPABASE_URL` environment variable. No other action is necessary.
+</Callout>
 
 ### Database
 

@@ -144,7 +144,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)"],
+        sans: ["var(--font-google-sans)", "Inter", "system-ui", "sans-serif"],
+        mono: ["var(--font-google-mono)", "Ubuntu Mono", "monospace"],
+        display: ["var(--font-google-display)", "Inter", "system-ui"],
       },
     },
     container: {

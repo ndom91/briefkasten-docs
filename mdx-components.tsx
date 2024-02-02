@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types"
+import { Screenshot } from "@/components/screenshot"
 import defaultComponents from "fumadocs-ui/mdx"
 import { Step, Steps } from "fumadocs-ui/components/steps"
 import { Tab, Tabs } from "fumadocs-ui/components/tabs"
@@ -25,6 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     Tabs,
     Step,
     Steps,
+    Screenshot,
     ...defaultComponents,
     ...components,
   }

@@ -7,15 +7,6 @@
 @import "open-props/easings";
 @import "open-props/animations";
 
-.noise-noise-noise {
-  /* stack grain with a gradient */
-  background-image: var(--gradient-3), var(--noise-3);
-  /* force colors and noise to collide */
-  filter: var(--noise-filter-3);
-  /* fit noise image to element */
-  background-size: cover;
-}
-
 /* :root { */
 /*   --background: 0 0% 100%; */
 /*   --foreground: 222.2 47.4% 11.2%; */
@@ -373,19 +364,23 @@ html.dark body:has(main.homepage)::before {
 }
 
 /* 
- * Hero Text 
+ * Hero Text Gradient
  * @link https://codepen.io/jh3y/pen/PoLmpOB
  **/
 
 .hero-text h1 {
   --font-size: clamp(2rem, 8vw + 1rem, 12rem);
   margin: 0;
-  color: hsl(0 0% 100%);
+  color: black;
   font-size: var(--font-size);
   position: relative;
   display: flex;
   align-items: flex-start;
   line-height: 1.2;
+}
+
+html.dark .hero-text h1 {
+  color: hsl(0 0% 100%);
 }
 
 .hero-text h1 > span:first-of-type {
@@ -395,12 +390,15 @@ html.dark body:has(main.homepage)::before {
 
 .hero-text .pops {
   position: absolute;
-  inset: 0;
+  inset: 0px;
   background: white;
-  mix-blend-mode: darken;
+  mix-blend-mode: lighten;
   filter: brightness(2);
   overflow: hidden;
   pointer-events: none;
+}
+html.dark .hero-text .pops {
+  mix-blend-mode: darken !important;
 }
 
 @keyframes pop {
@@ -415,13 +413,13 @@ html.dark body:has(main.homepage)::before {
   background: radial-gradient(hsl(var(--h) 100% 70%) 25%, transparent 50%);
   position: absolute;
   display: inline-block;
-  animation: scale var(--s, 2s) var(--d, 0s) infinite alternate;
+  animation: scale var(--s, 5s) var(--d, 2s) infinite alternate;
   left: var(--x, 0);
   top: var(--y, 0);
-  scale: 0;
+  scale: 2;
   translate: -50% -50%;
   mix-blend-mode: multiply;
-  filter: blur(2px);
+  filter: blur(5px);
 }
 
 .hero-text .pop:nth-of-type(1) {
@@ -430,7 +428,7 @@ html.dark body:has(main.homepage)::before {
   --h: 277;
   --s2: 6;
   --d: -0.25s;
-  --s: 6s;
+  --s: 7s;
 }
 
 .hero-text .pop:nth-of-type(2) {
@@ -439,7 +437,7 @@ html.dark body:has(main.homepage)::before {
   --h: 140;
   --s2: 5;
   --d: -0.75s;
-  --s: 5s;
+  --s: 6s;
 }
 .hero-text .pop:nth-of-type(3) {
   --x: 65%;
@@ -447,7 +445,7 @@ html.dark body:has(main.homepage)::before {
   --h: 210;
   --s2: 3;
   --d: -0.5s;
-  --s: 3s;
+  --s: 5s;
 }
 .hero-text .pop:nth-of-type(4) {
   --x: 85%;
@@ -455,7 +453,7 @@ html.dark body:has(main.homepage)::before {
   --h: 320;
   --s2: 5;
   --d: -1s;
-  --s: 2s;
+  --s: 3s;
 }
 .hero-text .pop:nth-of-type(5) {
   --x: 15%;
@@ -463,7 +461,7 @@ html.dark body:has(main.homepage)::before {
   --h: 40;
   --s2: 3;
   --d: -1s;
-  --s: 2s;
+  --s: 3s;
 }
 
 @keyframes scale {
