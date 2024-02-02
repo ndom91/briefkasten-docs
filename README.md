@@ -1,26 +1,36 @@
-# briefkasten-docs
+# 📚 Briefkasten Docs
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+This is the marketing / documentation site for [Briefkasten](https://github.com/ndom91/briefkasten).
 
-Run development server:
+### [docs.briefkastenhq.com](https://docs.briefkastenhq.com)
+
+## 🚀 Getting Started
+
+1. Clone the repository
 
 ```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
+$ git clone https://github.com/ndom91/briefkasten-docs
+$ cd briefkasten-docs
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+2. Install dependencies
 
-## Learn More
+```bash
+$ pnpm install
+```
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+3. Run dev server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.vercel.app) - learn about Fumadocs
+```bash
+$ pnpm dev
+```
+
+You will then have a local copy of the site up and running at [http://localhost:3000](http://localhost:3000)!
+
+## 🎩 Contributing
+
+This project is open to all contributions, please stick to the formatting and linting settings.
+
+## 📝 License
+
+MIT
