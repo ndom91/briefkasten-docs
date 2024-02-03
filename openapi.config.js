@@ -3,6 +3,6 @@
  * @todo Add OpenAPI Plugin to API Server
  */
 module.exports = {
-  input: ["./briefkasten.yaml"],
+  input: ["./briefkasten.openapi.yaml"],
   output: "./content/docs",
 }
