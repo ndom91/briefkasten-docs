@@ -1,0 +1,750 @@
+---
+title: Briefkasten API
+description: API Docs for https://briefkastenhq.com/api
+---
+
+import { Root, API, APIInfo, APIExample, Property } from 'fumadocs-ui/components/api'
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Root>
+
+<API>
+
+<APIInfo method={"GET"} route={"/bookmarks"}>
+
+## Search for bookmarks
+
+### Query Parameters
+
+<Property required={true} deprecated={false} name={"query"} type={"string"}>
+
+Search query string
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `200` | Successful |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X GET "http://briefkastenhq.com/bookmarks"
+```
+
+<Tabs items={["200"]}>
+
+<Tab value={"200"}>
+
+List of bookmark results
+
+```json title="Example Response"
+[
+  {
+    "id": "string",
+    "userId": "string",
+    "title": "string",
+    "url": "string",
+    "category?": "string",
+    "desc?": "string",
+    "tags?": [
+      {
+        "id": "string",
+        "userId": "string",
+        "name": "string",
+        "emoji": "string"
+      }
+    ]
+  }
+]
+```
+
+<Accordions>
+
+<Accordion title={"Typescript Definition"}>
+
+```ts
+/**
+ * List of bookmark results
+ */
+export type Response = {
+  id?: string;
+  userId?: string;
+  title?: string;
+  url?: string;
+  "category?"?: string;
+  "desc?"?: string;
+  "tags?"?: {
+    id?: string;
+    userId?: string;
+    name?: string;
+    emoji?: string;
+  }[];
+}[];
+
+```
+
+</Accordion>
+
+</Accordions>
+
+</Tab>
+
+</Tabs>
+
+</APIExample>
+
+</API>
+
+<API>
+
+<APIInfo method={"POST"} route={"/bookmarks"}>
+
+## Create bookmarks
+
+### Request Body
+
+The bookmark to create
+
+<Property required={false} deprecated={false} name={"id"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"userId"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"title"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"url"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"category?"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"desc?"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"tags?"} type={"array of object"}>
+
+
+
+<Accordions>
+
+<Accordion title={"Object Type"}>
+
+<Property required={false} deprecated={false} name={"id"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"userId"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"name"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"emoji"} type={"string"}>
+
+
+
+</Property>
+
+</Accordion>
+
+</Accordions>
+
+</Property>
+
+### Query Parameters
+
+<Property required={false} deprecated={false} name={"query"} type={"string"}>
+
+Query
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `200` | Successful |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X POST "http://briefkastenhq.com/bookmarks" \
+  -d '{
+  "id": "string",
+  "userId": "string",
+  "title": "string",
+  "url": "string",
+  "category?": "string",
+  "desc?": "string",
+  "tags?": [
+    {
+      "id": "string",
+      "userId": "string",
+      "name": "string",
+      "emoji": "string"
+    }
+  ]
+}'
+```
+
+<Tabs items={["200"]}>
+
+<Tab value={"200"}>
+
+
+
+```json title="Example Response"
+{
+  "id": "string",
+  "userId": "string",
+  "title": "string",
+  "url": "string",
+  "category?": "string",
+  "desc?": "string",
+  "tags?": [
+    {
+      "id": "string",
+      "userId": "string",
+      "name": "string",
+      "emoji": "string"
+    }
+  ]
+}
+```
+
+<Accordions>
+
+<Accordion title={"Typescript Definition"}>
+
+```ts
+export interface Response {
+  id?: string;
+  userId?: string;
+  title?: string;
+  url?: string;
+  "category?"?: string;
+  "desc?"?: string;
+  "tags?"?: {
+    id?: string;
+    userId?: string;
+    name?: string;
+    emoji?: string;
+  }[];
+}
+
+```
+
+</Accordion>
+
+</Accordions>
+
+</Tab>
+
+</Tabs>
+
+</APIExample>
+
+</API>
+
+<API>
+
+<APIInfo method={"DELETE"} route={"/bookmarks"}>
+
+## Delete bookmarks
+
+### Query Parameters
+
+<Property required={false} deprecated={false} name={"query"} type={"string"}>
+
+Query
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `204` | No Content |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X DELETE "http://briefkastenhq.com/bookmarks"
+```
+
+
+
+</APIExample>
+
+</API>
+
+<API>
+
+<APIInfo method={"GET"} route={"/tags"}>
+
+## Search for tags
+
+### Query Parameters
+
+<Property required={false} deprecated={false} name={"query"} type={"string"}>
+
+Query
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `200` | Successful |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X GET "http://briefkastenhq.com/tags"
+```
+
+<Tabs items={["200"]}>
+
+<Tab value={"200"}>
+
+List of tag results
+
+```json title="Example Response"
+[
+  {
+    "id": "string",
+    "userId": "string",
+    "name": "string",
+    "emoji": "string"
+  }
+]
+```
+
+<Accordions>
+
+<Accordion title={"Typescript Definition"}>
+
+```ts
+/**
+ * List of tag results
+ */
+export type Response = {
+  id?: string;
+  userId?: string;
+  name?: string;
+  emoji?: string;
+}[];
+
+```
+
+</Accordion>
+
+</Accordions>
+
+</Tab>
+
+</Tabs>
+
+</APIExample>
+
+</API>
+
+<API>
+
+<APIInfo method={"POST"} route={"/tags"}>
+
+## Create tag
+
+### Request Body
+
+The tag to create
+
+<Property required={false} deprecated={false} name={"id"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"userId"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"name"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"emoji"} type={"string"}>
+
+
+
+</Property>
+
+### Query Parameters
+
+<Property required={false} deprecated={false} name={"query"} type={"string"}>
+
+Query
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `200` | Successful |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X POST "http://briefkastenhq.com/tags" \
+  -d '{
+  "id": "string",
+  "userId": "string",
+  "name": "string",
+  "emoji": "string"
+}'
+```
+
+<Tabs items={["200"]}>
+
+<Tab value={"200"}>
+
+
+
+```json title="Example Response"
+{
+  "id": "string",
+  "userId": "string",
+  "name": "string",
+  "emoji": "string"
+}
+```
+
+<Accordions>
+
+<Accordion title={"Typescript Definition"}>
+
+```ts
+export interface Response {
+  id?: string;
+  userId?: string;
+  name?: string;
+  emoji?: string;
+}
+
+```
+
+</Accordion>
+
+</Accordions>
+
+</Tab>
+
+</Tabs>
+
+</APIExample>
+
+</API>
+
+<API>
+
+<APIInfo method={"DELETE"} route={"/tags"}>
+
+## Delete tag
+
+### Query Parameters
+
+<Property required={false} deprecated={false} name={"query"} type={"string"}>
+
+Query
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `204` | No Content |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X DELETE "http://briefkastenhq.com/tags"
+```
+
+
+
+</APIExample>
+
+</API>
+
+<API>
+
+<APIInfo method={"GET"} route={"/categories"}>
+
+## Search for categories
+
+### Query Parameters
+
+<Property required={false} deprecated={false} name={"query"} type={"string"}>
+
+Query
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `200` | Successful |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X GET "http://briefkastenhq.com/categories"
+```
+
+<Tabs items={["200"]}>
+
+<Tab value={"200"}>
+
+List of categories results
+
+```json title="Example Response"
+[
+  {
+    "id": "string",
+    "userId": "string",
+    "name": "string",
+    "desc": "string"
+  }
+]
+```
+
+<Accordions>
+
+<Accordion title={"Typescript Definition"}>
+
+```ts
+/**
+ * List of categories results
+ */
+export type Response = {
+  id?: string;
+  userId?: string;
+  name?: string;
+  desc?: string;
+}[];
+
+```
+
+</Accordion>
+
+</Accordions>
+
+</Tab>
+
+</Tabs>
+
+</APIExample>
+
+</API>
+
+<API>
+
+<APIInfo method={"POST"} route={"/categories"}>
+
+## Create categories
+
+### Request Body
+
+The category to create
+
+<Property required={false} deprecated={false} name={"id"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"userId"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"name"} type={"string"}>
+
+
+
+</Property>
+
+<Property required={false} deprecated={false} name={"desc"} type={"string"}>
+
+
+
+</Property>
+
+### Query Parameters
+
+<Property required={false} deprecated={false} name={"query"} type={"string"}>
+
+Query
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `200` | Successful |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X POST "http://briefkastenhq.com/categories" \
+  -d '{
+  "id": "string",
+  "userId": "string",
+  "name": "string",
+  "desc": "string"
+}'
+```
+
+<Tabs items={["200"]}>
+
+<Tab value={"200"}>
+
+
+
+```json title="Example Response"
+{
+  "id": "string",
+  "userId": "string",
+  "name": "string",
+  "desc": "string"
+}
+```
+
+<Accordions>
+
+<Accordion title={"Typescript Definition"}>
+
+```ts
+export interface Response {
+  id?: string;
+  userId?: string;
+  name?: string;
+  desc?: string;
+}
+
+```
+
+</Accordion>
+
+</Accordions>
+
+</Tab>
+
+</Tabs>
+
+</APIExample>
+
+</API>
+
+<API>
+
+<APIInfo method={"DELETE"} route={"/categories"}>
+
+## Delete categories
+
+### Query Parameters
+
+<Property required={false} deprecated={false} name={"query"} type={"string"}>
+
+Query
+
+</Property>
+
+| Status code | Description |
+| ----------- | ----------- |
+| `204` | No Content |
+| `401` | Unauthorized |
+| `403` | Forbidden |
+| `429` | Too Many Requests |
+
+</APIInfo>
+
+<APIExample>
+
+```bash title="curl"
+curl -X DELETE "http://briefkastenhq.com/categories"
+```
+
+
+
+</APIExample>
+
+</API>
+
+</Root>

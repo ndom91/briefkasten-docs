@@ -5,4 +5,6 @@
 module.exports = {
   input: ["./briefkasten.openapi.yaml"],
   output: "./content/docs",
+  per: "file",
+  name: () => "api-reference",
 }

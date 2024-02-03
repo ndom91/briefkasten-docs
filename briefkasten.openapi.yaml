@@ -7,340 +7,308 @@ servers:
   - url: http://briefkastenhq.com/api
     description: Production
 paths:
-  /bookmarks:
+  "/bookmarks":
     get:
       summary: Search for bookmarks
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
-          description: Query
-          name: query
-          in: body
+        - name: query
+          in: query
+          description: Search query string
+          required: true
+          schema:
+            type: string
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/bookmark"
           description: Successful
+          content:
+            application/json:
+              schema:
+                description: List of bookmark results
+                type: array
+                items:
+                  $ref: "#/components/bookmark"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     post:
       summary: Create bookmarks
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
+        - schema:
+            type: string
           description: Query
           name: query
-          in: body
+          in: query
+      requestBody:
+        description: The bookmark to create
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#/components/bookmark"
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/bookmark"
           description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/bookmark"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     put:
       summary: Update bookmarks
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
+        - schema:
+            type: string
           description: Query
           name: query
-          in: body
+          in: query
+      requestBody:
+        description: The bookmark to update
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#/components/bookmark"
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/bookmark"
           description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/bookmark"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     delete:
       summary: Delete bookmarks
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
+        - schema:
+            type: string
           description: Query
           name: query
-          in: body
+          in: query
       responses:
         "204":
           description: No Content
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
-  /tags:
+  "/tags":
     get:
       summary: Search for tags
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
+        - schema:
+            type: string
           description: Query
           name: query
-          in: body
+          in: query
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/tag"
           description: Successful
+          content:
+            application/json:
+              schema:
+                description: List of tag results
+                type: array
+                items:
+                  $ref: "#/components/tag"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     post:
       summary: Create tag
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
+        - schema:
+            type: string
           description: Query
           name: query
-          in: body
+          in: query
+      requestBody:
+        description: The tag to create
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#/components/tag"
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/tag"
           description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/tag"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     put:
       summary: Update tag
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
-          description: QUery
+        - schema:
+            type: string
+          description: Query
           name: query
-          in: body
+          in: query
+      requestBody:
+        description: The tag to update
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#/components/tag"
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/tag"
           description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/tag"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     delete:
       summary: Delete tag
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
-          description: QUery
+        - schema:
+            type: string
+          description: Query
           name: query
-          in: body
+          in: query
       responses:
         "204":
           description: No Content
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
-  /categories:
+  "/categories":
     get:
       summary: Search for categories
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
+        - schema:
+            type: string
           description: Query
           name: query
-          in: body
+          in: query
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/category"
           description: Successful
+          content:
+            application/json:
+              schema:
+                description: List of categories results
+                type: array
+                items:
+                  $ref: "#/components/category"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     post:
       summary: Create categories
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
+        - schema:
+            type: string
           description: Query
           name: query
-          in: body
+          in: query
+      requestBody:
+        description: The category to create
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#/components/category"
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/category"
           description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/category"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     put:
       summary: Update categories
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
-          description: QUery
+        - schema:
+            type: string
+          description: Query
           name: query
-          in: body
+          in: query
+      requestBody:
+        description: The category to update
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: "#/components/category"
       responses:
         "200":
-          schema:
-            $ref: "#/definitions/category"
           description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/category"
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
     delete:
       summary: Delete categories
-      consumes:
-        - application/json
-      produces:
-        - application/json
       parameters:
-        - type: string
-          description: QUery
+        - schema:
+            type: string
+          description: Query
           name: query
-          in: body
+          in: query
       responses:
         "204":
           description: No Content
         "401":
-          schema:
-            $ref: "#/definitions/UnauthorizedError"
           description: Unauthorized
         "403":
-          schema:
-            $ref: "#/definitions/ForbiddenError"
           description: Forbidden
         "429":
-          schema:
-            $ref: "#/definitions/TooManyRequestsError"
           description: Too Many Requests
-definitions:
+components:
   bookmark:
     type: object
     properties:
@@ -359,7 +327,7 @@ definitions:
       tags?:
         type: array
         items:
-          $ref: "#/definitions/tag"
+          $ref: "#/components/tag"
   tag:
     type: object
     properties:
@@ -430,8 +398,6 @@ definitions:
       message:
         type: string
         example: Too Many Requests
-      attributes:
-        $ref: "#/definitions/attributes"
     required:
       - statusCode
       - error
@@ -449,8 +415,6 @@ definitions:
       message:
         type: string
         example: Bad Token
-      attributes:
-        $ref: "#/definitions/attributes"
     required:
       - statusCode
       - error
