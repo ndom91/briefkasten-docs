@@ -1,5 +1,5 @@
 ---
-title: API Reference
+title: API Overview
 icon: Globe
 ---
 
@@ -23,56 +23,4 @@ const result = await axios.post(
     },
   },
 )
-```
-
-## Routes
-
-Below are the routes and HTTP methods which are available.
-
-- `/api/bookmarks`
-
-  - `GET` - Search
-  - `POST` - Create
-  - `PUT` - Update
-  - `DELETE` - Delete
-
-- `/api/tags`
-
-  - `GET` - Search
-  - `POST` - Create
-  - `PUT` - Update
-  - `DELETE` - Delete
-
-- `/api/categories`
-  - `GET` - Search
-  - `POST` - Create
-  - `PUT` - Update
-  - `DELETE` - Delete
-
-### Types
-
-```js
-type Bookmark = {
-  id?: string
-  userId?: string
-  title: string
-  url: string
-  category?: string
-  desc?: string
-  tags?: string[]
-}
-
-type Tag = {
-  id?: string
-  userId?: string
-  name: string
-  emoji: string
-}
-
-type Category = {
-  id?: string
-  userId?: string
-  name: string
-  desc: string
-}
 ```
