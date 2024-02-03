@@ -52,6 +52,7 @@
   /* --ring: 216 34% 17%; */
 }
 
+/* Set display font everywhere but homepage for headings */
 body:not(:has(main.homepage)) {
   h1,
   h2,
@@ -60,6 +61,18 @@ body:not(:has(main.homepage)) {
   h5,
   h6 {
     font-family: var(--font-google-display);
+  }
+}
+
+/* Set sans font for API reference headings */
+body:has(#query-parameters) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-google-sans);
   }
 }
 
