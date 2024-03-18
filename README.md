@@ -2,7 +2,9 @@
 
 This is the marketing / documentation site for [Briefkasten](https://github.com/ndom91/briefkasten).
 
-### [docs.briefkastenhq.com](https://docs.briefkastenhq.com)
+### [v1.docs.briefkastenhq.com](https://v1.docs.briefkastenhq.com)
+
+New version available in `main` branch and at [docs.briefkastenhq.com](https://docs.briefkastenhq.com).
 
 ## 🚀 Getting Started
 
