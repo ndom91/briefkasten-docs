@@ -6,7 +6,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs"
 import { ImageZoom } from "fumadocs-ui/components/image-zoom"
 import { File, Files } from "fumadocs-ui/components/files"
 import { Callout } from "fumadocs-ui/components/callout"
-import { AutoTypeTable } from "fumadocs-ui/components/auto-type-table"
+import { AutoTypeTable } from "fumadocs-typescript/ui"
 import { Accordion, Accordions } from "fumadocs-ui/components/accordion"
 import { Popup, PopupTrigger, PopupContent } from "fumadocs-ui/twoslash/popup"
 
