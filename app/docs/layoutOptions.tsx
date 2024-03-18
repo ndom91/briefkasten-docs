@@ -23,7 +23,11 @@ export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
       url: "/docs",
     },
     {
-      text: "Try App",
+      text: "v1 Docs",
+      url: "https://v1.docs.briefkastenhq.com",
+    },
+    {
+      text: "Login",
       url: "https://briefkastenhq.com",
       external: true,
     },
