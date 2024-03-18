@@ -3,9 +3,10 @@
   "root": true,
   "pages": [
     "index",
-    "---Setup---",
+    "--- Setup ---",
     "usage",
     "development",
+    "database",
     "api",
     "api-reference",
     "---Self Hosting---",
