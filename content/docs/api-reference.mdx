@@ -1,5 +1,5 @@
 ---
-title: Briefkasten API
+title: API Reference
 description: API Docs for https://briefkastenhq.com/api
 ---
 
@@ -20,6 +20,10 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 <Property required={true} deprecated={false} name={"query"} type={"string"}>
 
 Search query string
+
+<span>Example:  `"Tech blogs"`</span>
+
+<span>Format:  `"string"`</span>
 
 </Property>
 
@@ -47,18 +51,17 @@ List of bookmark results
 ```json title="Example Response"
 [
   {
-    "id": "string",
-    "userId": "string",
-    "title": "string",
-    "url": "string",
+    "id": "cjld2cjxh0000qzrmn831i7rn",
+    "userId": "cjld2cyuq0000t3rmniod1foy",
+    "title": "Tech Blog",
+    "url": "https://engadget.com",
     "category?": "string",
     "desc?": "string",
     "tags?": [
       {
-        "id": "string",
-        "userId": "string",
-        "name": "string",
-        "emoji": "string"
+        "id": "tz4a98xxat96iws9zmbrgj3a",
+        "userId": "q6jy42jq92xypbao731oj7x8",
+        "name": "string"
       }
     ]
   }
@@ -75,16 +78,30 @@ List of bookmark results
  */
 export type Response = {
   id?: string;
+  /**
+   * Linked user id
+   */
   userId?: string;
-  title?: string;
-  url?: string;
+  /**
+   * Page or link title
+   */
+  title: string;
+  /**
+   * Link to the bookmark
+   */
+  url: string;
+  /**
+   * Category grouping for your bookmark
+   */
   "category?"?: string;
+  /**
+   * Description of the bookmark
+   */
   "desc?"?: string;
   "tags?"?: {
     id?: string;
     userId?: string;
-    name?: string;
-    emoji?: string;
+    name: string;
   }[];
 }[];
 
@@ -116,35 +133,47 @@ The bookmark to create
 
 
 
+<span>Example:  `"cjld2cjxh0000qzrmn831i7rn"`</span>
+
+<span>Format:  `"cuid"`</span>
+
 </Property>
 
 <Property required={false} deprecated={false} name={"userId"} type={"string"}>
 
+Linked user id
 
+<span>Example:  `"cjld2cyuq0000t3rmniod1foy"`</span>
 
-</Property>
-
-<Property required={false} deprecated={false} name={"title"} type={"string"}>
-
-
+<span>Format:  `"cuid"`</span>
 
 </Property>
 
-<Property required={false} deprecated={false} name={"url"} type={"string"}>
+<Property required={true} deprecated={false} name={"title"} type={"string"}>
 
+Page or link title
 
+<span>Example:  `"Tech Blog"`</span>
+
+</Property>
+
+<Property required={true} deprecated={false} name={"url"} type={"string"}>
+
+Link to the bookmark
+
+<span>Example:  `"https://engadget.com"`</span>
 
 </Property>
 
 <Property required={false} deprecated={false} name={"category?"} type={"string"}>
 
-
+Category grouping for your bookmark
 
 </Property>
 
 <Property required={false} deprecated={false} name={"desc?"} type={"string"}>
 
-
+Description of the bookmark
 
 </Property>
 
@@ -160,21 +189,23 @@ The bookmark to create
 
 
 
+<span>Example:  `"tz4a98xxat96iws9zmbrgj3a"`</span>
+
+<span>Format:  `"cuid"`</span>
+
 </Property>
 
 <Property required={false} deprecated={false} name={"userId"} type={"string"}>
 
 
 
-</Property>
+<span>Example:  `"q6jy42jq92xypbao731oj7x8"`</span>
 
-<Property required={false} deprecated={false} name={"name"} type={"string"}>
-
-
+<span>Format:  `"cuid"`</span>
 
 </Property>
 
-<Property required={false} deprecated={false} name={"emoji"} type={"string"}>
+<Property required={true} deprecated={false} name={"name"} type={"string"}>
 
 
 
@@ -183,14 +214,6 @@ The bookmark to create
 </Accordion>
 
 </Accordions>
-
-</Property>
-
-### Query Parameters
-
-<Property required={false} deprecated={false} name={"query"} type={"string"}>
-
-Query
 
 </Property>
 
@@ -208,18 +231,17 @@ Query
 ```bash title="curl"
 curl -X POST "http://briefkastenhq.com/bookmarks" \
   -d '{
-  "id": "string",
-  "userId": "string",
-  "title": "string",
-  "url": "string",
+  "id": "cjld2cjxh0000qzrmn831i7rn",
+  "userId": "cjld2cyuq0000t3rmniod1foy",
+  "title": "Tech Blog",
+  "url": "https://engadget.com",
   "category?": "string",
   "desc?": "string",
   "tags?": [
     {
-      "id": "string",
-      "userId": "string",
-      "name": "string",
-      "emoji": "string"
+      "id": "tz4a98xxat96iws9zmbrgj3a",
+      "userId": "q6jy42jq92xypbao731oj7x8",
+      "name": "string"
     }
   ]
 }'
@@ -233,18 +255,17 @@ curl -X POST "http://briefkastenhq.com/bookmarks" \
 
 ```json title="Example Response"
 {
-  "id": "string",
-  "userId": "string",
-  "title": "string",
-  "url": "string",
+  "id": "cjld2cjxh0000qzrmn831i7rn",
+  "userId": "cjld2cyuq0000t3rmniod1foy",
+  "title": "Tech Blog",
+  "url": "https://engadget.com",
   "category?": "string",
   "desc?": "string",
   "tags?": [
     {
-      "id": "string",
-      "userId": "string",
-      "name": "string",
-      "emoji": "string"
+      "id": "tz4a98xxat96iws9zmbrgj3a",
+      "userId": "q6jy42jq92xypbao731oj7x8",
+      "name": "string"
     }
   ]
 }
@@ -257,16 +278,30 @@ curl -X POST "http://briefkastenhq.com/bookmarks" \
 ```ts
 export interface Response {
   id?: string;
+  /**
+   * Linked user id
+   */
   userId?: string;
-  title?: string;
-  url?: string;
+  /**
+   * Page or link title
+   */
+  title: string;
+  /**
+   * Link to the bookmark
+   */
+  url: string;
+  /**
+   * Category grouping for your bookmark
+   */
   "category?"?: string;
+  /**
+   * Description of the bookmark
+   */
   "desc?"?: string;
   "tags?"?: {
     id?: string;
     userId?: string;
-    name?: string;
-    emoji?: string;
+    name: string;
   }[];
 }
 
@@ -290,11 +325,17 @@ export interface Response {
 
 ## Delete bookmarks
 
-### Query Parameters
+### Request Body
 
-<Property required={false} deprecated={false} name={"query"} type={"string"}>
+Bookmark ID to delete
 
-Query
+<Property required={false} deprecated={false} name={"id"} type={"string"}>
+
+
+
+<span>Example:  `"cjld2cjxh0000qzrmn831i7rn"`</span>
+
+<span>Format:  `"cuid"`</span>
 
 </Property>
 
@@ -310,7 +351,10 @@ Query
 <APIExample>
 
 ```bash title="curl"
-curl -X DELETE "http://briefkastenhq.com/bookmarks"
+curl -X DELETE "http://briefkastenhq.com/bookmarks" \
+  -d '{
+  "id": "cjld2cjxh0000qzrmn831i7rn"
+}'
 ```
 
 
@@ -357,10 +401,9 @@ List of tag results
 ```json title="Example Response"
 [
   {
-    "id": "string",
-    "userId": "string",
-    "name": "string",
-    "emoji": "string"
+    "id": "tz4a98xxat96iws9zmbrgj3a",
+    "userId": "q6jy42jq92xypbao731oj7x8",
+    "name": "string"
   }
 ]
 ```
@@ -376,8 +419,7 @@ List of tag results
 export type Response = {
   id?: string;
   userId?: string;
-  name?: string;
-  emoji?: string;
+  name: string;
 }[];
 
 ```
@@ -408,21 +450,23 @@ The tag to create
 
 
 
+<span>Example:  `"tz4a98xxat96iws9zmbrgj3a"`</span>
+
+<span>Format:  `"cuid"`</span>
+
 </Property>
 
 <Property required={false} deprecated={false} name={"userId"} type={"string"}>
 
 
 
-</Property>
+<span>Example:  `"q6jy42jq92xypbao731oj7x8"`</span>
 
-<Property required={false} deprecated={false} name={"name"} type={"string"}>
-
-
+<span>Format:  `"cuid"`</span>
 
 </Property>
 
-<Property required={false} deprecated={false} name={"emoji"} type={"string"}>
+<Property required={true} deprecated={false} name={"name"} type={"string"}>
 
 
 
@@ -450,10 +494,9 @@ Query
 ```bash title="curl"
 curl -X POST "http://briefkastenhq.com/tags" \
   -d '{
-  "id": "string",
-  "userId": "string",
-  "name": "string",
-  "emoji": "string"
+  "id": "tz4a98xxat96iws9zmbrgj3a",
+  "userId": "q6jy42jq92xypbao731oj7x8",
+  "name": "string"
 }'
 ```
 
@@ -465,10 +508,9 @@ curl -X POST "http://briefkastenhq.com/tags" \
 
 ```json title="Example Response"
 {
-  "id": "string",
-  "userId": "string",
-  "name": "string",
-  "emoji": "string"
+  "id": "tz4a98xxat96iws9zmbrgj3a",
+  "userId": "q6jy42jq92xypbao731oj7x8",
+  "name": "string"
 }
 ```
 
@@ -480,8 +522,7 @@ curl -X POST "http://briefkastenhq.com/tags" \
 export interface Response {
   id?: string;
   userId?: string;
-  name?: string;
-  emoji?: string;
+  name: string;
 }
 
 ```
@@ -504,11 +545,17 @@ export interface Response {
 
 ## Delete tag
 
-### Query Parameters
+### Request Body
 
-<Property required={false} deprecated={false} name={"query"} type={"string"}>
+Tag ID to delete
 
-Query
+<Property required={false} deprecated={false} name={"id"} type={"string"}>
+
+
+
+<span>Example:  `"cjld2cjxh0000qzrmn831i7rn"`</span>
+
+<span>Format:  `"cuid"`</span>
 
 </Property>
 
@@ -524,7 +571,10 @@ Query
 <APIExample>
 
 ```bash title="curl"
-curl -X DELETE "http://briefkastenhq.com/tags"
+curl -X DELETE "http://briefkastenhq.com/tags" \
+  -d '{
+  "id": "cjld2cjxh0000qzrmn831i7rn"
+}'
 ```
 
 
@@ -571,10 +621,10 @@ List of categories results
 ```json title="Example Response"
 [
   {
-    "id": "string",
-    "userId": "string",
+    "id": "pfh0haxfpzowht3oi213cqos",
+    "userId": "nc6bzmkmd014706rfda898to",
     "name": "string",
-    "desc": "string"
+    "description": "string"
   }
 ]
 ```
@@ -590,8 +640,14 @@ List of categories results
 export type Response = {
   id?: string;
   userId?: string;
-  name?: string;
-  desc?: string;
+  /**
+   * Name of your category
+   */
+  name: string;
+  /**
+   * Description for the category
+   */
+  description?: string;
 }[];
 
 ```
@@ -622,23 +678,31 @@ The category to create
 
 
 
+<span>Example:  `"pfh0haxfpzowht3oi213cqos"`</span>
+
+<span>Format:  `"cuid"`</span>
+
 </Property>
 
 <Property required={false} deprecated={false} name={"userId"} type={"string"}>
 
 
 
-</Property>
+<span>Example:  `"nc6bzmkmd014706rfda898to"`</span>
 
-<Property required={false} deprecated={false} name={"name"} type={"string"}>
-
-
+<span>Format:  `"cuid"`</span>
 
 </Property>
 
-<Property required={false} deprecated={false} name={"desc"} type={"string"}>
+<Property required={true} deprecated={false} name={"name"} type={"string"}>
 
+Name of your category
 
+</Property>
+
+<Property required={false} deprecated={false} name={"description"} type={"string"}>
+
+Description for the category
 
 </Property>
 
@@ -664,10 +728,10 @@ Query
 ```bash title="curl"
 curl -X POST "http://briefkastenhq.com/categories" \
   -d '{
-  "id": "string",
-  "userId": "string",
+  "id": "pfh0haxfpzowht3oi213cqos",
+  "userId": "nc6bzmkmd014706rfda898to",
   "name": "string",
-  "desc": "string"
+  "description": "string"
 }'
 ```
 
@@ -679,10 +743,10 @@ curl -X POST "http://briefkastenhq.com/categories" \
 
 ```json title="Example Response"
 {
-  "id": "string",
-  "userId": "string",
+  "id": "pfh0haxfpzowht3oi213cqos",
+  "userId": "nc6bzmkmd014706rfda898to",
   "name": "string",
-  "desc": "string"
+  "description": "string"
 }
 ```
 
@@ -694,8 +758,14 @@ curl -X POST "http://briefkastenhq.com/categories" \
 export interface Response {
   id?: string;
   userId?: string;
-  name?: string;
-  desc?: string;
+  /**
+   * Name of your category
+   */
+  name: string;
+  /**
+   * Description for the category
+   */
+  description?: string;
 }
 
 ```
@@ -718,11 +788,17 @@ export interface Response {
 
 ## Delete categories
 
-### Query Parameters
+### Request Body
 
-<Property required={false} deprecated={false} name={"query"} type={"string"}>
+Category ID to delete
 
-Query
+<Property required={false} deprecated={false} name={"id"} type={"string"}>
+
+
+
+<span>Example:  `"cjld2cjxh0000qzrmn831i7rn"`</span>
+
+<span>Format:  `"cuid"`</span>
 
 </Property>
 
@@ -738,7 +814,10 @@ Query
 <APIExample>
 
 ```bash title="curl"
-curl -X DELETE "http://briefkastenhq.com/categories"
+curl -X DELETE "http://briefkastenhq.com/categories" \
+  -d '{
+  "id": "cjld2cjxh0000qzrmn831i7rn"
+}'
 ```
 
 

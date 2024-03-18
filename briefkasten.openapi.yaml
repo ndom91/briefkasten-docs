@@ -17,6 +17,8 @@ paths:
           required: true
           schema:
             type: string
+            example: "Tech blogs"
+            format: string
       responses:
         "200":
           description: Successful
@@ -35,12 +37,6 @@ paths:
           description: Too Many Requests
     post:
       summary: Create bookmarks
-      parameters:
-        - schema:
-            type: string
-          description: Query
-          name: query
-          in: query
       requestBody:
         description: The bookmark to create
         required: true
@@ -93,12 +89,21 @@ paths:
           description: Too Many Requests
     delete:
       summary: Delete bookmarks
-      parameters:
-        - schema:
-            type: string
-          description: Query
-          name: query
-          in: query
+      requestBody:
+        description: Bookmark ID to delete
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - title
+                - url
+              properties:
+                id:
+                  type: string
+                  format: cuid
+                  example: cjld2cjxh0000qzrmn831i7rn
       responses:
         "204":
           description: No Content
@@ -193,12 +198,21 @@ paths:
           description: Too Many Requests
     delete:
       summary: Delete tag
-      parameters:
-        - schema:
-            type: string
-          description: Query
-          name: query
-          in: query
+      requestBody:
+        description: Tag ID to delete
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - title
+                - url
+              properties:
+                id:
+                  type: string
+                  format: cuid
+                  example: cjld2cjxh0000qzrmn831i7rn
       responses:
         "204":
           description: No Content
@@ -293,12 +307,21 @@ paths:
           description: Too Many Requests
     delete:
       summary: Delete categories
-      parameters:
-        - schema:
-            type: string
-          description: Query
-          name: query
-          in: query
+      requestBody:
+        description: Category ID to delete
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - title
+                - url
+              properties:
+                id:
+                  type: string
+                  format: cuid
+                  example: cjld2cjxh0000qzrmn831i7rn
       responses:
         "204":
           description: No Content
@@ -308,48 +331,78 @@ paths:
           description: Forbidden
         "429":
           description: Too Many Requests
+  securitySchemes:
+    BriefkastenAuth:
+      type: http
+      scheme: basic
 components:
   bookmark:
     type: object
+    required:
+      - title
+      - url
     properties:
       id:
         type: string
+        format: cuid
+        example: cjld2cjxh0000qzrmn831i7rn
       userId:
         type: string
+        format: cuid
+        description: Linked user id
+        example: cjld2cyuq0000t3rmniod1foy
       title:
         type: string
+        description: Page or link title
+        example: "Tech Blog"
       url:
         type: string
+        description: Link to the bookmark
+        example: https://engadget.com
       category?:
         type: string
+        description: Category grouping for your bookmark
       desc?:
         type: string
+        description: Description of the bookmark
       tags?:
         type: array
         items:
           $ref: "#/components/tag"
   tag:
     type: object
+    required:
+      - name
     properties:
       id:
         type: string
+        format: cuid
+        example: tz4a98xxat96iws9zmbrgj3a
       userId:
         type: string
+        format: cuid
+        example: q6jy42jq92xypbao731oj7x8
       name:
-        type: string
-      emoji:
         type: string
   category:
     type: object
+    required:
+      - name
     properties:
       id:
         type: string
+        format: cuid
+        example: pfh0haxfpzowht3oi213cqos
       userId:
         type: string
+        format: cuid
+        example: nc6bzmkmd014706rfda898to
       name:
         type: string
-      desc:
+        description: Name of your category
+      description:
         type: string
+        description: Description for the category
   NotFoundError:
     type: object
     properties:
