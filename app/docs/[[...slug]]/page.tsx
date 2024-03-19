@@ -26,6 +26,7 @@ export default async function Page({ params }: { params: Param }) {
       toc={page.data.exports.toc}
       lastUpdate={page.data.exports.lastModified}
       tableOfContent={{
+        enabled: page.file.path !== "api-reference.mdx",
         footer: (
           <a
             href={`https://github.com/ndom91/briefkasten-docs/blob/main/${path}`}
