@@ -54,6 +54,7 @@
 
 /* Set display font everywhere but homepage for headings */
 body:not(:has(main.homepage)) {
+
   h1,
   h2,
   h3,
@@ -66,6 +67,7 @@ body:not(:has(main.homepage)) {
 
 /* Set sans font for API reference headings */
 body:has(#query-parameters) {
+
   h1,
   h2,
   h3,
@@ -84,10 +86,8 @@ body:has(main.homepage)::before {
   width: 100vw;
   position: absolute;
   background:
-    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% /
-      var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
-      var(--size) var(--size);
+    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
   mask: linear-gradient(-15deg, transparent 30%, white);
   top: 0;
   z-index: -1;
@@ -155,6 +155,7 @@ html.dark body:has(main.homepage)::before {
   0% {
     color: transparent;
   }
+
   50%,
   100% {
     color: var(--color);
@@ -176,10 +177,12 @@ html.dark body:has(main.homepage)::before {
   0% {
     transform: translateX(-110%);
   }
+
   45%,
   55% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(110%);
   }
@@ -206,14 +209,13 @@ html.dark body:has(main.homepage)::before {
  **/
 
 .homepage-scroll {
-  --card-width: 300px;
-  --card-width: clamp(300px, 80vmin, 400px);
+  --card-width: 500px;
+  --card-width: clamp(500px, 80vmin, 400px);
 }
 
 .homepage-scroll .track {
-  width: 100svw;
+  width: 100%;
   position: relative;
-  height: 100%;
 }
 
 .homepage-scroll .track ::-webkit-scrollbar {
@@ -224,7 +226,7 @@ html.dark body:has(main.homepage)::before {
   display: flex;
   gap: 2rem;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
   padding-inline: calc(50vw - (var(--card-width) * 0.5));
   scroll-snap-type: x mandatory;
   max-width: 100%;
@@ -240,38 +242,54 @@ html.dark body:has(main.homepage)::before {
 .homepage-scroll li {
   scroll-snap-align: center;
   padding: 0;
-  margin: 0;
+  margin: 20px 0;
 }
 
 .homepage-scroll :is(li, .indicator):nth-of-type(1) {
   --hue: 0;
 }
+
 .homepage-scroll :is(li, .indicator):nth-of-type(2) {
   --hue: 140;
 }
+
 .homepage-scroll :is(li, .indicator):nth-of-type(3) {
   --hue: 45;
 }
+
 .homepage-scroll :is(li, .indicator):nth-of-type(4) {
   --hue: 210;
 }
+
 .homepage-scroll :is(li, .indicator):nth-of-type(5) {
   --hue: 280;
 }
 
+.homepage-scroll :is(li, .indicator):nth-of-type(6) {
+  --hue: 320;
+}
+
+.homepage-scroll :is(li, .indicator):nth-of-type(7) {
+  --hue: 80;
+}
+
 .homepage-scroll article {
   width: var(--card-width);
-  aspect-ratio: 4 / 3;
-  background:
-    radial-gradient(circle at center, hsl(0 0% 100% / 0.65), transparent) fixed,
-    linear-gradient(hsl(var(--hue) 100% 0% / 0.25), transparent),
-    linear-gradient(transparent, hsl(var(--hue) 0% 10% / 0.5)),
-    hsl(var(--hue, 10) 0% 6%);
+  /* aspect-ratio: 4 / 3; */
+  background: transparent;
+  /* radial-gradient(circle at center, hsl(0 0% 100% / 0.65), transparent) fixed, */
+  /* linear-gradient(hsl(var(--hue) 100% 0% / 0.25), transparent), */
+  /* linear-gradient(transparent, hsl(var(--hue) 0% 10% / 0.5)), */
+  /* hsl(var(--hue, 10) 0% 6%); */
   box-shadow:
     0 1px hsl(0 0% 100% / 0.5) inset,
     0 10px 20px -10px black;
   border-radius: 1rem;
   border-top: 2px solid hsl(var(--hue, 10) 80% 60% / 0.75);
+}
+
+.homepage-scroll article img {
+  object-fit: cover;
 }
 
 .homepage-scroll .track__indicators {
@@ -282,6 +300,7 @@ html.dark body:has(main.homepage)::before {
   translate: -50% 0;
   display: flex;
 }
+
 .homepage-scroll .indicator {
   --color: hsl(var(--hue, 0) 0% 86%);
   background: linear-gradient(var(--color), var(--color)) padding-box;
@@ -305,50 +324,73 @@ html.dark body:has(main.homepage)::before {
 
 @supports (animation-timeline: scroll()) {
   .homepage-scroll .track {
-    timeline-scope: --one, --two, --three, --four, --five;
+    timeline-scope: --one, --two, --three, --four, --five, --six, --seven;
   }
 
   .homepage-scroll .track__indicators {
-    aspect-ratio: 7 / 1;
+    aspect-ratio: 9 / 1;
   }
 
   .homepage-scroll li:nth-of-type(1) {
     view-timeline: --one inline;
   }
+
   .homepage-scroll li:nth-of-type(2) {
     view-timeline: --two inline;
   }
+
   .homepage-scroll li:nth-of-type(3) {
     view-timeline: --three inline;
   }
+
   .homepage-scroll li:nth-of-type(4) {
     view-timeline: --four inline;
   }
+
   .homepage-scroll li:nth-of-type(5) {
     view-timeline: --five inline;
+  }
+
+  .homepage-scroll li:nth-of-type(6) {
+    view-timeline: --six inline;
+  }
+
+  .homepage-scroll li:nth-of-type(7) {
+    view-timeline: --seven inline;
   }
 
   .homepage-scroll .indicator {
     --buffer: calc(var(--card-width) * 0.9);
     animation: blink both linear;
-    animation-range: contain calc(50% - var(--buffer)) contain
-      calc(50% + var(--buffer));
+    animation-range: contain calc(50% - var(--buffer)) contain calc(50% + var(--buffer));
   }
 
   .homepage-scroll .indicator:nth-of-type(1) {
     animation-timeline: --one;
   }
+
   .homepage-scroll .indicator:nth-of-type(2) {
     animation-timeline: --two;
   }
+
   .homepage-scroll .indicator:nth-of-type(3) {
     animation-timeline: --three;
   }
+
   .homepage-scroll .indicator:nth-of-type(4) {
     animation-timeline: --four;
   }
+
   .homepage-scroll .indicator:nth-of-type(5) {
     animation-timeline: --five;
+  }
+
+  .homepage-scroll .indicator:nth-of-type(6) {
+    animation-timeline: --six;
+  }
+
+  .homepage-scroll .indicator:nth-of-type(7) {
+    animation-timeline: --seven;
   }
 
   @keyframes blink {
@@ -361,24 +403,35 @@ html.dark body:has(main.homepage)::before {
     --buffer: calc(var(--card-width) * 0.9);
     opacity: 0;
     animation: show both linear;
-    animation-range: contain calc(50% - var(--buffer)) contain
-      calc(50% + var(--buffer));
+    animation-range: contain calc(50% - var(--buffer)) contain calc(50% + var(--buffer));
   }
 
   .homepage-scroll .indicator:nth-of-type(1)::after {
     animation-timeline: --one;
   }
+
   .homepage-scroll .indicator:nth-of-type(2)::after {
     animation-timeline: --two;
   }
+
   .homepage-scroll .indicator:nth-of-type(3)::after {
     animation-timeline: --three;
   }
+
   .homepage-scroll .indicator:nth-of-type(4)::after {
     animation-timeline: --four;
   }
+
   .homepage-scroll .indicator:nth-of-type(5)::after {
     animation-timeline: --five;
+  }
+
+  .homepage-scroll .indicator:nth-of-type(6)::after {
+    animation-timeline: --six;
+  }
+
+  .homepage-scroll .indicator:nth-of-type(7)::after {
+    animation-timeline: --seven;
   }
 
   @keyframes show {
@@ -408,7 +461,7 @@ html.dark .hero-text h1 {
   color: hsl(0 0% 100%);
 }
 
-.hero-text h1 > span:first-of-type {
+.hero-text h1>span:first-of-type {
   display: inline-block;
   line-height: 0.8;
 }
@@ -422,6 +475,7 @@ html.dark .hero-text h1 {
   overflow: hidden;
   pointer-events: none;
 }
+
 html.dark .hero-text .pops {
   mix-blend-mode: darken !important;
 }
@@ -464,6 +518,7 @@ html.dark .hero-text .pops {
   --d: -0.75s;
   --s: 6s;
 }
+
 .hero-text .pop:nth-of-type(3) {
   --x: 65%;
   --y: 75%;
@@ -472,6 +527,7 @@ html.dark .hero-text .pops {
   --d: -0.5s;
   --s: 5s;
 }
+
 .hero-text .pop:nth-of-type(4) {
   --x: 85%;
   --y: 15%;
@@ -480,6 +536,7 @@ html.dark .hero-text .pops {
   --d: -1s;
   --s: 3s;
 }
+
 .hero-text .pop:nth-of-type(5) {
   --x: 15%;
   --y: 100%;

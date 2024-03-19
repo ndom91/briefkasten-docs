@@ -4,6 +4,7 @@
   "author": "ndom91 <yo@ndo.dev>",
   "version": "0.0.1",
   "license": "MIT",
+  "type": "module",
   "keywords": [
     "next.js",
     "prisma",

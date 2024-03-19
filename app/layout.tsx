@@ -70,7 +70,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           src="/p.js"
         />
       )}
-      <body className="">
+      <body className="overflow-x-hidden">
         <RootProvider>
           {children}
           <Footer />
