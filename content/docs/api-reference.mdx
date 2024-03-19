@@ -1,11 +1,17 @@
 ---
-title: API Reference
-description: API Docs for https://briefkastenhq.com/api
+title: Reference
+description: API Docs for Briefkasten
 ---
 
-import { Root, API, APIInfo, APIExample, Property } from 'fumadocs-ui/components/api'
-import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
-import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import {
+  Root,
+  API,
+  APIInfo,
+  APIExample,
+  Property,
+} from "fumadocs-ui/components/api"
+import { Tabs, Tab } from "fumadocs-ui/components/tabs"
+import { Accordion, Accordions } from "fumadocs-ui/components/accordion"
 
 <Root>
 
@@ -21,25 +27,25 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
 Search query string
 
-<span>Example:  `"Tech blogs"`</span>
+<span>Example: `"Tech blogs"`</span>
 
-<span>Format:  `"string"`</span>
+<span>Format: `"string"`</span>
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `200` | Successful |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `200`       | Successful        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X GET "http://briefkastenhq.com/bookmarks"
+curl -X GET "https://briefkastenhq.com/bookmarks"
 ```
 
 <Tabs items={["200"]}>
@@ -77,34 +83,33 @@ List of bookmark results
  * List of bookmark results
  */
 export type Response = {
-  id?: string;
+  id?: string
   /**
    * Linked user id
    */
-  userId?: string;
+  userId?: string
   /**
    * Page or link title
    */
-  title: string;
+  title: string
   /**
    * Link to the bookmark
    */
-  url: string;
+  url: string
   /**
    * Category grouping for your bookmark
    */
-  "category?"?: string;
+  "category?"?: string
   /**
    * Description of the bookmark
    */
-  "desc?"?: string;
+  "desc?"?: string
   "tags?"?: {
-    id?: string;
-    userId?: string;
-    name: string;
-  }[];
-}[];
-
+    id?: string
+    userId?: string
+    name: string
+  }[]
+}[]
 ```
 
 </Accordion>
@@ -131,11 +136,9 @@ The bookmark to create
 
 <Property required={false} deprecated={false} name={"id"} type={"string"}>
 
+<span>Example: `"cjld2cjxh0000qzrmn831i7rn"`</span>
 
-
-<span>Example:  `"cjld2cjxh0000qzrmn831i7rn"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
@@ -143,9 +146,9 @@ The bookmark to create
 
 Linked user id
 
-<span>Example:  `"cjld2cyuq0000t3rmniod1foy"`</span>
+<span>Example: `"cjld2cyuq0000t3rmniod1foy"`</span>
 
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
@@ -153,7 +156,7 @@ Linked user id
 
 Page or link title
 
-<span>Example:  `"Tech Blog"`</span>
+<span>Example: `"Tech Blog"`</span>
 
 </Property>
 
@@ -161,7 +164,7 @@ Page or link title
 
 Link to the bookmark
 
-<span>Example:  `"https://engadget.com"`</span>
+<span>Example: `"https://engadget.com"`</span>
 
 </Property>
 
@@ -179,35 +182,27 @@ Description of the bookmark
 
 <Property required={false} deprecated={false} name={"tags?"} type={"array of object"}>
 
-
-
 <Accordions>
 
 <Accordion title={"Object Type"}>
 
 <Property required={false} deprecated={false} name={"id"} type={"string"}>
 
+<span>Example: `"tz4a98xxat96iws9zmbrgj3a"`</span>
 
-
-<span>Example:  `"tz4a98xxat96iws9zmbrgj3a"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
 <Property required={false} deprecated={false} name={"userId"} type={"string"}>
 
+<span>Example: `"q6jy42jq92xypbao731oj7x8"`</span>
 
-
-<span>Example:  `"q6jy42jq92xypbao731oj7x8"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
 <Property required={true} deprecated={false} name={"name"} type={"string"}>
-
-
 
 </Property>
 
@@ -217,19 +212,19 @@ Description of the bookmark
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `200` | Successful |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `200`       | Successful        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X POST "http://briefkastenhq.com/bookmarks" \
+curl -X POST "https://briefkastenhq.com/bookmarks" \
   -d '{
   "id": "cjld2cjxh0000qzrmn831i7rn",
   "userId": "cjld2cyuq0000t3rmniod1foy",
@@ -250,8 +245,6 @@ curl -X POST "http://briefkastenhq.com/bookmarks" \
 <Tabs items={["200"]}>
 
 <Tab value={"200"}>
-
-
 
 ```json title="Example Response"
 {
@@ -277,34 +270,33 @@ curl -X POST "http://briefkastenhq.com/bookmarks" \
 
 ```ts
 export interface Response {
-  id?: string;
+  id?: string
   /**
    * Linked user id
    */
-  userId?: string;
+  userId?: string
   /**
    * Page or link title
    */
-  title: string;
+  title: string
   /**
    * Link to the bookmark
    */
-  url: string;
+  url: string
   /**
    * Category grouping for your bookmark
    */
-  "category?"?: string;
+  "category?"?: string
   /**
    * Description of the bookmark
    */
-  "desc?"?: string;
+  "desc?"?: string
   "tags?"?: {
-    id?: string;
-    userId?: string;
-    name: string;
-  }[];
+    id?: string
+    userId?: string
+    name: string
+  }[]
 }
-
 ```
 
 </Accordion>
@@ -331,33 +323,29 @@ Bookmark ID to delete
 
 <Property required={false} deprecated={false} name={"id"} type={"string"}>
 
+<span>Example: `"cjld2cjxh0000qzrmn831i7rn"`</span>
 
-
-<span>Example:  `"cjld2cjxh0000qzrmn831i7rn"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `204` | No Content |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `204`       | No Content        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X DELETE "http://briefkastenhq.com/bookmarks" \
+curl -X DELETE "https://briefkastenhq.com/bookmarks" \
   -d '{
   "id": "cjld2cjxh0000qzrmn831i7rn"
 }'
 ```
-
-
 
 </APIExample>
 
@@ -377,19 +365,19 @@ Query
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `200` | Successful |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `200`       | Successful        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X GET "http://briefkastenhq.com/tags"
+curl -X GET "https://briefkastenhq.com/tags"
 ```
 
 <Tabs items={["200"]}>
@@ -417,11 +405,10 @@ List of tag results
  * List of tag results
  */
 export type Response = {
-  id?: string;
-  userId?: string;
-  name: string;
-}[];
-
+  id?: string
+  userId?: string
+  name: string
+}[]
 ```
 
 </Accordion>
@@ -448,27 +435,21 @@ The tag to create
 
 <Property required={false} deprecated={false} name={"id"} type={"string"}>
 
+<span>Example: `"tz4a98xxat96iws9zmbrgj3a"`</span>
 
-
-<span>Example:  `"tz4a98xxat96iws9zmbrgj3a"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
 <Property required={false} deprecated={false} name={"userId"} type={"string"}>
 
+<span>Example: `"q6jy42jq92xypbao731oj7x8"`</span>
 
-
-<span>Example:  `"q6jy42jq92xypbao731oj7x8"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
 <Property required={true} deprecated={false} name={"name"} type={"string"}>
-
-
 
 </Property>
 
@@ -480,19 +461,19 @@ Query
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `200` | Successful |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `200`       | Successful        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X POST "http://briefkastenhq.com/tags" \
+curl -X POST "https://briefkastenhq.com/tags" \
   -d '{
   "id": "tz4a98xxat96iws9zmbrgj3a",
   "userId": "q6jy42jq92xypbao731oj7x8",
@@ -503,8 +484,6 @@ curl -X POST "http://briefkastenhq.com/tags" \
 <Tabs items={["200"]}>
 
 <Tab value={"200"}>
-
-
 
 ```json title="Example Response"
 {
@@ -520,11 +499,10 @@ curl -X POST "http://briefkastenhq.com/tags" \
 
 ```ts
 export interface Response {
-  id?: string;
-  userId?: string;
-  name: string;
+  id?: string
+  userId?: string
+  name: string
 }
-
 ```
 
 </Accordion>
@@ -551,33 +529,29 @@ Tag ID to delete
 
 <Property required={false} deprecated={false} name={"id"} type={"string"}>
 
+<span>Example: `"cjld2cjxh0000qzrmn831i7rn"`</span>
 
-
-<span>Example:  `"cjld2cjxh0000qzrmn831i7rn"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `204` | No Content |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `204`       | No Content        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X DELETE "http://briefkastenhq.com/tags" \
+curl -X DELETE "https://briefkastenhq.com/tags" \
   -d '{
   "id": "cjld2cjxh0000qzrmn831i7rn"
 }'
 ```
-
-
 
 </APIExample>
 
@@ -597,19 +571,19 @@ Query
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `200` | Successful |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `200`       | Successful        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X GET "http://briefkastenhq.com/categories"
+curl -X GET "https://briefkastenhq.com/categories"
 ```
 
 <Tabs items={["200"]}>
@@ -638,18 +612,17 @@ List of categories results
  * List of categories results
  */
 export type Response = {
-  id?: string;
-  userId?: string;
+  id?: string
+  userId?: string
   /**
    * Name of your category
    */
-  name: string;
+  name: string
   /**
    * Description for the category
    */
-  description?: string;
-}[];
-
+  description?: string
+}[]
 ```
 
 </Accordion>
@@ -676,21 +649,17 @@ The category to create
 
 <Property required={false} deprecated={false} name={"id"} type={"string"}>
 
+<span>Example: `"pfh0haxfpzowht3oi213cqos"`</span>
 
-
-<span>Example:  `"pfh0haxfpzowht3oi213cqos"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
 <Property required={false} deprecated={false} name={"userId"} type={"string"}>
 
+<span>Example: `"nc6bzmkmd014706rfda898to"`</span>
 
-
-<span>Example:  `"nc6bzmkmd014706rfda898to"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
@@ -714,19 +683,19 @@ Query
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `200` | Successful |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `200`       | Successful        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X POST "http://briefkastenhq.com/categories" \
+curl -X POST "https://briefkastenhq.com/categories" \
   -d '{
   "id": "pfh0haxfpzowht3oi213cqos",
   "userId": "nc6bzmkmd014706rfda898to",
@@ -738,8 +707,6 @@ curl -X POST "http://briefkastenhq.com/categories" \
 <Tabs items={["200"]}>
 
 <Tab value={"200"}>
-
-
 
 ```json title="Example Response"
 {
@@ -756,18 +723,17 @@ curl -X POST "http://briefkastenhq.com/categories" \
 
 ```ts
 export interface Response {
-  id?: string;
-  userId?: string;
+  id?: string
+  userId?: string
   /**
    * Name of your category
    */
-  name: string;
+  name: string
   /**
    * Description for the category
    */
-  description?: string;
+  description?: string
 }
-
 ```
 
 </Accordion>
@@ -794,33 +760,29 @@ Category ID to delete
 
 <Property required={false} deprecated={false} name={"id"} type={"string"}>
 
+<span>Example: `"cjld2cjxh0000qzrmn831i7rn"`</span>
 
-
-<span>Example:  `"cjld2cjxh0000qzrmn831i7rn"`</span>
-
-<span>Format:  `"cuid"`</span>
+<span>Format: `"cuid"`</span>
 
 </Property>
 
-| Status code | Description |
-| ----------- | ----------- |
-| `204` | No Content |
-| `401` | Unauthorized |
-| `403` | Forbidden |
-| `429` | Too Many Requests |
+| Status code | Description       |
+| ----------- | ----------------- |
+| `204`       | No Content        |
+| `401`       | Unauthorized      |
+| `403`       | Forbidden         |
+| `429`       | Too Many Requests |
 
 </APIInfo>
 
 <APIExample>
 
 ```bash title="curl"
-curl -X DELETE "http://briefkastenhq.com/categories" \
+curl -X DELETE "https://briefkastenhq.com/categories" \
   -d '{
   "id": "cjld2cjxh0000qzrmn831i7rn"
 }'
 ```
-
-
 
 </APIExample>
 
