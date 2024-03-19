@@ -2,9 +2,8 @@
   "name": "briefkasten-docs",
   "description": "Briefkasten Documentation - Fumadocs",
   "author": "ndom91 <yo@ndo.dev>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
-  "type": "module",
   "keywords": [
     "next.js",
     "prisma",

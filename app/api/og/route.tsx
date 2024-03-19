@@ -1,12 +1,7 @@
-/* eslint-disable react/no-unknown-property -- Tailwind CSS `tw` property */
 import { ImageResponse } from "next/og"
-import type { NextRequest } from "next/server"
+import { type NextRequest } from "next/server"
 
 export const runtime = "edge"
-
-const bold = fetch(new URL("./inter-bold.woff", import.meta.url)).then((res) =>
-  res.arrayBuffer(),
-)
 
 const foreground = "hsl(0 0% 98%)"
 const mutedForeground = "hsl(0 0% 63.9%)"
@@ -22,11 +17,6 @@ export async function GET(request: NextRequest): Promise<ImageResponse> {
       title: title ?? "Briefkasten",
       description: description ?? "Read-it-later Bookmarks and RSS Reader",
     }),
-    {
-      width: 1200,
-      height: 630,
-      fonts: [{ name: "Inter", data: await bold, weight: 700 }],
-    },
   )
 }
 
@@ -43,25 +33,25 @@ function OG({
         color: foreground,
         background,
       }}
-      tw="flex flex-col w-full h-full p-12"
+      className="flex flex-col p-12 w-full h-full"
     >
       <div
         style={{
           background:
             "linear-gradient(to right bottom, rgb(150, 200, 255), rgb(200, 100, 255))",
         }}
-        tw="flex flex-col justify-center rounded-2xl p-4 shadow-2xl shadow-purple-600"
+        className="flex flex-col justify-center p-4 rounded-2xl shadow-2xl shadow-purple-600"
       >
         <div
-          tw="flex flex-col rounded-2xl p-12"
+          className="flex flex-col p-12 rounded-2xl"
           style={{
             border: "1px rgba(156,163,175,0.3)",
             background,
           }}
         >
-          <p tw="font-bold text-6xl">{title}</p>
+          <p className="text-6xl font-bold">{title}</p>
           <p
-            tw="text-4xl"
+            className="text-4xl"
             style={{
               color: mutedForeground,
             }}
@@ -71,7 +61,7 @@ function OG({
         </div>
       </div>
 
-      <div tw="flex flex-row items-center mt-auto p-4">
+      <div className="flex flex-row items-center p-4 mt-auto">
         <svg
           fill="currentColor"
           height="60"
@@ -88,7 +78,7 @@ function OG({
           <path d="M3 5h4" />
           <path d="M17 19h4" />
         </svg>
-        <p tw="font-bold ml-4 text-4xl">ndom91</p>
+        <p className="ml-4 text-4xl font-bold">ndom91</p>
       </div>
     </div>
   )

@@ -16,6 +16,7 @@ import app6 from "../public/screenshots/app6.png"
 export const FeatureScroll = () => {
   function replaceState(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     e.preventDefault()
+    // @ts-expect-error - Shh, its fine. Anchor elements have hrefs.
     history.replaceState({}, "", e.target?.href)
   }
 
@@ -26,7 +27,7 @@ export const FeatureScroll = () => {
 
     if (currentHash) {
       const track = document.querySelector(".track ul")!
-      const initialOffset = document.getElementById("one")?.offsetLeft!
+      const initialOffset = document.getElementById("one")?.offsetLeft ?? 0
       const element = document.getElementById(currentHash)
 
       if (element) {
