@@ -9,7 +9,7 @@ export default function HomePage() {
     <Layout {...layoutOptions}>
       <div className="overflow-hidden">
         <main
-          className={`overflow-hidden container flex flex-col gap-8 justify-start items-center mt-16 text-center homepage`}
+          className={`container flex flex-col gap-8 justify-start items-center mt-16 text-center homepage`}
         >
           <HeroImage />
           <div className="flex overflow-hidden relative flex-col mt-8 w-full border-b-4 md:max-w-full border-neutral-600 max-w-[20rem] sm:max-w-[25rem] md:w-[35rem] dark:border-neutral-500">
