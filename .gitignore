@@ -1,1 +1,6 @@
 node_modules
+.map*
+tsbuildinfo
+.next*
+next-env.d.ts
+.vercel*
