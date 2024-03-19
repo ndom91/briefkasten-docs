@@ -13,7 +13,7 @@ head:
 
 # API
 
-Briefkasten comes with a REST API reachable at `https://briefkasten.vercel.app/api/**`. These are based on [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) and the code can be found under `/src/pages/api/**/*`.
+Briefkasten comes with a REST API reachable at `https://briefkastenhq.com/api/**`. These are based on [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) and the code can be found under `/src/pages/api/**/*`.
 
 ## Authentication
 
@@ -21,7 +21,7 @@ To authenticate to these routes, you must pass the user API Token as the `Author
 
 ```js{9-11}
 const result = await axios.post(
-  'https://briefkasten.vercel.app/api/bookmarks',
+  'https://briefkastenhq.com/api/bookmarks',
   {
     url: 'https://reddit.com',
     tags: 'web',

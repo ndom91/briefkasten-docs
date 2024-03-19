@@ -26,7 +26,7 @@ We promise to do our best to always run the cloud instance without any sort of l
 
 ## Briefkasten Cloud
 
-If you want to use the cloud version of Briefkasten, just visit [briefkasten.vercel.app](https://briefkasten.vercel.app) and signin with any of the available providers (Google OAuth, Github OAuth, Email Magic Link).
+If you want to use the cloud version of Briefkasten, just visit [briefkastenhq.com](https://briefkastenhq.com) and signin with any of the available providers (Google OAuth, Github OAuth, Email Magic Link).
 
 As stated above, this cloud version is completely free and without any sort of limits, however we do reserve the right to end this at any time. It is after all just a side-project of mine ([`ndom91`](https://ndo.dev)), which I am more than happy to share with the world, however!
 

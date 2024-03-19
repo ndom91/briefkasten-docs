@@ -45,7 +45,7 @@
               clip-rule="evenodd"></path>
           </svg>
         </a>
-        <a href="https://briefkasten.vercel.app/?utm_source=docs&utm_medium=hero" target="_blank"
+        <a href="https://briefkastenhq.com/?utm_source=docs&utm_medium=hero" target="_blank"
           class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-200 rounded-lg transition dark:text-white focus:ring-4 focus:ring-gray-100 bg-slate-700 dark:hover:bg-slate-800 dark:focus:ring-gray-800 hover:bg-slate-900">
           Start
           <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
