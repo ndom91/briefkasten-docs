@@ -3,7 +3,7 @@
   "root": true,
   "pages": [
     "index",
-    "--- Setup ---",
+    "---Getting Started---",
     "usage",
     "development",
     "database",

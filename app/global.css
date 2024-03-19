@@ -551,3 +551,10 @@ html.dark .hero-text .pops {
     scale: var(--s2);
   }
 }
+
+/* Sidebar Tweaks */
+
+aside div[data-radix-scroll-area-viewport] p {
+  font-family: var(--font-google-display);
+  font-size: 1.2rem;
+}

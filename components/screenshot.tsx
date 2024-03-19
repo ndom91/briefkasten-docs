@@ -1,5 +1,5 @@
-import { cn } from "@/utils/cn"
 import Image from "next/image"
+import { cn } from "@/utils/cn"
 
 type ScreenshotProps = {
   src: string
@@ -27,8 +27,8 @@ export function Screenshot({
           src={src}
           alt={alt}
           className={cn(
-            "m-0 object-cover object-top block w-full h-full select-none bg-white rounded-md",
-            full ? "w-full" : "ring-1 ring-gray-200",
+            "m-0 object-cover object-top block w-full h-full select-none rounded-lg outline-red-500",
+            full ? "w-full" : "ring-2 dark:ring-neutral-800 ring-gray-200",
           )}
         />
       </div>
