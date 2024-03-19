@@ -1,6 +1,6 @@
 {
   "name": "briefkasten-docs-vitepress",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vitepress documentation page for the Briefkasten Bookmarking App.",
   "main": "index.js",
   "scripts": {
