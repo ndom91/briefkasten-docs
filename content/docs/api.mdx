@@ -3,24 +3,30 @@ title: Overview
 icon: Globe
 ---
 
-Briefkasten comes with a REST API reachable at `https://briefkastenhq.com/api/**`. These are based on [Next.js API Routes](https://nextjs.org/docs/api-routes/introduction) and the code can be found under `/src/pages/api/**/*`.
+Briefkasten comes with a REST API reachable at `https://briefkastenhq.com/api/v1/**`. These are based on [SvelteKit `+server` Routes](https://kit.svelte.dev/docs/routing#server) and the code can be found in the [monorepo](https://github.com/ndom91/sveltekasten) at `/apps/web/src/routes/api/v1/*`.
 
 ## Authentication
 
-To authenticate to these routes, you must pass the user API Token as the `Authorization` Header. For example:
+You can get your API token from the [Settings page](/settings).
 
-```js {9-11}
-const result = await axios.post(
-  "https://briefkastenhq.com/api/bookmarks",
-  {
+import APIToken from "../../public/screenshots/api-token.png"
+
+<Screenshot src={APIToken} alt="Settings -> API Token" />
+
+Then you can use your token to authenticate by passing it in the `Authorization` Header.
+
+```ts title="createBookmark.ts"
+const response = await fetch("https://briefkastenhq.com/api/v1/bookmarks", {
+  method: "POST"
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: "Bearer <TOKEN>", // [!code highlight]
+  },
+  body: JSON.stringify({
     url: "https://reddit.com",
-    tags: "web",
     title: "Reddit",
-  },
-  {
-    headers: {
-      Authorization: "ABC123DEF456",
-    },
-  },
-)
+  })
+})
+
+const body = await response.json()
 ```

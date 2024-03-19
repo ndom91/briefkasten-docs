@@ -8,9 +8,9 @@ To begin local development, you'll need a copy of the code and a local database.
 
 The code is setup as a monorepo and contains the following pieces.
 
-1. The web app
-2. The backend workers and additional API
-3. The (shared) Prisma database package
+1. `apps/web` - The web app
+2. `apps/backend` - The backend workers and additional API
+3. `packages/db` - The (shared) Prisma database package
 
 ### 1. Clone the repository
 
@@ -21,28 +21,40 @@ cd briefkasten
 
 ### 2. Dependencies
 
+In the root of the repository, running this command will install the dependencies for the entier workspaces, i.e. all three packages / applications.
+
 ```bash
 pnpm install
 ```
 
-This will install the dependencies for the entier workspaces, i.e. all three packages.
-
 ### 3. Environment variables
+
+Next, you'll want to setup the environment variables. Because this is a monorepo, there are 3 different environment variables files you'll need to make copies of.
+
+Run the following command for these files
 
 ```bash
 cp .env.example .env
 vim .env
 ```
 
-Now that you have the `.env` file open in an editor, you'll want to modify the following values:
+1. `apps/web/.env.example`
+1. `apps/backend/.env.example`
+1. `packages/db/.env.example`
 
-| Variable       | Value                                                                    |
-| :------------- | :----------------------------------------------------------------------- |
-| `DATABASE_URL` | `postgres://username:password@localhost:5432/postgres`                   |
-| `AUTH_URL`     | Set to your current local development URL (i.e. `http://localhost:3000`) |
-| `AUTH_SECRET`  | Set to the output of `openssl rand -hex 33`                              |
+Open your `.env` files in an editor and modify at least the following values. These are the required values.
 
-If you want to setup an OAuth login provider, you will also need to add the appropriate environment variables. Like `AUTH_GITHUB_ID`/`AUTH_GITHUB_SECRET` for the GitHub provider. For more login methods, please check out the [Auth.js docs](https://authjs.dev).
+| Directory | Variable       | Value                                                                             |
+| :-------- | :------------- | :-------------------------------------------------------------------------------- |
+| Database  | `DATABASE_URL` | `postgres://username:password@localhost:5432/postgres`                            |
+| Web       | `AUTH_URL`     | Set to your current local development URL (i.e. `http://localhost:3000`)          |
+| Web       | `AUTH_SECRET`  | Set to the output of `openssl rand -hex 33`                                       |
+| Web       | `WORKER_URL`   | Set the URL of the `apps/backend` application, it listens on port 8000 by default |
+| Backend   | `JWT_SECRET`   | The same secret as you set in your web's `AUTH_SECRET`                            |
+
+Next, you'll want to setup at least 1 [Authentication Provider](https://authjs.dev) with Auth.js-related environment variables. We support OAuth providers like Github, Google, Azure, Keycloak and Authentik as well as the Email "Magic Link" provider out of the box. See the `apps/web/.env.example` for the various environment variables you can set.
+
+In addition, you can tell the backend to save the bookmarks images to a [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/) bucket instead of to the disk, by filling in the `R2_*` environment variables in the backends `apps/backend/.env` file.
 
 ## Database
 
@@ -52,7 +64,9 @@ Next, to work on the application locally, we'll want to setup a PostgreSQL datab
 docker-compose up -d postgres
 ```
 
-Next, once the database container is up and running, we need to run the initial prisma migrations to apply our schema to the database.
+// TODO: Setup automatic initial migration
+
+Once the database container is up and running, we need to run the initial prisma migrations to apply our schema to the database.
 
 ```bash
 pnpm exec prisma migrate dev
@@ -62,15 +76,10 @@ npx prisma migrate
 
 ## Dev Server
 
-Once you've got the database prepared and all dependencies installed, you can start the dev server in the root of the repository.
+Once you've got the database prepared and all dependencies installed, you can start the dev servers by running the `dev` npm script in the root of the repository.
 
 ```bash
 pnpm dev
 ```
 
 This will execute both the web app as well as the backend development servers in parallel.
-
-<Callout>
-  Prisma comes with a little development database viewer, which is available via
-  the npm script `db:studio` in `packages/db`.
-</Callout>

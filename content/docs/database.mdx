@@ -9,8 +9,14 @@ import { Database } from "@phosphor-icons/react/dist/ssr"
 The Briefkasten database is based on PostgreSQL and is managed using Prisma. The database schema is defined in the `schema.prisma` file and is used to generate the database schema and client. The database lives in its own packages in the monorepo, under `packages/db/*`, where the code is shared among both the webapp and api server.
 
 <Callout icon={<Database size={24} />} title="Database Diagram">
-![ERD Diagram](/screenshots/erd1.png)
+
+// TODO: Update ERD diagram, mermaid?
 
 The full database schema can be found in the repository under [`/prisma/schema.prisma`](https://github.com/ndom91/briefkasten/blob/main/prisma/schema.prisma)
 
+</Callout>
+
+<Callout>
+  Prisma comes with a little development database viewer, which is available via
+  the npm script `db:studio` in `packages/db`.
 </Callout>
