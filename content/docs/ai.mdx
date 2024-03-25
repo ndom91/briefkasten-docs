@@ -1,0 +1,24 @@
+---
+title: AI Features
+---
+
+All of the available AI / LLM-based features are in **beta** quality and subject to change. My goal is to get these to run locally in the users browser and not require any API keys / credits. Running these models locally brings some advantages, like better privacy and potentially less latency. However, there are also some significant downsides at the moment - since the users machines are often much less powerful than the machines running OpenAI, Huggingface, etc. workloads, the task often takes much langer.
+
+That being said, we currently have the following features available to test:
+
+1. Text-to-speech (in-browser + API)
+2. Summarization (in-browser)
+
+import AISettings from "../../public/screenshots/ai-settings.png"
+
+<Screenshot src={AISettings} alt="AI Settings" />
+
+### Text-to-speech (TTS)
+
+The TTS feature is available both as an in-browser model as well as as an API service. We're piggy-backing on the Bing TTS service which exposes a websocket endpoint. This option allows for generating audio of your articles at a very reasonable speed. In the browser, we're using the [`Xenova/speecht5_tts`](https://huggingface.co/Xenova/speecht5_tts) model.
+
+You can toggle between the two modes in the AI Settings panel as shown in the screenshot above. If you choose the "Server" method, you can also customize the voice being used to generate the audio.
+
+### Summarization
+
+The summarization feature is available only in-browser at the moment and is leveraging [`Xenova/distilbart-cnn-6-6`](https://huggingface.co/Xenova/distilbart-cnn-6-6) model.

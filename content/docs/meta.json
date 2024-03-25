@@ -5,11 +5,14 @@
     "index",
     "---Getting Started---",
     "usage",
-    "development",
-    "database",
+    "ai",
+    "extension",
     "---API---",
     "api",
     "api-reference",
+    "---Technical---",
+    "database",
+    "development",
     "---Self Hosting---",
     "...self-hosting"
   ]

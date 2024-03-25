@@ -1,0 +1,48 @@
+---
+title: Extension
+---
+
+The official Extension is available on the [Chrome Extension Store](https://chrome.google.com/webstore/detail/briefkasten-bookmarks/aighkhofochfjejmhjfkgjfpkpgmjlnd). After installing it, you will be greeted with an options screen. In which you must enter two pieces of information.
+
+1. The Base URL of your Briefkasten instance. Enter the full URL of your selfhosted instance. If you're using the cloud version, please enter `https://briefkastenhq.com`.
+2. Your API Token. This can be found in the settings page. Click on your profile picture in the bottom left of the application and select "Settings", or use this link and [click here](https://briefkastenhq.com/settings).
+
+After you've set these two options and clicked "Save", the extension will double check that it can make authenticated calls to the API and display a green check mark and the words "Saved" if everything is okay!
+
+import Extension from "../../public/screenshots/extension1.png"
+
+<Screenshot src={Extension} alt="Extension" />
+
+## Extension Usage
+
+The Extension comes with the keyboard shortcut **<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd>** setup by default. This shortcut will launch the extension overlay and auto-fill any page title and description it can parse. Just click "Save" and you'll add the current tab to your Briefkasten!
+
+import Extension2 from "../../public/screenshots/extension2.png"
+
+<Screenshot src={Extension2} alt="Extension" />
+
+The extension also adds an Omnibox (URL Bar) prefix called `bk` to your Chrome instance. For example, if you type `bk ` (i.e. `bk<space>`) and a search term, it will search through your bookmarks and return a list of matching Bookmarks and their URLs which you can simply navigate through (by pressing <kbd>↑</kbd> or <kbd>↓</kbd>) and press <kbd>Enter</kbd> to visit. For example:
+
+# Android (HTTP Shortcuts)
+
+You can also quickly add bookmarks to your Briefkasten instance from your mobile phone via a free app called **HTTP Request Shortcuts**. This app will create an entry in your "quick share" menu which you can configure to make an HTTP request upon selection. In this case, we'll configure it to make a `POST` request to our Briefkasten API.
+
+Available via:
+
+- [Play Store](https://play.google.com/store/apps/details?id=ch.rmy.android.http_shortcuts&hl=en_US&gl=US)
+- [F-Droid](https://f-droid.org/en/packages/ch.rmy.android.http_shortcuts/)
+
+Once downloaded, you can setup Briefkasten as a shortcut like so:
+
+1. Download the Briefkasten Shortcut [template](https://github.com/ndom91/briefkasten/blob/main/public/briefkasten_shortcut.json)
+2. Open HTTP Shortcuts, go to the 3-dot menu in the top-right and select `Import/Export` and select `Import from file` and select this `.json` template file you've just downloaded.
+3. Select the 3-dot menu again and select `Variables` this time.
+4. Edit the values of `briefkasten_instance`, `briefkasten_tag` and `briefkasten_api_token`.
+
+After this is setup, any time you press "Share" within Android, you'll have a new share target titled "Briefkasten".
+
+<Callout type="info" title="Tip">
+  For example, I like to set a default tag (`mobile`) in my HTTP Shortcuts
+  setup. Therefore I can easily identify bookmarks that I've created from my
+  phone next time I'm back in the application.
+</Callout>

@@ -10,7 +10,6 @@ The code is setup as a monorepo and contains the following pieces.
 
 1. `apps/web` - The web app
 2. `apps/backend` - The backend workers and additional API
-3. `packages/db` - The (shared) Prisma database package
 
 ### 1. Clone the repository
 
@@ -21,7 +20,7 @@ cd briefkasten
 
 ### 2. Dependencies
 
-In the root of the repository, running this command will install the dependencies for the entier workspaces, i.e. all three packages / applications.
+In the root of the repository, running this command will install the dependencies for the entier workspaces, i.e. both packages / applications.
 
 ```bash
 pnpm install
@@ -40,38 +39,27 @@ vim .env
 
 1. `apps/web/.env.example`
 1. `apps/backend/.env.example`
-1. `packages/db/.env.example`
 
 Open your `.env` files in an editor and modify at least the following values. These are the required values.
 
-| Directory | Variable       | Value                                                                             |
-| :-------- | :------------- | :-------------------------------------------------------------------------------- |
-| Database  | `DATABASE_URL` | `postgres://username:password@localhost:5432/postgres`                            |
-| Web       | `AUTH_URL`     | Set to your current local development URL (i.e. `http://localhost:3000`)          |
-| Web       | `AUTH_SECRET`  | Set to the output of `openssl rand -hex 33`                                       |
-| Web       | `WORKER_URL`   | Set the URL of the `apps/backend` application, it listens on port 8000 by default |
-| Backend   | `JWT_SECRET`   | The same secret as you set in your web's `AUTH_SECRET`                            |
+| Directory     | Variable       | Value                                                                   |
+| :------------ | :------------- | :---------------------------------------------------------------------- |
+| Web + Backend | `DATABASE_URL` | `postgres://username:password@localhost:5432/postgres`                  |
+| Web           | `AUTH_URL`     | Your current URL (i.e. `http://localhost:3000`)                         |
+| Web           | `AUTH_SECRET`  | Set to the output of `openssl rand -hex 33`                             |
+| Web           | `WORKER_URL`   | URL of the `backend` application, (i.e. `http://localhost:8000/api/v0`) |
+| Backend       | `JWT_SECRET`   | The same secret as you set in your web's `AUTH_SECRET`                  |
 
 Next, you'll want to setup at least 1 [Authentication Provider](https://authjs.dev) with Auth.js-related environment variables. We support OAuth providers like Github, Google, Azure, Keycloak and Authentik as well as the Email "Magic Link" provider out of the box. See the `apps/web/.env.example` for the various environment variables you can set.
 
-In addition, you can tell the backend to save the bookmarks images to a [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/) bucket instead of to the disk, by filling in the `R2_*` environment variables in the backends `apps/backend/.env` file.
+In addition, you can tell the backend to save the bookmarks images to a [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/) bucket instead of to the disk, by filling in the `BUCKET_*` environment variables in the backends `apps/backend/.env` file. I only tested with Cloudflare R2, but any S3 compatible object store should work.
 
 ## Database
 
 Next, to work on the application locally, we'll want to setup a PostgreSQL database. Check out the `postgres` service in the `docker-compose.yml` file in the root of the `ndom91/briefkasten` repository. We can bring up that database with the following command.
 
 ```bash
-docker-compose up -d postgres
-```
-
-// TODO: Setup automatic initial migration
-
-Once the database container is up and running, we need to run the initial prisma migrations to apply our schema to the database.
-
-```bash
-pnpm exec prisma migrate dev
-# or
-npx prisma migrate
+docker-compose up --profile postgres database
 ```
 
 ## Dev Server
@@ -82,4 +70,4 @@ Once you've got the database prepared and all dependencies installed, you can st
 pnpm dev
 ```
 
-This will execute both the web app as well as the backend development servers in parallel.
+This will execute both the web app as well as the backend development servers in parallel. The web app will be available at `http://localhost:3000` and the backend at `http://localhost:8000/api/v0`, unless you changed the default URLs.
