@@ -1,0 +1,69 @@
+---
+title: Setup
+---
+
+You can self-host Briefkasten with Docker and docker-compose. The setup is split into two docker-compose files, depending on how much you want to self-host, and how many cloud services you'd like to use.
+
+1. `docker-compose.yml` - Contains the frontend and backend of the application.
+2. `docker-compose.storage.yml` - Contains a PostgreSQL container as well as a Minio object store container.
+
+## Quick Start
+
+1. Clone the repository to your server.
+
+```bash
+git clone https://github.com/ndom91/briefkasten.git
+```
+
+2. Setup the environment variables.
+
+Make a copy of the two `.env.example` files and fill in at least the required variables with your favorite text editor. The example files have annotations for the variables.
+
+1. `apps/web/.env.example`
+2. `apps/backend/.env.example`
+
+| Directory     | Variable       | Value                                                                   |
+| :------------ | :------------- | :---------------------------------------------------------------------- |
+| Web + Backend | `DATABASE_URL` | `postgres://username:password@localhost:5432/postgres`                  |
+| Web           | `AUTH_URL`     | Your current URL (i.e. `http://localhost:3000`)                         |
+| Web           | `AUTH_SECRET`  | Set to the output of `openssl rand -hex 33`                             |
+| Web           | `WORKER_URL`   | URL of the `backend` application, (i.e. `http://localhost:8000/api/v0`) |
+| Backend       | `JWT_SECRET`   | The same secret as you set in your web's `AUTH_SECRET`                  |
+
+3. If you want to use the storage containers, you'll want to change some of the default credentials in the `docker-compose.storage.yml` file. For more details, check out the [Object Storage](#object-storage) and [Database](#database) sections below.
+
+4. Finally, you can spin up the containers
+
+Only the application containers:
+
+```bash
+docker-compose up -d
+```
+
+The application containers and storage containers:
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.storage.yml up -d
+```
+
+5. Now your application and database should be up and running at the default `http://localhost:3000`!
+
+You can continue by putting `localhost:3000` behind a reverse proxy (i.e. `nginx` or `traefik`). There is an example `nginx` configuration file in `/configs/nginx-example.conf`.
+
+## Parts
+
+### Database
+
+To setup the PostgreSQL database, checkout out the `postgres` service in the `docker-compose.storage.yml` file. We can bring up that database separately with the following command.
+
+```bash
+docker-compose -f docker-compose.storage.yml up database
+```
+
+### Object Storage
+
+The default object storage provider is Cloudflare R2 as it has a free plan with 10GB storage, no egress fees. But if you'd like to self-host this, I included a [minio](https://min.io)-based setup in the `docker-compose.storage.yml` file. You can start it separately with the following command. Make sure to update the `MINIO_ROOT_USER` and `MINIO_ROOT_PASSWORD` environment variables in the `docker-compose.storage.yml` file, this will be your bucket access key and secret key, respectively, as well as the login for the minio console (available in the container at port `9001`).
+
+```bash
+docker-compose -f docker-compose.storage.yml up mc minio
+```

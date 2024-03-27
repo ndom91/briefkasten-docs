@@ -38,7 +38,7 @@ vim .env
 ```
 
 1. `apps/web/.env.example`
-1. `apps/backend/.env.example`
+2. `apps/backend/.env.example`
 
 Open your `.env` files in an editor and modify at least the following values. These are the required values.
 
@@ -52,14 +52,24 @@ Open your `.env` files in an editor and modify at least the following values. Th
 
 Next, you'll want to setup at least 1 [Authentication Provider](https://authjs.dev) with Auth.js-related environment variables. We support OAuth providers like Github, Google, Azure, Keycloak and Authentik as well as the Email "Magic Link" provider out of the box. See the `apps/web/.env.example` for the various environment variables you can set.
 
-In addition, you can tell the backend to save the bookmarks images to a [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/) bucket instead of to the disk, by filling in the `BUCKET_*` environment variables in the backends `apps/backend/.env` file. I only tested with Cloudflare R2, but any S3 compatible object store should work.
+In addition, if you want the application to generate images and save them, you'll have to provide an S3-compatible object store. I've tested and used [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/) and provided a [minio](https://min.io) container setup in the `docker-compose.yml`. To set this up, you'll have to fill in the `BUCKET_*` environment variables in the backends `apps/backend/.env` file.
+
+## Object Storage
+
+The default object storage provider is Cloudflare R2 as it has a free plan with 10GB storage, no egress fees. But if you'd like to self-host this, I included a [minio](https://min.io)-based setup in the `docker-compose.storage.yml` file. You can start it with the following command. Make sure to update the `MINIO_ROOT_USER` and `MINIO_ROOT_PASSWORD` environment variables in the `docker-compose.storage.yml` file, this will be your bucket access key and secret key, respectively, as well as the login for the minio console (available in the container at port `9001`).
+
+```bash
+docker-compose -f docker-compose.storage.yml up mc minio
+```
+
+For more information, check out the [self-hosting object storage](/docs/self-hosting#object-storage) section.
 
 ## Database
 
-Next, to work on the application locally, we'll want to setup a PostgreSQL database. Check out the `postgres` service in the `docker-compose.yml` file in the root of the `ndom91/briefkasten` repository. We can bring up that database with the following command.
+Next, to work on the application locally, we'll want to setup a PostgreSQL database. Check out the `postgres` service in the `docker-compose.storage.yml` file in the root of the `ndom91/briefkasten` repository. We can bring up that database with the following command.
 
 ```bash
-docker-compose up --profile postgres database
+docker-compose -f docker-compose.storage.yml up database
 ```
 
 ## Dev Server
