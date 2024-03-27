@@ -49,7 +49,7 @@ export function JoinCTA() {
           </div>
         </div>
         <svg
-          className="overflow-visible absolute bottom-0 left-0 text-black transform dark:text-white translate-y-[460px] -z-[1]"
+          className="overflow-visible absolute bottom-0 left-0 text-black transform dark:text-white min-w-[1400px] translate-y-[460px] -z-[1]"
           viewBox="0 0 800 800"
         >
           <g transform="matrix(1,0,0,1,0,0)">
