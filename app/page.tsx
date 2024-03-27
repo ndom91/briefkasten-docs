@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <Layout {...layoutOptions}>
       <main
-        className={`container flex flex-col gap-64 justify-start items-center mt-16 text-center homepage`}
+        className={`overflow-x-hidden mx-auto w-full max-w-[1700px] px-4 sm:px-24 md:px-[100x] lg:px-[150px] flex flex-col gap-64 justify-start items-center mt-16 text-center homepage`}
       >
         <Hero />
         <BentoFeatures />

@@ -1,12 +1,12 @@
 export function JoinCTA() {
   return (
-    <section className="relative bg-white w-[100vw] dark:bg-neutral-900">
-      <div className="relative items-center py-12 px-5 mx-auto w-full md:px-12 lg:py-24 lg:px-24 shadow-xs max-w-[1400px]">
-        <div className="grid relative grid-cols-3">
-          <div className="flex col-span-1 items-center">
-            <div className="p-8 rounded-full bg-neutral-950">
+    <section className="relative bg-white rounded-sm w-[100vw] dark:bg-neutral-900">
+      <div className="relative items-center py-12 px-12 mx-auto w-full md:px-12 lg:py-24 lg:px-24 shadow-xs max-w-[1400px]">
+        <div className="grid relative grid-cols-2 grid-flow-row md:grid-cols-3">
+          <div className="flex col-span-1 justify-center items-center">
+            <div className="p-8 w-2/3 rounded-full bg-neutral-950 md:w-fit">
               <svg
-                height="196"
+                width="196"
                 fill="none"
                 aria-hidden="true"
                 stroke="#fff"
@@ -14,7 +14,7 @@ export function JoinCTA() {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
-                className=""
+                className="w-full"
               >
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
               </svg>
@@ -55,7 +55,7 @@ export function JoinCTA() {
           <g transform="matrix(1,0,0,1,0,0)">
             <circle
               r="160"
-              cx="127"
+              cx="160"
               cy="400"
               strokeWidth="6"
               stroke="currentColor"
@@ -64,7 +64,7 @@ export function JoinCTA() {
             ></circle>
             <circle
               r="190"
-              cx="127"
+              cx="160"
               cy="400"
               strokeWidth="6"
               stroke="currentColor"
@@ -73,7 +73,7 @@ export function JoinCTA() {
             ></circle>
             <circle
               r="220"
-              cx="127"
+              cx="160"
               cy="400"
               strokeWidth="6"
               stroke="currentColor"
@@ -82,7 +82,7 @@ export function JoinCTA() {
             ></circle>
             <circle
               r="250"
-              cx="127"
+              cx="160"
               cy="400"
               strokeWidth="6"
               stroke="currentColor"

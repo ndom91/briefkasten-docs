@@ -118,7 +118,7 @@ html.dark body:has(main.homepage)::before {
 /* Bookmarks, feeds, notes styling */
 .hero h1 {
   margin-block: 1rem;
-  font-size: clamp(5rem, 1rem + 6vmin, 7rem);
+  /* font-size: clamp(5rem, 1rem + 6vmin, 7rem); */
   display: inline-flex;
   align-items: flex-start;
   flex-direction: column;
@@ -209,7 +209,7 @@ html.dark body:has(main.homepage)::before {
  **/
 
 .homepage-scroll {
-  --card-width: clamp(800px, 80vmin, 1000px);
+  --card-width: clamp(400px, 80vmin, 1000px);
 }
 
 .homepage-scroll .track {

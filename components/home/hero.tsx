@@ -3,7 +3,7 @@ import { HeroImage } from "@/components/home/hero-image"
 
 export function Hero() {
   return (
-    <div className="flex relative flex-col gap-4 items-center px-8 w-full md:flex-row">
+    <div className="flex relative flex-col gap-4 items-center px-2 w-full md:flex-row lg:px-8">
       <HeroText />
       <HeroImage />
     </div>

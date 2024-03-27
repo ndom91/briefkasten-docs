@@ -42,7 +42,7 @@ export const ScreenshotScroll = () => {
   return (
     <div className="relative my-48 w-screen homepage-scroll">
       <div className="relative mx-auto h-2 max-w-[1400px]">
-        <div className="absolute -top-40 font-extrabold opacity-[0.03] font-heading text-[12rem]">
+        <div className="absolute left-0 -top-40 font-extrabold min-w-[911px] opacity-[0.03] font-heading text-[12rem]">
           Screenshots
         </div>
       </div>
