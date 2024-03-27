@@ -8,11 +8,11 @@ export default function HomePage() {
   return (
     <Layout {...layoutOptions}>
       <main
-        className={`container overflow-hidden flex flex-col gap-8 justify-start items-center mt-16 text-center homepage`}
+        className={`container overflow-hidden flex flex-col gap-64 justify-start items-center mt-16 text-center homepage`}
       >
         <Hero />
-        <ScreenshotScroll />
         <BentoFeatures />
+        <ScreenshotScroll />
       </main>
     </Layout>
   )
