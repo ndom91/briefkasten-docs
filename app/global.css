@@ -118,7 +118,7 @@ html.dark body:has(main.homepage)::before {
 /* Bookmarks, feeds, notes styling */
 .hero h1 {
   margin-block: 1rem;
-  font-size: clamp(5rem, 1rem + 6vmin, 12rem);
+  font-size: clamp(5rem, 1rem + 6vmin, 7rem);
   display: inline-flex;
   align-items: flex-start;
   flex-direction: column;
@@ -233,7 +233,7 @@ html.dark body:has(main.homepage)::before {
   overflow: auto;
   height: 100%;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   scroll-behavior: smooth;
   scroll-padding-inline: calc(50vw - (var(--card-width) * 0.5));
 }
@@ -274,7 +274,7 @@ html.dark body:has(main.homepage)::before {
 
 .homepage-scroll article {
   width: var(--card-width);
-  /* aspect-ratio: 4 / 3; */
+  aspect-ratio: 16 / 9;
   background: transparent;
   /* radial-gradient(circle at center, hsl(0 0% 100% / 0.65), transparent) fixed, */
   /* linear-gradient(hsl(var(--hue) 100% 0% / 0.25), transparent), */
@@ -288,7 +288,7 @@ html.dark body:has(main.homepage)::before {
 }
 
 .homepage-scroll article img {
-  object-fit: cover;
+  object-fit: fit;
 }
 
 .homepage-scroll .track__indicators {

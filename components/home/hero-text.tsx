@@ -14,7 +14,7 @@ export function HeroText() {
           </h1>
         </div>
       </div>
-      <div className="hero-text text-[22vw] md:text-[18vw]">
+      <div className="hero-text text-[5rem] md:text-[clamp(10rem,_15vw_+_1rem,_21rem)]">
         <h1 className="my-8 font-bold tracking-tighter font-heading">
           <div className="px-2">Briefkasten</div>
           <span className="pops">

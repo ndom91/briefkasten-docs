@@ -1,8 +1,8 @@
 export function JoinCTA() {
   return (
-    <section className="relative w-[100vw]">
-      <div className="relative items-center py-12 px-5 mx-auto w-full bg-white md:px-12 lg:py-24 lg:px-24 shadow-xs dark:bg-neutral-900">
-        <div className="grid grid-cols-3">
+    <section className="relative bg-white w-[100vw] dark:bg-neutral-900">
+      <div className="relative items-center py-12 px-5 mx-auto w-full md:px-12 lg:py-24 lg:px-24 shadow-xs max-w-[1400px]">
+        <div className="grid relative grid-cols-3">
           <div className="flex col-span-1 items-center">
             <div className="p-8 rounded-full bg-neutral-950">
               <svg
@@ -32,14 +32,14 @@ export function JoinCTA() {
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://dev.briefkastenhq.com"
+                href="https://dev.briefkastenhq.com/?utm_source=docs&utm_medium=cta&utm_campaign=beta"
                 target="_blank"
                 className="flex justify-center items-center py-4 px-10 w-full text-base font-medium text-center text-white rounded-xl transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none bg-neutral-600 hover:bg-neutral-700 focus:ring-neutral-500"
               >
                 Cloud
               </a>
               <a
-                href="https://docs.briefkastenhq.com/docs/self-hosting"
+                href="https://docs.briefkastenhq.com/docs/self-hosting/?utm_source=docs&utm_medium=cta&utm_campaign=beta"
                 target="_blank"
                 className="flex justify-center items-center py-4 px-10 w-full text-base font-medium text-center bg-transparent rounded-xl border-2 transition duration-500 ease-in-out transform outline-none dark:text-white focus:ring-2 focus:ring-offset-2 focus:outline-none text-neutral-800 border-neutral-500 focus:ring-neutral-500"
               >
@@ -49,7 +49,7 @@ export function JoinCTA() {
           </div>
         </div>
         <svg
-          className="absolute bottom-0 left-0 text-black transform translate-y-1/3 dark:text-white -z-[1]"
+          className="overflow-visible absolute bottom-0 left-0 text-black transform dark:text-white translate-y-[460px] -z-[1]"
           viewBox="0 0 800 800"
         >
           <g transform="matrix(1,0,0,1,0,0)">
@@ -57,7 +57,7 @@ export function JoinCTA() {
               r="160"
               cx="127"
               cy="400"
-              stroke-width="6"
+              strokeWidth="6"
               stroke="currentColor"
               fill="none"
               opacity="0.1"
@@ -66,7 +66,7 @@ export function JoinCTA() {
               r="190"
               cx="127"
               cy="400"
-              stroke-width="6"
+              strokeWidth="6"
               stroke="currentColor"
               fill="none"
               opacity="0.075"
@@ -75,7 +75,7 @@ export function JoinCTA() {
               r="220"
               cx="127"
               cy="400"
-              stroke-width="6"
+              strokeWidth="6"
               stroke="currentColor"
               fill="none"
               opacity="0.05"
@@ -84,7 +84,7 @@ export function JoinCTA() {
               r="250"
               cx="127"
               cy="400"
-              stroke-width="6"
+              strokeWidth="6"
               stroke="currentColor"
               fill="none"
               opacity="0.025"
