@@ -118,7 +118,7 @@ html.dark body:has(main.homepage)::before {
 /* Bookmarks, feeds, notes styling */
 .hero h1 {
   margin-block: 1rem;
-  font-size: clamp(2rem, 1rem + 5vmin, 10rem);
+  font-size: clamp(5rem, 1rem + 6vmin, 12rem);
   display: inline-flex;
   align-items: flex-start;
   flex-direction: column;
@@ -209,8 +209,7 @@ html.dark body:has(main.homepage)::before {
  **/
 
 .homepage-scroll {
-  --card-width: 500px;
-  --card-width: clamp(500px, 80vmin, 400px);
+  --card-width: clamp(800px, 80vmin, 1000px);
 }
 
 .homepage-scroll .track {
@@ -447,10 +446,10 @@ html.dark body:has(main.homepage)::before {
  **/
 
 .hero-text h1 {
-  --font-size: clamp(2rem, 8vw + 1rem, 12rem);
-  margin: 0;
+  --font-size: clamp(2rem, 10vw + 1rem, 18rem);
+  margin-top: 2rem;
   color: black;
-  font-size: var(--font-size);
+  /* font-size: var(--font-size); */
   position: relative;
   display: flex;
   align-items: flex-start;
@@ -476,8 +475,10 @@ html.dark .hero-text h1 {
   pointer-events: none;
 }
 
-html.dark .hero-text .pops {
-  mix-blend-mode: darken !important;
+html.dark {
+  .hero-text .pops {
+    mix-blend-mode: darken !important;
+  }
 }
 
 @keyframes pop {
@@ -530,7 +531,7 @@ html.dark .hero-text .pops {
 
 .hero-text .pop:nth-of-type(4) {
   --x: 85%;
-  --y: 15%;
+  --y: 55%;
   --h: 320;
   --s2: 5;
   --d: -1s;
