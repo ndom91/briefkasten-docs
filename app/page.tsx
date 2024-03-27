@@ -3,6 +3,7 @@ import { layoutOptions } from "./docs/layoutOptions"
 import { Hero } from "@/components/home/hero"
 import { ScreenshotScroll } from "@/components/home/screenshot-scroll"
 import { BentoFeatures } from "@/components/home/bento"
+import { JoinCTA } from "@/components/home/join-cta"
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
       >
         <Hero />
         <BentoFeatures />
+        <JoinCTA />
         <ScreenshotScroll />
       </main>
     </Layout>
