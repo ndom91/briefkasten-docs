@@ -191,8 +191,8 @@ export function BentoFeatures() {
                       Local LLM support
                     </h2>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Want all the latest AI features, but don't want to share
-                      your data? Have your browser run the model on your
+                      Want all the latest AI features, but don&apos;t want to
+                      share your data? Have your browser run the model on your
                       machine!
                     </p>
                   </div>
@@ -306,8 +306,8 @@ export function BentoFeatures() {
                         RSS feeds
                       </h2>
                       <p className="text-gray-700 dark:text-gray-300">
-                        RSS feeds are still a thing! Don't miss any updates from
-                        your favorite blogs and websites
+                        RSS feeds are still a thing! Don&apos;t miss any updates
+                        from your favorite blogs and websites
                       </p>
                     </div>
                   </div>

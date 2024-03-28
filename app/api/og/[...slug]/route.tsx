@@ -50,6 +50,7 @@ function OG({
       }}
     >
       <img
+        alt="Screenshot"
         src={`${origin}/screenshots/app4.png`}
         style={{
           opacity: 0.05,

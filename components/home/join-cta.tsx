@@ -27,7 +27,7 @@ export function JoinCTA() {
             <p className="mt-3 text-base leading-relaxed text-left text-gray-500 dark:text-neutral-100">
               You can try out the new Briefkasten rewrite both in the cloud, as
               well as self-hosted, this time with a much simpler docker setup.
-              There's new features like RSS feed integration, LLM-based
+              There&apos;s new features like RSS feed integration, LLM-based
               text-to-speech and summarization, and much more!
             </p>
             <div className="flex gap-4 mt-6">
