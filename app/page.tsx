@@ -4,6 +4,7 @@ import { Hero } from "@/components/home/hero"
 import { ScreenshotScroll } from "@/components/home/screenshot-scroll"
 import { BentoFeatures } from "@/components/home/bento"
 import { JoinCTA } from "@/components/home/join-cta"
+import { Pricing } from "@/components/home/pricing"
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
         <BentoFeatures />
         <JoinCTA />
         <ScreenshotScroll />
+        <Pricing />
       </main>
     </Layout>
   )

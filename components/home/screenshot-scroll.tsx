@@ -40,7 +40,7 @@ export const ScreenshotScroll = () => {
   }, [params])
 
   return (
-    <div className="relative my-48 w-screen homepage-scroll">
+    <section className="relative mt-48 mb-12 w-screen homepage-scroll">
       <div className="relative mx-auto h-2 max-w-[1400px]">
         <div className="absolute left-0 -top-40 font-extrabold min-w-[911px] opacity-[0.03] font-heading text-[12rem]">
           Screenshots
@@ -102,6 +102,6 @@ export const ScreenshotScroll = () => {
           <a href="#seven" onClick={replaceState} className="indicator"></a>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -21,7 +21,7 @@ export function JoinCTA() {
             </div>
           </div>
           <div className="flex flex-col col-span-2 gap-4 justify-center items-stretch w-full">
-            <h4 className="mt-8 text-4xl font-semibold tracking-tighter leading-none text-left lg:text-5xl dark:text-white text-neutral-600">
+            <h4 className="mt-8 text-4xl font-semibold leading-none text-left lg:text-5xl dark:text-white text-neutral-600 font-display">
               Briefkasten v2 Beta is here!
             </h4>
             <p className="mt-3 text-base leading-relaxed text-left text-gray-500 dark:text-neutral-100">
@@ -34,14 +34,14 @@ export function JoinCTA() {
               <a
                 href="https://dev.briefkastenhq.com/?utm_source=docs&utm_medium=cta&utm_campaign=beta"
                 target="_blank"
-                className="flex justify-center items-center py-4 px-10 w-full text-base font-medium text-center text-white rounded-xl transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none bg-neutral-600 hover:bg-neutral-700 focus:ring-neutral-500"
+                className="flex justify-center items-center py-4 px-10 w-full text-2xl text-center text-white rounded-md transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none bg-neutral-600 font-display hover:bg-neutral-700 focus:ring-neutral-500"
               >
                 Cloud
               </a>
               <a
                 href="https://docs.briefkastenhq.com/docs/self-hosting/?utm_source=docs&utm_medium=cta&utm_campaign=beta"
                 target="_blank"
-                className="flex justify-center items-center py-4 px-10 w-full text-base font-medium text-center bg-transparent rounded-xl border-2 transition duration-500 ease-in-out transform outline-none dark:text-white focus:ring-2 focus:ring-offset-2 focus:outline-none text-neutral-800 border-neutral-500 focus:ring-neutral-500"
+                className="flex justify-center items-center py-4 px-10 w-full text-2xl text-center bg-transparent rounded-md border-2 transition duration-500 ease-in-out transform outline-none dark:text-white focus:ring-2 focus:ring-offset-2 focus:outline-none text-neutral-800 border-neutral-500 font-display focus:ring-neutral-500"
               >
                 Self-host
               </a>
