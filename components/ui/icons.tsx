@@ -1,5 +1,3 @@
-// import type { SVGProps } from "react"
-
 export interface Props extends React.HTMLProps<HTMLElement> {
   className?: string
   fill?: string

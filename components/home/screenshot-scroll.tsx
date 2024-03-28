@@ -11,7 +11,7 @@ import app2 from "../../public/screenshots/app2.png"
 import app3 from "../../public/screenshots/app3.png"
 import app4 from "../../public/screenshots/app4.png"
 import app5 from "../../public/screenshots/app5.png"
-import app6 from "../../public/screenshots/app6.png"
+// import app6 from "../../public/screenshots/app6.png"
 
 export const ScreenshotScroll = () => {
   function replaceState(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -50,12 +50,12 @@ export const ScreenshotScroll = () => {
         <ul>
           <li id="one">
             <article>
-              <Image src={app4} alt="Bookmarks List" className="rounded-2xl" />
+              <Image src={app1} alt="Bookmarks List" className="rounded-2xl" />
             </article>
           </li>
           <li id="two">
             <article>
-              <Image src={app1} alt="Settings" className="rounded-2xl" />
+              <Image src={app0} alt="Settings" className="rounded-2xl" />
             </article>
           </li>
           <li id="three">
@@ -75,7 +75,7 @@ export const ScreenshotScroll = () => {
           <li id="five">
             <article>
               <Image
-                src={app0}
+                src={app4}
                 alt="Bookmarks List with Edit Sidebar"
                 className="rounded-2xl"
               />
@@ -84,11 +84,6 @@ export const ScreenshotScroll = () => {
           <li id="six">
             <article>
               <Image src={app5} alt="Light Mode" className="rounded-2xl" />
-            </article>
-          </li>
-          <li id="seven">
-            <article>
-              <Image src={app6} alt="Command Palette" className="rounded-2xl" />
             </article>
           </li>
         </ul>

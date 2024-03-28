@@ -327,7 +327,7 @@ html.dark body:has(main.homepage)::before {
   }
 
   .homepage-scroll .track__indicators {
-    aspect-ratio: 9 / 1;
+    aspect-ratio: 8 / 1;
   }
 
   .homepage-scroll li:nth-of-type(1) {
@@ -448,26 +448,18 @@ html.dark body:has(main.homepage)::before {
 .hero-text h1 {
   --font-size: clamp(2rem, 10vw + 1rem, 18rem);
   margin-top: 2rem;
-  color: black;
-  /* font-size: var(--font-size); */
   position: relative;
   display: flex;
   align-items: flex-start;
-  line-height: 1.2;
 }
 
 html.dark .hero-text h1 {
   color: hsl(0 0% 100%);
 }
 
-.hero-text h1>span:first-of-type {
-  display: inline-block;
-  line-height: 0.8;
-}
-
 .hero-text .pops {
   position: absolute;
-  inset: 0px;
+  inset: 0;
   background: white;
   mix-blend-mode: lighten;
   filter: brightness(2);
@@ -496,7 +488,7 @@ html.dark {
   animation: scale var(--s, 5s) var(--d, 2s) infinite alternate;
   left: var(--x, 0);
   top: var(--y, 0);
-  scale: 2;
+  scale: 1;
   translate: -50% -50%;
   mix-blend-mode: multiply;
   filter: blur(5px);
