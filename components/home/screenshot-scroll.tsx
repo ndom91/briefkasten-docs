@@ -11,7 +11,6 @@ import app2 from "../../public/screenshots/app2.png"
 import app3 from "../../public/screenshots/app3.png"
 import app4 from "../../public/screenshots/app4.png"
 import app5 from "../../public/screenshots/app5.png"
-// import app6 from "../../public/screenshots/app6.png"
 
 export const ScreenshotScroll = () => {
   function replaceState(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
@@ -42,7 +41,7 @@ export const ScreenshotScroll = () => {
   return (
     <section className="relative mt-48 mb-12 w-screen homepage-scroll">
       <div className="relative mx-auto h-2 max-w-[1400px]">
-        <div className="absolute left-0 -top-40 font-extrabold min-w-[911px] opacity-[0.03] font-heading text-[12rem]">
+        <div className="absolute left-0 -top-40 font-extrabold min-w-[911px] opacity-[0.05] font-heading text-[12rem]">
           Screenshots
         </div>
       </div>

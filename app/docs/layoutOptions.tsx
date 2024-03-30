@@ -1,6 +1,6 @@
 import { pageTree } from "../source"
 import { type DocsLayoutProps } from "fumadocs-ui/layout"
-import { BriefkastenLogoSvg } from "@/components/ui/icons"
+import { Logo } from "@/components/ui/icons"
 
 export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
   tree: pageTree,
@@ -8,7 +8,7 @@ export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
     transparentMode: "top",
     title: (
       <>
-        <BriefkastenLogoSvg
+        <Logo
           className="text-black dark:text-white size-5"
           fill="currentColor"
         />
@@ -23,12 +23,13 @@ export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
       url: "/docs",
     },
     {
-      text: "v1 Docs",
+      text: "Docs v1",
       url: "https://v1.docs.briefkastenhq.com",
+      external: true,
     },
     {
       text: "Login",
-      url: "https://briefkastenhq.com",
+      url: "https://dev.briefkastenhq.com",
       external: true,
     },
   ],

@@ -63,7 +63,6 @@ html.dark ::selection {
 
 /* Set display font everywhere but homepage for headings */
 body:not(:has(main.homepage)) {
-
   h1,
   h2,
   h3,
@@ -76,7 +75,6 @@ body:not(:has(main.homepage)) {
 
 /* Set sans font for API reference headings */
 body:has(#query-parameters) {
-
   h1,
   h2,
   h3,
@@ -95,12 +93,15 @@ body:has(main.homepage)::before {
   width: 100vw;
   position: absolute;
   background:
-    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+    linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+      var(--size) var(--size);
   mask: linear-gradient(-15deg, transparent 30%, white);
   top: 0;
   z-index: -1;
   transform: translate3d(0, 0, -100vmin);
+  overflow-x: hidden;
 }
 
 html.dark body:has(main.homepage)::before {
@@ -366,7 +367,8 @@ html.dark body:has(main.homepage)::before {
   .homepage-scroll .indicator {
     --buffer: calc(var(--card-width) * 0.9);
     animation: blink both linear;
-    animation-range: contain calc(50% - var(--buffer)) contain calc(50% + var(--buffer));
+    animation-range: contain calc(50% - var(--buffer)) contain
+      calc(50% + var(--buffer));
   }
 
   .homepage-scroll .indicator:nth-of-type(1) {
@@ -403,7 +405,8 @@ html.dark body:has(main.homepage)::before {
     --buffer: calc(var(--card-width) * 0.9);
     opacity: 0;
     animation: show both linear;
-    animation-range: contain calc(50% - var(--buffer)) contain calc(50% + var(--buffer));
+    animation-range: contain calc(50% - var(--buffer)) contain
+      calc(50% + var(--buffer));
   }
 
   .homepage-scroll .indicator:nth-of-type(1)::after {
@@ -547,4 +550,27 @@ html.dark {
 aside div[data-radix-scroll-area-viewport] p {
   font-family: var(--font-google-display);
   font-size: 1.2rem;
+}
+
+/* FAQ details / summary chevrons */
+details > summary {
+  list-style: none;
+  position: relative;
+}
+
+details > summary::before {
+  height: 20px;
+  width: 6px;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='85 35 103 185'%3E%3Crect width='32' height='32' fill='none'/%3E%3Cpolyline points='96 48 176 128 96 208' fill='none' stroke='%23545454' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3C/svg%3E");
+
+  position: absolute;
+  top: 0px;
+  left: -15px;
+  transform: rotate(0);
+  transform-origin: 3px 15px;
+  transition: all 250ms ease-in-out;
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
 }

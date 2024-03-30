@@ -3,7 +3,7 @@ export interface Props extends React.HTMLProps<HTMLElement> {
   fill?: string
 }
 
-export const BriefkastenLogoSvg: React.FC<Props> = ({ className }) => {
+export const Logo: React.FC<Props> = ({ className }) => {
   return (
     <svg
       className={className}
