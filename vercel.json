@@ -27,6 +27,13 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/:path*.html",
+      "permanent": true,
+      "destination": "/:path*"
+    }
+  ],
   "rewrites": [
     {
       "source": "/a/e",
