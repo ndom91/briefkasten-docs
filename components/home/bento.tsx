@@ -29,7 +29,7 @@ export function BentoFeatures() {
                     </span>
                   </div>
                   <h2 className="mx-4 mt-6 text-3xl text-center dark:text-white font-display text-gray-950">
-                    Secure and Private
+                    Private by default
                   </h2>
                 </div>
               </div>

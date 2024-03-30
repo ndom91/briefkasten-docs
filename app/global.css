@@ -52,6 +52,15 @@
   /* --ring: 216 34% 17%; */
 }
 
+::selection {
+  background-color: plum;
+}
+
+html.dark ::selection {
+  color: black;
+  background-color: thistle;
+}
+
 /* Set display font everywhere but homepage for headings */
 body:not(:has(main.homepage)) {
 
