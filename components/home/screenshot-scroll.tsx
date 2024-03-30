@@ -94,7 +94,6 @@ export const ScreenshotScroll = () => {
           <a href="#four" onClick={replaceState} className="indicator"></a>
           <a href="#five" onClick={replaceState} className="indicator"></a>
           <a href="#six" onClick={replaceState} className="indicator"></a>
-          <a href="#seven" onClick={replaceState} className="indicator"></a>
         </div>
       </div>
     </section>

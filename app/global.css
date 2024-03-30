@@ -354,10 +354,6 @@ html.dark body:has(main.homepage)::before {
     view-timeline: --six inline;
   }
 
-  .homepage-scroll li:nth-of-type(7) {
-    view-timeline: --seven inline;
-  }
-
   .homepage-scroll .indicator {
     --buffer: calc(var(--card-width) * 0.9);
     animation: blink both linear;
@@ -386,10 +382,6 @@ html.dark body:has(main.homepage)::before {
 
   .homepage-scroll .indicator:nth-of-type(6) {
     animation-timeline: --six;
-  }
-
-  .homepage-scroll .indicator:nth-of-type(7) {
-    animation-timeline: --seven;
   }
 
   @keyframes blink {
@@ -427,10 +419,6 @@ html.dark body:has(main.homepage)::before {
 
   .homepage-scroll .indicator:nth-of-type(6)::after {
     animation-timeline: --six;
-  }
-
-  .homepage-scroll .indicator:nth-of-type(7)::after {
-    animation-timeline: --seven;
   }
 
   @keyframes show {

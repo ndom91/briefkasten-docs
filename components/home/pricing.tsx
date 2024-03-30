@@ -6,7 +6,7 @@ export function Pricing() {
           Pricing
         </div>
         <div>
-          <div className="overflow-hidden relative p-10 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:space-y-0">
+          <div className="overflow-hidden relative p-3 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:p-10 lg:space-y-0">
             <div className="flex relative flex-col p-8 bg-gray-200 rounded-lg">
               <div className="flex-1">
                 <h3 className="text-3xl font-semibold text-neutral-600 font-display">
