@@ -32,6 +32,11 @@
       "source": "/:path*.html",
       "permanent": true,
       "destination": "/:path*"
+    },
+    {
+      "source": "/docs/self-hosting/(page|workers)",
+      "permanent": true,
+      "destination": "/docs/self-hosting"
     }
   ],
   "rewrites": [
