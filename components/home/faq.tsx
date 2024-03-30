@@ -5,7 +5,7 @@ export function Faq() {
         <div className="absolute -left-16 -top-24 font-extrabold opacity-[0.05] font-heading text-[12rem]">
           FAQ
         </div>
-        <div className="p-2 rounded-xl border w-[640px] shadow-xs backdrop-blur dark:border-neutral-800">
+        <div className="p-2 w-full rounded-xl border shadow-xs backdrop-blur md:w-[640px] dark:border-neutral-800">
           <div className="flex flex-col gap-8 p-10 text-base text-left bg-gray-50 rounded-lg border md:p-20 lg:col-span-2 text-neutral-400 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50">
             <details name="faq" className="">
               <summary className="text-lg font-medium text-black cursor-pointer dark:text-white">
