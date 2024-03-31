@@ -4,7 +4,16 @@ title: Database
 
 # Database
 
-The Briefkasten database is built on PostgreSQL and Prisma as the ORM. The database schema is defined in the `prisma/schema.prisma` file and is used to generate the database schema and client. Alongside the database client, we also auto-generate Zod schemas for runtime validation of inputs of various kinds.
+The Briefkasten database is built on PostgreSQL and Prisma. The database schema is defined in the `/apps/{web,backend}/prisma/schema.prisma` file and is used to generate the database schema and client, as well as Zod schemas for runtime validation of inputs of various kinds.
+
+<Callout>
+  We intended to ship prisma as its own package in the monorepo and have it be
+  shared between the web and backend applications, however, due to complications
+  with Prisma's ESM compatibility, we decided to revert to putting Prisma
+  directly into both applications. Therefore there are two copies of everything
+  related to Prisma, including the schema files at
+  `/apps/web/prisma/schema.prisma` and `/apps/backend/prisma/schema.prisma`.
+</Callout>
 
 ## ERD Diagram
 
