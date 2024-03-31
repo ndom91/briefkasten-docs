@@ -86,7 +86,10 @@ export const ScreenshotScroll = () => {
             </article>
           </li>
         </ul>
-        <div className="track__indicators" aria-hidden="true">
+        <div
+          className="track__indicators focus:*:ring focus:*:ring-neutral-100/20 *:outline-none dark:focus:*:ring-neutral-600 *:transition"
+          aria-hidden="true"
+        >
           <a href="#one" onClick={replaceState} className="indicator"></a>
           <a href="#two" onClick={replaceState} className="indicator"></a>
           <a href="#three" onClick={replaceState} className="indicator"></a>

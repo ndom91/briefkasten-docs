@@ -6,21 +6,21 @@ export function Faq() {
           FAQ
         </div>
         <div className="p-2 w-full rounded-xl border shadow-xs backdrop-blur md:w-[640px] dark:border-neutral-800">
-          <div className="flex flex-col gap-8 p-10 text-base text-left bg-gray-50 rounded-lg border md:p-20 lg:col-span-2 text-neutral-400 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50">
+          <div className="flex flex-col gap-6 p-10 text-base text-left bg-gray-50 rounded-lg border md:p-20 lg:col-span-2 text-neutral-400 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-50">
             <details name="faq" className="">
-              <summary className="text-lg font-medium text-black cursor-pointer dark:text-white">
+              <summary className="p-1 text-lg font-medium text-black rounded-sm cursor-pointer outline-none dark:text-white focus:ring-2 dark:focus:ring-neutral-600">
                 Can I really use this for free?
               </summary>
               <p className="pt-4 text-base font-light tracking-wide leading-7 text-neutral-500 text-balance dark:text-neutral-50">
-                Yes! This is a side-project of mine that I do not intend to make
-                money from. That being said, if this becomes popular to the
-                point where I cannot afford the hosting any longer, or begins to
-                be abused with a similar outcome, then I reserve the right to
+                Yes! This is a side-project that we do not intend to make money
+                from. That being said, if this becomes popular to the point
+                where we cannot afford the hosting any longer, or begins to be
+                abused with a similar outcome, then we reserve the right to
                 change any of these terms.
               </p>
             </details>
             <details name="faq">
-              <summary className="text-lg font-medium text-black cursor-pointer dark:text-white">
+              <summary className="p-1 text-lg font-medium text-black rounded-sm cursor-pointer outline-none dark:text-white focus:ring-2 dark:focus:ring-neutral-600">
                 What&apos;s going to happen to my bookmarks?
               </summary>
               <p className="pt-4 text-base font-light tracking-wide leading-7 text-neutral-500 text-balance dark:text-neutral-50">
@@ -31,7 +31,7 @@ export function Faq() {
               </p>
             </details>
             <details name="faq">
-              <summary className="text-lg font-medium text-black cursor-pointer dark:text-white">
+              <summary className="p-1 text-lg font-medium text-black rounded-sm cursor-pointer outline-none dark:text-white focus:ring-2 dark:focus:ring-neutral-600">
                 How do the AI features work without an API key?
               </summary>
               <p className="pt-4 text-base font-light tracking-wide leading-7 text-neutral-500 text-balance dark:text-neutral-50">
@@ -53,19 +53,20 @@ export function Faq() {
               </p>
             </details>
             <details name="faq">
-              <summary className="text-lg font-medium text-black cursor-pointer dark:text-white">
+              <summary className="p-1 text-lg font-medium text-black rounded-sm cursor-pointer outline-none dark:text-white focus:ring-2 dark:focus:ring-neutral-600">
                 I&apos;ve found a bug or want to make a feature request
               </summary>
               <p className="pt-4 text-base font-light tracking-wide leading-7 text-neutral-500 text-balance dark:text-neutral-50">
-                Great! Your best bet is to create an{" "}
+                Great! Your best bet is to create an issue in the{" "}
                 <a
                   href="https://github.com/ndom91/sveltekasten/issues"
+                  className="underline underline-offset-4"
                   target="_blank"
                 >
-                  issue
-                </a>{" "}
-                in the GitHub repository. If you don&apos;t have a Github
-                account, you can also email me at{" "}
+                  GitHub repository
+                </a>
+                . If you don&apos;t have a Github account, you can also email us
+                at{" "}
                 <code>
                   info &quot;at&quot; briefkastenhq &quot;dot&quot; com
                 </code>

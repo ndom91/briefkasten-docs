@@ -34,16 +34,68 @@ export function JoinCTA() {
               <a
                 href="https://dev.briefkastenhq.com/?utm_source=docs&utm_medium=cta&utm_campaign=beta"
                 target="_blank"
-                className="flex justify-center items-center py-4 px-10 w-full text-2xl text-center text-white rounded-md transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none bg-neutral-600 font-display hover:bg-neutral-700 focus:ring-neutral-500"
+                className="flex justify-center items-center py-4 px-10 w-full text-2xl text-center text-white rounded-md transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:outline-none bg-neutral-600 font-display group dark:focus:ring-offset-neutral-900 dark:focus:ring-neutral-700 hover:bg-neutral-700 focus:ring-neutral-100"
               >
                 Cloud
+                <div className="hidden lg:block w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 lg:group-hover:w-5 lg:group-hover:translate-x-0 lg:group-hover:pl-4 lg:group-hover:opacity-100">
+                  <svg
+                    className="size-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                  >
+                    <rect width="256" height="256" fill="none" />
+                    <path
+                      d="M80,128a80,80,0,1,1,80,80H72A56,56,0,1,1,85.92,97.74"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="16"
+                    />
+                  </svg>
+                </div>
               </a>
               <a
                 href="https://docs.briefkastenhq.com/docs/self-hosting/?utm_source=docs&utm_medium=cta&utm_campaign=beta"
                 target="_blank"
-                className="flex justify-center items-center py-4 px-10 w-full text-2xl text-center bg-transparent rounded-md border-2 transition duration-500 ease-in-out transform outline-none dark:text-white focus:ring-2 focus:ring-offset-2 focus:outline-none text-neutral-800 border-neutral-500 font-display focus:ring-neutral-500"
+                className="flex justify-center items-center py-4 px-10 w-full text-2xl text-center bg-transparent rounded-md border-2 transition duration-500 ease-in-out transform outline-none dark:text-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:outline-none group text-neutral-800 border-neutral-500 font-display dark:focus:ring-offset-neutral-900 dark:focus:ring-neutral-700 focus:ring-neutral-100"
               >
                 Self-host
+                <div className="hidden lg:block w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 lg:group-hover:w-5 lg:group-hover:translate-x-0 lg:group-hover:pl-4 lg:group-hover:opacity-100">
+                  <svg
+                    className="size-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                  >
+                    <rect width="256" height="256" fill="none" />
+                    <rect
+                      x="40"
+                      y="144"
+                      width="176"
+                      height="64"
+                      rx="8"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="16"
+                    />
+                    <rect
+                      x="40"
+                      y="48"
+                      width="176"
+                      height="64"
+                      rx="8"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="16"
+                    />
+                    <circle cx="180" cy="80" r="12" />
+                    <circle cx="180" cy="176" r="12" />
+                  </svg>
+                </div>
               </a>
             </div>
           </div>

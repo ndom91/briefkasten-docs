@@ -122,7 +122,7 @@ export function Pricing() {
                     href="https://dev.briefkastenhq.com/?utm_source=docs&utm_medium=cta&utm_campaign=pricing"
                     target="_blank"
                     type="highlight"
-                    className="block items-center py-3.5 px-10 w-full text-xl font-bold text-center text-white rounded-md border-2 transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none border-neutral-700 bg-neutral-700 shadow-xs font-display focus:ring-neutral-500"
+                    className="block items-center py-3.5 px-10 w-full text-xl font-bold text-center text-white rounded-md border-2 transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none border-neutral-700 bg-neutral-700 shadow-xs font-display focus:ring-neutral-200"
                   >
                     Cloud
                   </a>
@@ -241,7 +241,7 @@ export function Pricing() {
                   <a
                     href="/docs/self-hosting"
                     type="highlight"
-                    className="block items-center py-3.5 px-10 w-full text-xl font-bold text-center bg-white rounded-md border-2 border-white transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none shadow-xs font-display text-neutral-600 focus:ring-neutral-500"
+                    className="block items-center py-3.5 px-10 w-full text-xl font-bold text-center bg-white rounded-md border-2 border-white transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none shadow-xs font-display text-neutral-600 focus:ring-neutral-400 focus:ring-offset-neutral-700"
                   >
                     Self-host
                   </a>
