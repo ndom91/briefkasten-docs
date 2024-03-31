@@ -13,11 +13,10 @@ export function Faq() {
               </summary>
               <p className="pt-4 text-base font-light tracking-wide leading-7 text-neutral-500 text-balance dark:text-neutral-50">
                 Yes! This is a side-project of mine that I do not intend to make
-                money from. Who&apos;s going to pay for a simple bookmarking app
-                like this anyway haha. That being said, if this becomes popular
-                to the point where I cannot afford the hosting any longer, or
-                begins to be abused with a similar outcome, then I reserve the
-                right to change any of these terms.
+                money from. That being said, if this becomes popular to the
+                point where I cannot afford the hosting any longer, or begins to
+                be abused with a similar outcome, then I reserve the right to
+                change any of these terms.
               </p>
             </details>
             <details name="faq">
