@@ -4,6 +4,9 @@ import { Logo } from "@/components/ui/icons"
 
 export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
   tree: pageTree,
+  sidebar: {
+    collapsible: false,
+  },
   nav: {
     transparentMode: "top",
     title: (

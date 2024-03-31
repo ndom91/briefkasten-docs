@@ -12,11 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: url("/showcase"),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: url("/docs"),
       changeFrequency: "monthly",
       priority: 0.8,

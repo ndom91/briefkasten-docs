@@ -10,15 +10,36 @@ Check out the available keyboard shortcuts with <kbd>Ctrl</kbd>+<kbd>?</kbd> and
 
 ## Searching
 
-// TODO
+Both the [feeds](https://dev.briefkastenhq.com/feeds) as well as [bookmarks](https://dev.briefkastenhq.com/bookmarks) pages have a search input in the nav bar which will do a case-insensitive search on the titles, descriptions and URLs of bookmarks and the title and feed item content (i.e. the article) of RSS items.
 
 ## Filtering
 
-// TODO
+Currently only the [feeds](https://dev.briefkastenhq.com/feeds) page has a filtering mechanism. The Bookmarks will have a filtering mechanism to leverage your tags and categories soon too. Stay tuned!
+
+On the feeds page, you can open the sidebar by using the <kbd>]</kbd> button or pressing the Sidebar toggle button in the top right. There you can filter for unread items, or show/hide individual feeds.
 
 ## RSS Feeds
 
-// TODO
+To manager your RSS feeds in Briefkasten, go to ["Settings" -> "Feeds"](https://dev.briefkastenhq.com/settings?tab=feeds). There you can add, edit, or delete RSS feed URLs.
+
+When you add a new feed URL, we will initially fetch the last 10 items to add to your list. We will then queue up a background task to fetch new items every hour. To view new items, you can check out the Dashboard "New Items" section(s), or go to the [feeds page](https://dev.briefkastenhq.com/feeds) directly. The feeds page will auto-update when tab away, and back to it, to show you the latest items. No manual refreshing necessary.
+
+## Import / Export
+
+Briefkasten allows you to easily import and export your bookmarks. Visit ["Settings" -> "User"](https://dev.briefkastenhq.com/settings?tab=user) and find the "Import / Export" section.
+
+**Export** will generate an HTML file following the [Netscape Bookmark File Format](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa753582) which is compatible with most browsers and bookmarking services. This is the same format that Firefox, Chrome, etc. use when exporting your bookmarks.
+
+**Import** will accept an uploaded file, show you a preview of the first 10 items to make sure the parser has identified everything correctly, and then ask you to confirm before executing the import. Importing accepts two file types, (1) the same [Netscape bookmark format](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa753582) which we export, but also the **Pocket** export format to make migration easier.
+
+<Callout>
+  If you have a different file format you'd like to import, and are willing and
+  able to write a parser for it, we'd love any pull requests to allow other
+  folks with your format to migrate to Briefkasten more easily! Check out the
+  [existing
+  parsers](https://github.com/ndom91/sveltekasten/blob/main/apps/web/src/routes/settings/import/pocket.ts)
+  for examples.
+</Callout>
 
 ## Adding Bookmarks
 
