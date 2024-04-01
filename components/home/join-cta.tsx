@@ -68,32 +68,33 @@ export function JoinCTA() {
                     viewBox="0 0 256 256"
                   >
                     <rect width="256" height="256" fill="none" />
-                    <rect
-                      x="40"
-                      y="144"
-                      width="176"
-                      height="64"
-                      rx="8"
+                    <ellipse
+                      cx="128"
+                      cy="80"
+                      rx="88"
+                      ry="48"
                       fill="none"
                       stroke="currentColor"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="16"
                     />
-                    <rect
-                      x="40"
-                      y="48"
-                      width="176"
-                      height="64"
-                      rx="8"
+                    <path
+                      d="M40,80v48c0,26.51,39.4,48,88,48s88-21.49,88-48V80"
                       fill="none"
                       stroke="currentColor"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="16"
                     />
-                    <circle cx="180" cy="80" r="12" />
-                    <circle cx="180" cy="176" r="12" />
+                    <path
+                      d="M40,128v48c0,26.51,39.4,48,88,48s88-21.49,88-48V128"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="16"
+                    />
                   </svg>
                 </div>
               </a>
