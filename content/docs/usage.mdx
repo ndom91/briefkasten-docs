@@ -30,9 +30,9 @@ Briefkasten allows you to easily import and export your bookmarks. Visit ["Setti
 
 **Export** will generate an HTML file following the [Netscape Bookmark File Format](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa753582) which is compatible with most browsers and bookmarking services. This is the same format that Firefox, Chrome, etc. use when exporting your bookmarks.
 
-**Import** will accept an uploaded file, show you a preview of the first 10 items to make sure the parser has identified everything correctly, and then ask you to confirm before executing the import. Importing accepts two file types, (1) the same [Netscape bookmark format](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa753582) which we export, but also the **Pocket** export format to make migration easier.
+**Import** will accept an uploaded file, show you a preview of the first 10 items to make sure the parser has identified everything correctly, and then ask you to confirm before executing the import. Importing accepts two file types, the same [Netscape bookmark format](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa753582) which we export, but also the **Pocket** export format to make migration easier.
 
-<Callout>
+<Callout className="shadow-xs">
   If you have a different file format you'd like to import, and are willing and
   able to write a parser for it, we'd love any pull requests to allow other
   folks with your format to migrate to Briefkasten more easily! Check out the
@@ -49,7 +49,7 @@ There are a few options to add bookmarks. If you want to create a new bookmark e
 
 import QuickAdd from "../../public/screenshots/quick-add.png"
 
-<Screenshot src={QuickAdd} alt="Quick Add" />
+<Screenshot src={QuickAdd} alt="Quick Add" className="shadow-xs" />
 
 The quick add modal allows you to manually type in any desired information, including of course the URL to the website you wish to save. While saving the bookmark, we will fetch a current screenshot of the desired page and save it alongside the page details.
 
@@ -59,7 +59,7 @@ Open it by pressing the `+` button in the bottom right of the application or usi
 
 import DragNDrop from "../../public/screenshots/dragndrop.png"
 
-<Screenshot src={DragNDrop} alt="Drag and Drop Add" />
+<Screenshot src={DragNDrop} alt="Drag and Drop Add" className="shadow-xs" />
 
 In addition to manually typing in all the required information, you can simply drag and drop any URL onto the Briefkasten application page and we'll fetch the basic title, description, and page screenshot for you. Remember, you can manually edit any of those values later after it's been saved.
 

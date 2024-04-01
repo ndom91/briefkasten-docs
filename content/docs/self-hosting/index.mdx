@@ -167,7 +167,7 @@ docker-compose -f docker-compose.storage.yml up database
 
 If you're running the application with their `sveltekasten-web` and `sveltekasten-backend` containers from the `docker-compose.yml` file, they will automatically apply the initial schema migrations to the database upon startup. Otherwise, checkout the [development -> database](/docs/development#database) section for more information on how to run the migrations manually.
 
-After you've setup the database, you'll need to tell the web and backend applications where to find the database. This is done by setting the required `DATABASE_URL` environment variable in both the `apps/web/.env` and `apps/backend/.env` files. This default connection string should work if your applications are running in containers on the same docker network as the database, otherwise you&aposll need to adjust at least the hostname (`database`).
+After you've setup the database, you'll need to tell the web and backend applications where to find the database. This is done by setting the required `DATABASE_URL` environment variable in both the `apps/web/.env` and `apps/backend/.env` files. This default connection string should work if your applications are running in containers on the same docker network as the database, otherwise you&apos;ll need to adjust at least the hostname (`database`).
 
 ```bash title="/apps/web/.env"
 DATABASE_URL=postgres://postgres:postgres@database:5432/briefkasten

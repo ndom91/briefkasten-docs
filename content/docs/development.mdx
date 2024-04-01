@@ -28,9 +28,29 @@ cd sveltekasten
 
 In the root of the repository, running this command will install the dependencies for the entier workspaces, i.e. both packages / applications.
 
+<Tabs items={["npm", "pnpm", "yarn"]}>
+  <Tab value="npm">
+
+```bash
+npm install
+```
+
+  </Tab>
+  <Tab value="pnpm">
+
 ```bash
 pnpm install
 ```
+
+  </Tab>
+  <Tab value="yarn">
+
+```bash
+yarn install
+```
+
+  </Tab>
+</Tabs>
 
 </Step>
 <Step>
@@ -170,8 +190,28 @@ For more information, check out the [self-hosting object storage](/docs/self-hos
 
 Once you've got the database prepared and all dependencies installed, you can start the dev servers by running the `dev` npm script in the root of the repository.
 
+<Tabs items={["npm", "pnpm", "yarn"]}>
+  <Tab value="npm">
+
+```bash
+npm run dev
+```
+
+  </Tab>
+  <Tab value="pnpm">
+
 ```bash
 pnpm dev
 ```
+
+  </Tab>
+  <Tab value="yarn">
+
+```bash
+yarn dev
+```
+
+  </Tab>
+</Tabs>
 
 This will execute both the web app as well as the backend development servers in parallel. The web app will be available at `http://localhost:3000` and the backend at `http://localhost:8000/api/v0`, unless you changed the default URLs.

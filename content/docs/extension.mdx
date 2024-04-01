@@ -11,7 +11,7 @@ After you've set these two options and clicked "Save", the extension will double
 
 import Extension from "../../public/screenshots/extension1.png"
 
-<Screenshot src={Extension} alt="Extension" />
+<Screenshot src={Extension} alt="Extension" className="shadow-xs" />
 
 ## Extension Usage
 
@@ -19,7 +19,7 @@ The Extension comes with the keyboard shortcut **<kbd>Ctrl</kbd>+<kbd>Shift</kbd
 
 import Extension2 from "../../public/screenshots/extension2.png"
 
-<Screenshot src={Extension2} alt="Extension" />
+<Screenshot src={Extension2} alt="Extension" className="shadow-xs" />
 
 The extension also adds an Omnibox (URL Bar) prefix called `bk` to your Chrome instance. For example, if you type `bk ` (i.e. `bk<space>`) and a search term, it will search through your bookmarks and return a list of matching Bookmarks and their URLs which you can simply navigate through (by pressing <kbd>↑</kbd> or <kbd>↓</kbd>) and press <kbd>Enter</kbd> to visit. For example:
 
@@ -41,7 +41,7 @@ Once downloaded, you can setup Briefkasten as a shortcut like so:
 
 After this is setup, any time you press "Share" within Android, you'll have a new share target titled "Briefkasten".
 
-<Callout type="info" title="Tip">
+<Callout type="info" title="Tip" className="shadow-xs">
   For example, I like to set a default tag (`mobile`) in my HTTP Shortcuts
   setup. Therefore I can easily identify bookmarks that I've created from my
   phone next time I'm back in the application.

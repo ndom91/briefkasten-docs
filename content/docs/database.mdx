@@ -6,7 +6,7 @@ title: Database
 
 The Briefkasten database is built on PostgreSQL and Prisma. The database schema is defined in the `/apps/{web,backend}/prisma/schema.prisma` file and is used to generate the database schema and client, as well as Zod schemas for runtime validation of inputs of various kinds.
 
-<Callout>
+<Callout className="shadow-xs">
   We intended to ship prisma as its own package in the monorepo and have it be
   shared between the web and backend applications, however, due to complications
   with Prisma's ESM compatibility, we decided to revert to putting Prisma
@@ -25,7 +25,7 @@ import Database1 from "../../public/db.png"
 
 The full database schema can be found in the repository under [`/apps/{web,backend}/prisma/schema.prisma`](https://github.com/ndom91/sveltekasten/blob/main/apps/web/prisma/schema.prisma)
 
-<Callout>
+<Callout className="shadow-xs">
   Prisma comes with a simple data viewer which is available via the npm script
   `db:studio`
 </Callout>
