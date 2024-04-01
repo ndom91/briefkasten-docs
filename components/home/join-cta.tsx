@@ -1,10 +1,10 @@
 export function JoinCTA() {
   return (
-    <section className="relative bg-white rounded-sm w-[100vw] dark:bg-neutral-900">
-      <div className="relative items-center py-12 px-12 mx-auto w-full md:px-12 lg:py-24 lg:px-24 shadow-xs max-w-[1400px]">
+    <section className="relative bg-white rounded-sm w-[100vw] shadow-xs dark:bg-neutral-900">
+      <div className="relative items-center py-12 px-12 mx-auto w-full md:px-12 lg:py-24 lg:px-24 max-w-[1400px]">
         <div className="grid relative grid-cols-2 grid-flow-row md:grid-cols-3">
-          <div className="flex col-span-1 justify-center items-center">
-            <div className="p-8 w-2/3 rounded-full bg-neutral-950 md:w-fit">
+          <div className="flex col-span-2 justify-center items-center md:col-span-1">
+            <div className="p-8 w-1/3 rounded-full bg-neutral-950 md:w-fit">
               <svg
                 width="196"
                 fill="none"
@@ -60,7 +60,7 @@ export function JoinCTA() {
                 target="_blank"
                 className="flex justify-center items-center py-4 px-10 w-full text-2xl text-center bg-transparent rounded-md border-2 transition duration-500 ease-in-out transform outline-none dark:text-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:outline-none group text-neutral-800 border-neutral-500 font-display dark:focus:ring-offset-neutral-900 dark:focus:ring-neutral-700 focus:ring-neutral-100"
               >
-                Self-host
+                Selfhost
                 <div className="hidden lg:block w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 lg:group-hover:w-5 lg:group-hover:translate-x-0 lg:group-hover:pl-4 lg:group-hover:opacity-100">
                   <svg
                     className="size-6"

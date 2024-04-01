@@ -10,7 +10,7 @@ export function BentoFeatures() {
         <div className="px-6 mx-auto max-w-6xl text-gray-500">
           <div className="relative">
             <div className="grid relative z-10 grid-cols-6 gap-3">
-              <div className="flex overflow-hidden relative col-span-full p-8 rounded-xl border lg:col-span-2 border-neutral-50/50 backdrop-blur dark:border-neutral-800">
+              <div className="flex overflow-hidden relative col-span-full p-8 rounded-xl border lg:col-span-2 border-neutral-50/50 backdrop-blur dark:bg-neutral-700/10 dark:border-neutral-800">
                 <div className="relative m-auto size-fit">
                   <div className="flex relative items-center mx-auto w-56 h-24">
                     <svg
@@ -33,7 +33,7 @@ export function BentoFeatures() {
                   </h2>
                 </div>
               </div>
-              <div className="overflow-hidden relative col-span-full p-8 rounded-xl border sm:col-span-3 lg:col-span-2 border-neutral-50/50 backdrop-blur dark:border-neutral-800">
+              <div className="overflow-hidden relative col-span-full p-8 rounded-xl border sm:col-span-3 lg:col-span-2 border-neutral-50/50 backdrop-blur dark:bg-neutral-700/10 dark:border-neutral-800">
                 <div>
                   <div className="flex relative mx-auto w-40 text-white dark:text-neutral-800">
                     <Browser />
@@ -49,7 +49,7 @@ export function BentoFeatures() {
                   </div>
                 </div>
               </div>
-              <div className="overflow-hidden relative col-span-full p-8 rounded-xl border sm:col-span-3 lg:col-span-2 border-neutral-50/50 backdrop-blur dark:border-neutral-800">
+              <div className="overflow-hidden relative col-span-full p-8 rounded-xl border sm:col-span-3 lg:col-span-2 border-neutral-50/50 backdrop-blur dark:bg-neutral-700/10 dark:border-neutral-800">
                 <div>
                   <div className="mx-auto w-40 text-white dark:text-neutral-800">
                     <Audio />
@@ -65,9 +65,9 @@ export function BentoFeatures() {
                   </div>
                 </div>
               </div>
-              <div className="overflow-hidden relative col-span-full p-8 rounded-xl border lg:col-span-3 border-neutral-50/50 backdrop-blur dark:border-neutral-800">
+              <div className="overflow-hidden relative col-span-full p-8 rounded-xl border lg:col-span-3 border-neutral-50/50 backdrop-blur dark:bg-neutral-700/10 dark:border-neutral-800">
                 <div className="grid sm:grid-cols-2">
-                  <div className="flex relative z-10 flex-col gap-12 justify-between lg:gap-6">
+                  <div className="flex relative z-10 flex-col gap-2 justify-between sm:gap-6">
                     <div className="flex relative rounded-full border aspect-square min-h-12 min-w-12 size-12 before:absolute before:-inset-2 before:border before:rounded-full dark:bg-white/5 dark:border-white/10 dark:before:border-white/5 dark:before:bg-white/5">
                       <svg
                         className="m-auto size-6"
@@ -99,9 +99,9 @@ export function BentoFeatures() {
                   </div>
                 </div>
               </div>
-              <div className="overflow-hidden relative col-span-full p-8 rounded-xl border lg:col-span-3 border-neutral-50/50 backdrop-blur dark:border-neutral-800">
+              <div className="overflow-hidden relative col-span-full p-8 rounded-xl border lg:col-span-3 border-neutral-50/50 backdrop-blur dark:bg-neutral-700/10 dark:border-neutral-800">
                 <div className="grid h-full sm:grid-cols-2">
-                  <div className="flex relative z-10 flex-col gap-12 justify-start lg:gap-6">
+                  <div className="flex relative z-10 flex-col gap-2 justify-start">
                     <div className="flex relative rounded-full border aspect-square size-12 before:absolute before:-inset-2 before:border before:rounded-full dark:bg-white/5 dark:border-white/10 dark:before:border-white/5 dark:before:bg-white/5">
                       <svg
                         className="m-auto size-6"
