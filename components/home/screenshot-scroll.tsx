@@ -49,40 +49,32 @@ export const ScreenshotScroll = () => {
         <ul>
           <li id="one">
             <article>
-              <Image src={app1} alt="Bookmarks List" className="rounded-2xl" />
+              <Image src={app1} alt="Bookmarks List" />
             </article>
           </li>
           <li id="two">
             <article>
-              <Image src={app0} alt="Settings" className="rounded-2xl" />
+              <Image src={app0} alt="Settings" />
             </article>
           </li>
           <li id="three">
             <article>
-              <Image
-                src={app2}
-                alt="RSS Feed Reading"
-                className="rounded-2xl"
-              />
+              <Image src={app2} alt="RSS Feed Reading" />
             </article>
           </li>
           <li id="four">
             <article>
-              <Image src={app3} alt="Home Dashboard" className="rounded-2xl" />
+              <Image src={app3} alt="Home Dashboard" />
             </article>
           </li>
           <li id="five">
             <article>
-              <Image
-                src={app4}
-                alt="Bookmarks List with Edit Sidebar"
-                className="rounded-2xl"
-              />
+              <Image src={app4} alt="Bookmarks List with Edit Sidebar" />
             </article>
           </li>
           <li id="six">
             <article>
-              <Image src={app5} alt="Light Mode" className="rounded-2xl" />
+              <Image src={app5} alt="Light Mode" />
             </article>
           </li>
         </ul>

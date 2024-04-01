@@ -254,51 +254,57 @@ html.dark body:has(main.homepage)::before {
   margin: 20px 0;
 }
 
+.homepage-scroll :is(li, .indicator):nth-of-type(1) img,
 .homepage-scroll :is(li, .indicator):nth-of-type(1) {
   --hue: 0;
+  --hsl: 343deg 76% 68%;
 }
 
+.homepage-scroll :is(li, .indicator):nth-of-type(2) img,
 .homepage-scroll :is(li, .indicator):nth-of-type(2) {
   --hue: 140;
+  --hsl: 35deg 88% 72%;
 }
 
+.homepage-scroll :is(li, .indicator):nth-of-type(3) img,
 .homepage-scroll :is(li, .indicator):nth-of-type(3) {
   --hue: 45;
+  --hsl: 2deg 55% 83%;
 }
 
+.homepage-scroll :is(li, .indicator):nth-of-type(4) img,
 .homepage-scroll :is(li, .indicator):nth-of-type(4) {
   --hue: 210;
+  --hsl: 267deg 57% 78%;
 }
 
+.homepage-scroll :is(li, .indicator):nth-of-type(5) img,
 .homepage-scroll :is(li, .indicator):nth-of-type(5) {
   --hue: 280;
+  --hsl: 189deg 43% 73%;
 }
 
+.homepage-scroll :is(li, .indicator):nth-of-type(6) img,
 .homepage-scroll :is(li, .indicator):nth-of-type(6) {
   --hue: 320;
-}
-
-.homepage-scroll :is(li, .indicator):nth-of-type(7) {
-  --hue: 80;
+  --hsl: 197deg 49% 38%;
 }
 
 .homepage-scroll article {
+  @apply shadow-sm md:shadow-md;
+
   width: var(--card-width);
-  aspect-ratio: 16 / 9;
-  background: transparent;
-  /* radial-gradient(circle at center, hsl(0 0% 100% / 0.65), transparent) fixed, */
-  /* linear-gradient(hsl(var(--hue) 100% 0% / 0.25), transparent), */
-  /* linear-gradient(transparent, hsl(var(--hue) 0% 10% / 0.5)), */
-  /* hsl(var(--hue, 10) 0% 6%); */
-  box-shadow:
-    0 1px hsl(0 0% 100% / 0.5) inset,
-    0 10px 20px -10px black;
   border-radius: 1rem;
-  border-top: 2px solid hsl(var(--hue, 10) 80% 60% / 0.75);
+  border-top: 5px solid hsl(var(--hsl) / 0.75);
+  background: hsl(var(--hsl) / 0.75);
+
+  @apply border-t-[5px] rounded-xl md:rounded-2xl;
 }
 
 .homepage-scroll article img {
-  object-fit: fit;
+  background: hsl(var(--hsl) / 0.75);
+  border: none;
+  @apply p-0 md:p-1 rounded-xl md:rounded-2xl;
 }
 
 .homepage-scroll .track__indicators {
@@ -328,7 +334,7 @@ html.dark body:has(main.homepage)::before {
   border-radius: 100px;
   position: absolute;
   inset: 0;
-  background: hsl(var(--hue) 90% 70%);
+  background: hsl(var(--hsl));
 }
 
 @supports (animation-timeline: scroll()) {

@@ -1,7 +1,7 @@
 export function JoinCTA() {
   return (
-    <section className="relative bg-white rounded-sm w-[100vw] shadow-xs dark:bg-neutral-900">
-      <div className="relative items-center py-12 px-12 mx-auto w-full md:px-12 lg:py-24 lg:px-24 max-w-[1400px]">
+    <section className="relative rounded-sm w-[100vw]">
+      <div className="relative items-center py-12 px-12 mx-auto w-full bg-white border md:px-12 lg:py-24 lg:px-24 max-w-[1400px] border-neutral-100/20 dark:bg-neutral-900 dark:border-neutral-600/30">
         <div className="grid relative grid-cols-2 grid-flow-row md:grid-cols-3">
           <div className="flex col-span-2 justify-center items-center md:col-span-1">
             <div className="p-8 w-1/3 rounded-full bg-neutral-950 md:w-fit">
