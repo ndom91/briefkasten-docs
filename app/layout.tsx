@@ -42,10 +42,10 @@ const uni = UnifrakturCook({
 
 export const metadata = createMetadata({
   title: {
-    template: "%s | Briefkasten",
-    default: "Briefkasten",
+    template: "Briefkasten • %s",
+    default: "Briefkasten • Docs",
   },
-  description: "Read-it-later - Bookmarks and RSS-Feeds",
+  description: "Bookmarks, Read-it-later, and RSS-Feeds",
   metadataBase: baseUrl,
 })
 

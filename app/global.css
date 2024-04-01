@@ -7,49 +7,9 @@
 @import "open-props/easings";
 @import "open-props/animations";
 
-/* :root { */
-/* --background: theme(colors.gray.200); */
-/* --foreground: theme(colors.gray.800); */
-/* --muted: 210 40% 96.1%; */
-/* --muted-foreground: 215.4 16.3% 46.9%; */
-/* --popover: 0 0% 100%; */
-/* --popover-foreground: 222.2 47.4% 11.2%; */
-/* --card: 210 40% 98%; */
-/* --card-foreground: 222.2 47.4% 11.2%; */
-/* --border: 214.3 31.8% 91.4%; */
-/* --input: 214.3 31.8% 91.4%; */
-/* --primary: 222.2 47.4% 11.2%; */
-/* --primary-foreground: 210 40% 98%; */
-/* --secondary: 210 40% 96.1%; */
-/* --secondary-foreground: 222.2 47.4% 11.2%; */
-/* --accent: 210 40% 96.1%; */
-/* --accent-foreground: 222.2 47.4% 11.2%; */
-/* --destructive: 0 100% 50%; */
-/* --destructive-foreground: 210 40% 98%; */
-/* --ring: 215 20.2% 65.1%; */
-/* } */
-
 .dark {
-  /* --background: 224 71% 4%; */
   --background: 0 0% 3%;
   --foreground: 0 0% 62%;
-  /* --muted: 223 47% 11%; */
-  /* --muted-foreground: 215.4 16.3% 56.9%; */
-  /* --popover: 224 47.4% 6%; */
-  /* --popover-foreground: 215 20.2% 65.1%; */
-  /* --card: 216 71% 6%; */
-  /* --card-foreground: 213 31% 91%; */
-  /* --border: 216 34% 17%; */
-  /* --input: 216 34% 17%; */
-  /* --primary: 210 40% 98%; */
-  /* --primary-foreground: 222.2 47.4% 1.2%; */
-  /* --secondary: 222.2 47.4% 11.2%; */
-  /* --secondary-foreground: 210 40% 98%; */
-  /* --accent: 216 34% 14%; */
-  /* --accent-foreground: 210 40% 98%; */
-  /* --destructive: 0 63% 31%; */
-  /* --destructive-foreground: 210 40% 98%; */
-  /* --ring: 216 34% 17%; */
 }
 
 ::selection {
@@ -128,7 +88,6 @@ html.dark body:has(main.homepage)::before {
 /* Bookmarks, feeds, notes styling */
 .hero h1 {
   margin-block: 1rem;
-  /* font-size: clamp(5rem, 1rem + 6vmin, 7rem); */
   display: inline-flex;
   align-items: flex-start;
   flex-direction: column;
@@ -254,37 +213,37 @@ html.dark body:has(main.homepage)::before {
   margin: 20px 0;
 }
 
-.homepage-scroll :is(li, .indicator):nth-of-type(1) img,
+.homepage-scroll :is(li, .indicator):nth-of-type(1) picture,
 .homepage-scroll :is(li, .indicator):nth-of-type(1) {
   --hue: 0;
   --hsl: 343deg 76% 68%;
 }
 
-.homepage-scroll :is(li, .indicator):nth-of-type(2) img,
+.homepage-scroll :is(li, .indicator):nth-of-type(2) picture,
 .homepage-scroll :is(li, .indicator):nth-of-type(2) {
   --hue: 140;
   --hsl: 35deg 88% 72%;
 }
 
-.homepage-scroll :is(li, .indicator):nth-of-type(3) img,
+.homepage-scroll :is(li, .indicator):nth-of-type(3) picture,
 .homepage-scroll :is(li, .indicator):nth-of-type(3) {
   --hue: 45;
   --hsl: 2deg 55% 83%;
 }
 
-.homepage-scroll :is(li, .indicator):nth-of-type(4) img,
+.homepage-scroll :is(li, .indicator):nth-of-type(4) picture,
 .homepage-scroll :is(li, .indicator):nth-of-type(4) {
   --hue: 210;
   --hsl: 267deg 57% 78%;
 }
 
-.homepage-scroll :is(li, .indicator):nth-of-type(5) img,
+.homepage-scroll :is(li, .indicator):nth-of-type(5) picture,
 .homepage-scroll :is(li, .indicator):nth-of-type(5) {
   --hue: 280;
   --hsl: 189deg 43% 73%;
 }
 
-.homepage-scroll :is(li, .indicator):nth-of-type(6) img,
+.homepage-scroll :is(li, .indicator):nth-of-type(6) picture,
 .homepage-scroll :is(li, .indicator):nth-of-type(6) {
   --hue: 320;
   --hsl: 197deg 49% 38%;
@@ -295,16 +254,20 @@ html.dark body:has(main.homepage)::before {
 
   width: var(--card-width);
   border-radius: 1rem;
-  border-top: 5px solid hsl(var(--hsl) / 0.75);
-  background: hsl(var(--hsl) / 0.75);
+  border-top: 5px solid hsl(var(--hsl));
+  background: hsl(var(--hsl));
 
   @apply border-t-[5px] rounded-xl md:rounded-2xl;
 }
 
-.homepage-scroll article img {
-  background: hsl(var(--hsl) / 0.75);
+.homepage-scroll article picture {
+  background: hsl(var(--hsl));
   border: none;
   @apply p-0 md:p-1 rounded-xl md:rounded-2xl;
+}
+
+.homepage-scroll article img {
+  @apply rounded-xl md:rounded-2xl;
 }
 
 .homepage-scroll .track__indicators {
@@ -552,7 +515,6 @@ html.dark {
 }
 
 /* Sidebar Tweaks */
-
 aside div[data-radix-scroll-area-viewport] p {
   font-family: var(--font-google-display);
   font-size: 1.2rem;
