@@ -50,22 +50,22 @@ If you want to use the storage containers, you'll want to change some of the def
 
 Finally, you can spin up the containers
 
-<Tabs items={['Application', 'Application + Storage']}>
-  <Tab value="Application">
-
-To start only the application containers (`sveltekasten-web` and `sveltekasten-backend`), you can use the following command in the root of the repository. It will default to only using the primary `docker-compose.yml`.
-
-```bash
-docker-compose up -d
-```
-
-  </Tab>
+<Tabs items={['Application + Storage', 'Application']}>
   <Tab value="Application + Storage">
 
 To start the application containers (`database` and `minio`/`mc`) as well, you can use the following command in the root of the repository.
 
 ```bash
 docker-compose -f docker-compose.yml -f docker-compose.storage.yml up -d
+```
+
+  </Tab>
+  <Tab value="Application">
+
+To start only the application containers (`sveltekasten-web` and `sveltekasten-backend`), you can use the following command in the root of the repository. It will default to only using the primary `docker-compose.yml`.
+
+```bash
+docker-compose up -d
 ```
 
   </Tab>
