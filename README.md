@@ -2,6 +2,8 @@
 
 This is the marketing / documentation site for [Briefkasten](https://github.com/ndom91/briefkasten).
 
+![Screenshot](./screenshot.png)
+
 ### [docs.briefkastenhq.com](https://docs.briefkastenhq.com)
 
 ## 🚀 Getting Started
