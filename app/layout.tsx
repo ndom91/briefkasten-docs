@@ -1,5 +1,4 @@
 import "./global.css"
-import Script from "next/script"
 import { RootProvider } from "fumadocs-ui/provider"
 import { baseUrl, createMetadata } from "@/utils/metadata"
 import { Libre_Franklin } from "next/font/google"
