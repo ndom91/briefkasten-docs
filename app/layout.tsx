@@ -4,6 +4,8 @@ import { RootProvider } from "fumadocs-ui/provider"
 import { baseUrl, createMetadata } from "@/utils/metadata"
 import { Libre_Franklin } from "next/font/google"
 import { Footer } from "../components/footer"
+import { usePathname, useSearchParams } from "next/navigation"
+import * as Swetrix from "swetrix"
 import {
   UnifrakturCook,
   Noto_Sans_Mono,
@@ -57,19 +59,27 @@ export const viewport: Viewport = {
 }
 
 export default function Layout({ children }: { children: ReactNode }) {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  Swetrix.init("Av7QEUN6nZXA", {
+    apiURL: "https://api.stats.ndo.dev/log",
+  })
+  let url = pathname
+  if (searchParams.toString() !== "") {
+    url += `?${searchParams.toString()}`
+  }
+
+  if (typeof document !== "undefined") {
+    Swetrix.trackPageview(url)
+  }
+
   return (
     <html
       lang="en"
       className={`${libreFranklin.variable} ${uni.variable} ${dmMono.variable} ${dmSerif.variable}`}
       suppressHydrationWarning
     >
-      {process.env.NODE_ENV === "production" && (
-        <Script
-          data-api="/a/e"
-          data-domain="docs.briefkastenhq.com"
-          src="/p.js"
-        />
-      )}
       <body className="overflow-x-hidden">
         <RootProvider>
           {children}
