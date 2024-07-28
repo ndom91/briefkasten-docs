@@ -1,17 +1,21 @@
 import "./global.css"
 import Script from "next/script"
 import { RootProvider } from "fumadocs-ui/provider"
-import { baseUrl, createMetadata } from "@/utils/metadata"
-import { Libre_Franklin } from "next/font/google"
-import { Footer } from "../components/footer"
+import { Footer } from "@/components/footer"
 import {
   UnifrakturCook,
   Noto_Sans_Mono,
   DM_Serif_Display,
+  Libre_Franklin
 } from "next/font/google"
 
 import type { Viewport } from "next"
 import type { ReactNode } from "react"
+
+const baseUrl =
+  process.env.NODE_ENV === "development"
+    ? new URL("http://localhost:3000")
+    : new URL(`https://${process.env.VERCEL_URL}`)
 
 const libreFranklin = Libre_Franklin({
   subsets: ["latin"],
@@ -40,22 +44,6 @@ const uni = UnifrakturCook({
   display: "swap",
 })
 
-export const metadata = createMetadata({
-  title: {
-    template: "Briefkasten • %s",
-    default: "Briefkasten • Docs",
-  },
-  description: "Bookmarks, Read-it-later, and RSS-Feeds",
-  metadataBase: baseUrl,
-})
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
-    { media: "(prefers-color-scheme: light)", color: "#fff" },
-  ],
-}
-
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html
@@ -71,7 +59,6 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       )}
       <body className="overflow-x-hidden">
-        <Analytics />
         <RootProvider>
           {children}
           <Footer />
@@ -79,4 +66,46 @@ export default function Layout({ children }: { children: ReactNode }) {
       </body>
     </html>
   )
+}
+
+export const metadata = {
+  title: {
+    template: "Briefkasten • %s",
+    default: "Briefkasten • Docs",
+  },
+  description: "Bookmarks, Read-it-later, and RSS-Feeds",
+  metadataBase: baseUrl,
+  openGraph: {
+    title: "Briefkasten • Docs",
+    description: "Bookmarks, Read-it-later, and RSS-Feeds",
+    url: "https://docs.briefkastenhq.com",
+    images: "/banner.png",
+    siteName: "Briefkasten",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@ndom91",
+    title: "Briefkasten • Docs",
+    description: "Bookmarks, Read-it-later, and RSS-Feeds",
+    images: "/banner.png",
+  },
+  applicationName: "Briefkasten",
+  robots: {
+    index: true,
+    follow: true
+  },
+  icons: {
+    icon: "/favicon/favicon-32x32.png",
+    apple: "/favicon/apple-touch-icon.png"
+  }
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0A0A0A" },
+    { media: "(prefers-color-scheme: light)", color: "#fff" },
+  ],
+  colorScheme: "dark light",
+  width: "device-width",
+  initialScale: 1
 }
