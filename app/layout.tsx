@@ -3,7 +3,6 @@ import { RootProvider } from "fumadocs-ui/provider"
 import { baseUrl, createMetadata } from "@/utils/metadata"
 import { Libre_Franklin } from "next/font/google"
 import { Footer } from "../components/footer"
-import Analytics from "./analytics"
 import {
   UnifrakturCook,
   Noto_Sans_Mono,
@@ -63,6 +62,13 @@ export default function Layout({ children }: { children: ReactNode }) {
       className={`${libreFranklin.variable} ${uni.variable} ${dmMono.variable} ${dmSerif.variable}`}
       suppressHydrationWarning
     >
+      {process.env.NODE_ENV === "production" && (
+        <Script
+          data-api="/a/e"
+          data-domain="docs.briefkastenhq.com"
+          src="/p.js"
+        />
+      )}
       <body className="overflow-x-hidden">
         <Analytics />
         <RootProvider>

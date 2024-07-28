@@ -38,5 +38,11 @@
       "permanent": true,
       "destination": "/docs/self-hosting"
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/a/e",
+      "destination": "https://stats.ndo.dev/api/event"
+    }
   ]
 }
