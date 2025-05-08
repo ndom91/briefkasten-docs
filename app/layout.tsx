@@ -6,7 +6,7 @@ import {
   UnifrakturCook,
   Noto_Sans_Mono,
   DM_Serif_Display,
-  Libre_Franklin
+  Libre_Franklin,
 } from "next/font/google"
 
 import type { Viewport } from "next"
@@ -52,11 +52,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       {process.env.NODE_ENV === "production" && (
-        <Script
-          data-api="/a/e"
-          data-domain="docs.briefkastenhq.com"
-          src="/p.js"
-        />
+        <Script src="r.js" data-site-id="2" defer></Script>
       )}
       <body className="overflow-x-hidden">
         <RootProvider>
@@ -92,12 +88,12 @@ export const metadata = {
   applicationName: "Briefkasten",
   robots: {
     index: true,
-    follow: true
+    follow: true,
   },
   icons: {
     icon: "/favicon/favicon-32x32.png",
-    apple: "/favicon/apple-touch-icon.png"
-  }
+    apple: "/favicon/apple-touch-icon.png",
+  },
 }
 
 export const viewport: Viewport = {
@@ -107,5 +103,5 @@ export const viewport: Viewport = {
   ],
   colorScheme: "dark light",
   width: "device-width",
-  initialScale: 1
+  initialScale: 1,
 }
