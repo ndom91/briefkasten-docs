@@ -52,7 +52,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       {process.env.NODE_ENV === "production" && (
-        <Script src="r.js" data-site-id="2" defer></Script>
+        <Script src="/r.js" data-site-id="2" defer></Script>
       )}
       <body className="overflow-x-hidden">
         <RootProvider>
