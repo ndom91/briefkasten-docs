@@ -17,8 +17,8 @@ The code is setup as a monorepo and contains the following pieces.
 ### Clone the repository
 
 ```bash
-git clone https://github.com/ndom91/sveltekasten
-cd sveltekasten
+git clone https://github.com/ndom91/briefkasten
+cd briefkasten
 ```
 
 </Step>
@@ -71,19 +71,18 @@ vim .env
 
 Open your `.env` files in an editor and modify at least the following values. These are the required values.
 
-| Directory     | Variable       | Value                                                                   |
-| :------------ | :------------- | :---------------------------------------------------------------------- |
-| Web + Backend | `DATABASE_URL` | `postgres://username:password@localhost:5432/postgres`                  |
-| Web           | `AUTH_URL`     | Your current URL (i.e. `http://localhost:3000`)                         |
-| Web           | `AUTH_SECRET`  | Set to the output of `openssl rand -hex 33`                             |
-| Web           | `WORKER_URL`   | URL of the `backend` application, (i.e. `http://localhost:8000/api/v0`) |
-| Backend       | `JWT_SECRET`   | The same secret as you set in your web's `AUTH_SECRET`                  |
+| Directory     | Variable             | Value                                                                   |
+| :------------ | :------------------- | :---------------------------------------------------------------------- |
+| Web + Backend | `DATABASE_URL`       | `postgres://username:password@localhost:5432/postgres`                  |
+| Web + Backend | `BETTER_AUTH_URL`    | Your current URL (i.e. `http://localhost:3000`)                         |
+| Web + Backend | `BETTER_AUTH_SECRET` | Set to the output of `openssl rand -hex 33`                             |
+| Web           | `PUBLIC_WORKER_URL`  | URL of the `backend` application, (i.e. `http://localhost:8000/api/v0`) |
 
-Next, you'll want to setup at least 1 [Authentication Provider](https://authjs.dev) with Auth.js-related environment variables. We support OAuth providers like Github, Google, Azure, Keycloak and Authentik as well as the Email "Magic Link" provider out of the box. See the `apps/web/.env.example` for the various environment variables you can set.
+Next, you'll want to setup at least 1 authentication provider. Briefkasten v2 uses [Better Auth](https://better-auth.com) and supports the GitHub and Google OAuth providers, as well as email/password out of the box. See the `apps/web/.env.example` for the various environment variables you can set.
 
-We like to use the [GitHub provider](https://authjs-nextra-docs.vercel.app/getting-started/providers/github) in development as well, as its easy to setup and safe to use. That requires the `AUTH_GITHUB_ID` and `AUTH_GITHUB_SECRET` environment variables to be set.
+We like to use the [GitHub provider](https://better-auth.com/docs/authentication/github) in development as well, as its easy to setup and safe to use. That requires the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` environment variables to be set.
 
-This is optional during development, but if you want the application to generate images and save them, you'll have to provide an S3-compatible object store. I've tested and used [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/), but also provided a [minio](https://min.io) container setup in the `docker-compose.yml` so you don't have to use a cloud provider. To set this up, you'll have to fill in the `BUCKET_*` environment variables in the backends `apps/backend/.env` file.
+This is optional during development, but if you want the application to generate images and save them, you'll have to provide an S3-compatible object store. I've tested and used [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/), but also provided a [RustFS](https://rustfs.com) container setup in the `docker-compose.storage.yml` so you don't have to use a cloud provider. To set this up, you'll have to fill in the `BUCKET_*` environment variables in the backends `apps/backend/.env` file.
 
 </Step>
 </Steps>
@@ -178,10 +177,10 @@ yarn run dev
 
 ### Object Storage
 
-The default object storage provider is Cloudflare R2 as it has a free plan with 10GB storage, no egress fees. But if you'd like to self-host this, I included a [minio](https://min.io)-based setup in the `docker-compose.storage.yml` file. You can start it with the following command. Make sure to update the `MINIO_ROOT_USER` and `MINIO_ROOT_PASSWORD` environment variables in the `docker-compose.storage.yml` file, this will be your bucket access key and secret key, respectively, as well as the login for the minio console (available in the container at port `9001`).
+The default object storage provider is Cloudflare R2 as it has a free plan with 10GB storage, no egress fees. But if you'd like to self-host this, I included a [RustFS](https://rustfs.com)-based setup in the `docker-compose.storage.yml` file. You can start it with the following command. Make sure to update the `BUCKET_ACCESS_KEY` and `BUCKET_SECRET_KEY` environment variables in the `docker-compose.storage.yml` file, this will be your bucket access key and secret key, as well as the login for the RustFS console (available in the container at port `9001`).
 
 ```bash
-docker-compose -f docker-compose.storage.yml up mc minio
+docker-compose -f docker-compose.storage.yml up rustfs
 ```
 
 For more information, check out the [self-hosting object storage](/docs/self-hosting#object-storage) section.

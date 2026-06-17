@@ -14,7 +14,7 @@ export const HeroImage = () => {
         sizes="(max-width: 640px) 300px, (max-width: 960px) 500px, 30vw"
         quality={100}
         priority
-        alt="Screenshot of SvelteKasten"
+        alt="Screenshot of Briefkasten"
       />
       <Image
         className="inline-block relative p-1 bg-gray-100 bg-cover rounded-md opacity-100 transition dark:p-0 dark:opacity-0 gradient-border object-fit size-fit dark:size-0"
@@ -22,7 +22,7 @@ export const HeroImage = () => {
         sizes="(max-width: 640px) 300px, (max-width: 960px) 500px, 40vw"
         quality={100}
         priority
-        alt="Screenshot of SvelteKasten"
+        alt="Screenshot of Briefkasten"
       />
       <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
         <div className="relative w-12 h-full bg-gray-100/90 blur-md dark:bg-white/20"></div>

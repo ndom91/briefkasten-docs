@@ -59,7 +59,7 @@ export function Faq() {
               <p className="pt-4 text-base font-light tracking-wide leading-7 text-neutral-500 text-balance dark:text-neutral-50">
                 Great! Your best bet is to create an issue in the{" "}
                 <a
-                  href="https://github.com/ndom91/sveltekasten/issues"
+                  href="https://github.com/ndom91/briefkasten/issues"
                   className="underline underline-offset-4"
                   target="_blank"
                 >
