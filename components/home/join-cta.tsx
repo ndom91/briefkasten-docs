@@ -32,7 +32,7 @@ export function JoinCTA() {
             </p>
             <div className="flex gap-4 mt-6">
               <a
-                href="https://dev.briefkastenhq.com/?utm_source=docs&utm_medium=cta&utm_campaign=v2"
+                href="https://briefkastenhq.com/?utm_source=docs&utm_medium=cta&utm_campaign=v2"
                 target="_blank"
                 className="flex justify-center items-center py-4 px-10 w-full text-2xl text-center text-white rounded-md transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:outline-none bg-neutral-600 font-display group dark:focus:ring-offset-neutral-900 dark:focus:ring-neutral-700 hover:bg-neutral-700 focus:ring-neutral-100"
               >
@@ -146,5 +146,5 @@ export function JoinCTA() {
         </svg>
       </div>
     </section>
-  )
+  );
 }

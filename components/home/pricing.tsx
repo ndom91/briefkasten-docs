@@ -274,7 +274,7 @@ export function Pricing() {
                 </div>
                 <div className="mt-6">
                   <a
-                    href="https://dev.briefkastenhq.com/?utm_source=docs&utm_medium=cta&utm_campaign=pricing"
+                    href="https://briefkastenhq.com/?utm_source=docs&utm_medium=cta&utm_campaign=pricing"
                     target="_blank"
                     type="highlight"
                     className="flex justify-center items-center py-3.5 px-10 w-full text-xl font-bold text-white rounded-md border-2 transition duration-500 ease-in-out transform focus:ring-2 focus:ring-offset-2 focus:outline-none group border-neutral-700 bg-neutral-700 shadow-xs font-display focus:ring-neutral-200"
@@ -305,5 +305,5 @@ export function Pricing() {
         </div>
       </div>
     </section>
-  )
+  );
 }

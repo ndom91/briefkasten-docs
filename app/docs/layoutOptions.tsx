@@ -1,6 +1,6 @@
-import { pageTree } from "../source"
-import { type DocsLayoutProps } from "fumadocs-ui/layout"
-import { Logo } from "@/components/ui/icons"
+import { pageTree } from "../source";
+import { type DocsLayoutProps } from "fumadocs-ui/layout";
+import { Logo } from "@/components/ui/icons";
 
 export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
   tree: pageTree,
@@ -26,14 +26,9 @@ export const layoutOptions: Omit<DocsLayoutProps, "children"> = {
       url: "/docs",
     },
     {
-      text: "Docs v1",
-      url: "https://v1.docs.briefkastenhq.com",
-      external: true,
-    },
-    {
       text: "Login",
-      url: "https://dev.briefkastenhq.com",
+      url: "https://briefkastenhq.com",
       external: true,
     },
   ],
-}
+};
