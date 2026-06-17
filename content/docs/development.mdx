@@ -76,7 +76,7 @@ Open your `.env` files in an editor and modify at least the following values. Th
 | Web + Backend | `DATABASE_URL`       | `postgres://username:password@localhost:5432/postgres`                  |
 | Web + Backend | `BETTER_AUTH_URL`    | Your current URL (i.e. `http://localhost:3000`)                         |
 | Web + Backend | `BETTER_AUTH_SECRET` | Set to the output of `openssl rand -hex 33`                             |
-| Web           | `PUBLIC_WORKER_URL`  | URL of the `backend` application, (i.e. `http://localhost:8000/api/v0`) |
+| Web           | `PUBLIC_WORKER_URL`  | URL of the `backend` application, (i.e. `http://localhost:8000`)        |
 
 Next, you'll want to setup at least 1 authentication provider. Briefkasten v2 uses [Better Auth](https://better-auth.com) and supports the GitHub and Google OAuth providers, as well as email/password out of the box. See the `apps/web/.env.example` for the various environment variables you can set.
 
