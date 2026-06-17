@@ -7,6 +7,10 @@ You can self-host Briefkasten with Docker and docker-compose. The setup is split
 1. [`docker-compose.yml`](https://github.com/ndom91/briefkasten/blob/main/docker-compose.yml) - Contains the frontend and backend of the application.
 2. [`docker-compose.storage.yml`](https://github.com/ndom91/briefkasten/blob/main/docker-compose.storage.yml) - Contains a PostgreSQL container as well as a RustFS object store container.
 
+**The recommended setup runs both files** — a fully self-hosted stack with a local PostgreSQL database and a local RustFS (S3-compatible) object store, no cloud accounts required. This is the green path used in the examples below.
+
+If you'd rather offload the database and/or object storage to a managed cloud service (e.g. a hosted Postgres provider or [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/)), that's fully supported too — just skip `docker-compose.storage.yml` and point the relevant environment variables at your provider.
+
 ## Quick Start
 
 <Steps>
@@ -49,19 +53,19 @@ If you want to use the storage containers, you'll want to change some of the def
 
 Finally, you can spin up the containers
 
-<Tabs items={['Application + Storage', 'Application']}>
-  <Tab value="Application + Storage">
+<Tabs items={['Application + Storage (recommended)', 'Application only']}>
+  <Tab value="Application + Storage (recommended)">
 
-To start the application containers (`database` and `rustfs`) as well, you can use the following command in the root of the repository.
+This is the recommended green path: it starts the application **and** the local `database` (PostgreSQL) and `rustfs` (object storage) containers, so the whole stack is self-hosted. Run the following command in the root of the repository.
 
 ```bash
 docker-compose -f docker-compose.yml -f docker-compose.storage.yml up -d
 ```
 
   </Tab>
-  <Tab value="Application">
+  <Tab value="Application only">
 
-To start only the application containers (`briefkasten-web` and `briefkasten-backend`), you can use the following command in the root of the repository. It will default to only using the primary `docker-compose.yml`.
+If you're using a managed cloud database and object storage instead, you can start just the `briefkasten-web` and `briefkasten-backend` application containers. This defaults to only using the primary `docker-compose.yml` — make sure your `.env` files point at your cloud providers first.
 
 ```bash
 docker-compose up -d
@@ -174,9 +178,9 @@ DATABASE_URL=postgres://postgres:postgres@database:5432/briefkasten
 
 ### Object Storage
 
-The default object storage provider is [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/) as it has a generous free plan with 10GB storage and no egress fees. But if you'd like to self-host this service, we&apos;ve included a [RustFS](https://rustfs.com) (S3-compatible) container setup in the `docker-compose.storage.yml` file.
+The recommended object storage is the self-hosted [RustFS](https://rustfs.com) (S3-compatible) container included in the `docker-compose.storage.yml` file — it runs locally with no cloud account required. If you'd prefer a managed provider instead, any S3-compatible service works; [Cloudflare R2](https://www.cloudflare.com/developer-platform/r2/) is a good option with a generous free plan (10GB storage, no egress fees). To use a cloud provider, skip the `rustfs` container and point the `BUCKET_*` variables at your provider.
 
-You can start it separately with the following command. The container reads its credentials from the `BUCKET_ACCESS_KEY` and `BUCKET_SECRET_KEY` environment variables, which will also be your bucket access key and secret key, as well as the login for the RustFS console (available at the container&apos;s port `9001`).
+When self-hosting with RustFS, it comes up as part of the recommended `docker-compose.storage.yml` setup above. To start it on its own, use the following command. The container reads its credentials from the `BUCKET_ACCESS_KEY` and `BUCKET_SECRET_KEY` environment variables, which will also be your bucket access key and secret key, as well as the login for the RustFS console (available at the container&apos;s port `9001`).
 
 ```bash
 docker-compose -f docker-compose.storage.yml up rustfs
